@@ -1,7 +1,19 @@
 #include "student.h"
 #include <algorithm>
+#include <iostream>
 
 using std::sort;
+
+Studentas::Studentas(std::istream &is)
+{
+    ReadStudent(is);
+}
+
+std::istream& Studentas::ReadStudent(std::istream &is)
+{
+    is >> _vardas >> _pavarde;
+    return is;
+}
 
 void MedVidSkaciavimas(Studentas &A, int sum)
 {
