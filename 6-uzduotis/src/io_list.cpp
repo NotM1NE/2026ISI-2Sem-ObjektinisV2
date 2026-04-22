@@ -293,7 +293,7 @@ void fileRead(list<Studentas> &grupe, string file_name)
     Studentas A;
     string temp;
     int balas;
-    ifstream duomenys(file_name);
+    ifstream duomenys("Data\\" + file_name);
     if (!duomenys.is_open())
     {
         throw std::runtime_error("Klaida: failas nerastas arba nepavyko atidaryti " + file_name);
@@ -469,7 +469,7 @@ void GenerateStudentsFile(int n)
 {
     srand(time(NULL));
     int ndRand = rand() % 16 + 5;
-    ofstream rez("studentaiGen" + std::to_string(n) + ".txt");
+    ofstream rez("Data\\studentaiGen" + std::to_string(n) + ".txt");
     rez << left << setw(25) << "Vardas" << setw(25) << "Pavarde";
     for (int i = 1; i <= ndRand; i++)
         rez << setw(10) << ("ND" + std::to_string(i));
