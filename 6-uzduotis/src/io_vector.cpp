@@ -82,10 +82,13 @@ void inputas(vector<Studentas> &grupe)
             {
                 cout << "Iveskite 0, kad baigti ivedinet duomenis" << endl;
                 cout << "Iveskite varda ir pavarde: ";
-                cin >> A.vardas;
-                if (A.vardas == "0")
+                string vardas, pavarde;
+                cin >> vardas;
+                if (vardas == "0")
                     break;
-                cin >> A.pavarde;
+                cin >> pavarde;
+                A.SetVardas(vardas);
+                A.SetPavarde(pavarde);
                 char c = cin.peek(); // patikriname ar yra papildomu simboliu/zodziu
                 if (c != '\n')       // jeigu ne eilutes pabaiga, vadinasi yra papildomu simboliu/zodziu
                 {
@@ -109,7 +112,7 @@ void inputas(vector<Studentas> &grupe)
                     }
                     if (temp == 0)
                         break;
-                    A.paz.push_back(temp);
+                    A.AddPaz(temp);
                     sum += temp;
                     i++;
                 }
@@ -124,10 +127,10 @@ void inputas(vector<Studentas> &grupe)
                     }
                     break;
                 }
-                A.egz = temp;
-                MedVidSkaciavimas(A, sum);
+                A.SetEgz(temp);
+                A.MedIrVidSkaciavimas(sum);
                 grupe.push_back(A);
-                A.paz.clear();
+                A.ClearPaz();
             }
         }
         if (t == 2)
@@ -136,10 +139,14 @@ void inputas(vector<Studentas> &grupe)
             {
                 cout << "Iveskite 0, kad baigti ivedinet duomenis" << endl;
                 cout << "Iveskite varda ir pavarde: ";
-                cin >> A.vardas;
-                if (A.vardas == "0")
+                string vardas, pavarde;
+                cin >> vardas;
+                if (vardas == "0")
                     break;
-                cin >> A.pavarde;
+                cin >> pavarde;
+
+                A.SetVardas(vardas);
+                A.SetPavarde(pavarde);
                 char c = cin.peek(); // patikriname ar yra papildomu simboliu/zodziu
                 if (c != '\n')       // jeigu ne eilutes pabaiga, vadinasi yra papildomu simboliu/zodziu
                 {
@@ -152,36 +159,36 @@ void inputas(vector<Studentas> &grupe)
                 {
                     rand_paz = rand() % 10 + 1;
                     cout << "Sugeneruotas " << i << " pazymys: " << rand_paz << endl;
-                    A.paz.push_back(rand_paz);
+                    A.AddPaz(rand_paz);
                     sum += rand_paz;
                 }
                 rand_paz = rand() % 10 + 1;
                 cout << "Sugeneruotas egzamino invertinimas: " << rand_paz << endl;
-                A.egz = rand_paz;
-                MedVidSkaciavimas(A, sum);
+                A.SetEgz(rand_paz);
+                A.MedIrVidSkaciavimas(sum);
                 grupe.push_back(A);
-                A.paz.clear();
+                A.ClearPaz();
             }
         }
         if (t == 3)
         {
             for (int i = 1; i <= 10; i++)
             {
-                randomVardasPavarde(A.vardas, A.pavarde);
-                cout << "Sugeneruotas " << i << " vardas ir pavarde: " << A.vardas << " " << A.pavarde << endl;
+                randomVardasPavarde(A.vardas(), A.pavarde());
+                cout << "Sugeneruotas " << i << " vardas ir pavarde: " << A.vardas() << " " << A.pavarde() << endl;
                 int sum = 0, rand_paz;
                 for (int ii = 1; ii <= 10; ii++)
                 {
                     rand_paz = rand() % 10 + 1;
                     cout << "Sugeneruotas " << ii << " pazymys: " << rand_paz << endl;
-                    A.paz.push_back(rand_paz);
+                    A.AddPaz(rand_paz);
                     sum += rand_paz;
                 }
-                A.egz = rand() % 10 + 1;
-                cout << "Sugeneruotas egzamino invertinimas: " << A.egz << endl;
-                MedVidSkaciavimas(A, sum);
+                A.SetEgz(rand() % 10 + 1);
+                cout << "Sugeneruotas egzamino invertinimas: " << A.egz() << endl;
+                A.MedIrVidSkaciavimas(sum);
                 grupe.push_back(A);
-                A.paz.clear();
+                A.ClearPaz();
             }
         }
         if (t == 4)
@@ -300,13 +307,13 @@ void fileRead(vector<Studentas> &grupe, string file_name)
         throw std::runtime_error("Klaida: failas nerastas arba nepavyko atidaryti " + file_name);
     }
     getline(duomenys, temp); // skip header
-    while (duomenys >> A.vardas >> A.pavarde)
+    while (duomenys >> A.vardas() >> A.pavarde())
     {
-        A.paz.clear();
-        A.vardas.erase(std::remove_if(A.vardas.begin(), A.vardas.end(), ::isspace), A.vardas.end());
-        A.pavarde.erase(std::remove_if(A.pavarde.begin(), A.pavarde.end(), ::isspace), A.pavarde.end());
+        A.ClearPaz();
+        A.vardas().erase(std::remove_if(A.vardas().begin(), A.vardas().end(), ::isspace), A.vardas().end());
+        A.pavarde().erase(std::remove_if(A.pavarde().begin(), A.pavarde().end(), ::isspace), A.pavarde().end());
 
-        if (A.vardas.empty() || A.pavarde.empty())
+        if (A.vardas().empty() || A.pavarde().empty())
             throw std::invalid_argument("Faile nera vardo arba pavardes");
         getline(duomenys, temp);
         stringstream x(temp);
@@ -323,15 +330,15 @@ void fileRead(vector<Studentas> &grupe, string file_name)
         if (pazymiai.empty())
             throw std::invalid_argument("Faile nera pazymiu");
 
-        A.egz = pazymiai.back();
+        A.SetEgz(pazymiai.back());
         pazymiai.pop_back();
         for (int paz : pazymiai)
         {
-            A.paz.push_back(paz);
+            A.AddPaz(paz);
             sum += paz;
         }
 
-        MedVidSkaciavimas(A, sum);
+        A.MedIrVidSkaciavimas(sum);
         grupe.push_back(A);
     }
     duomenys.close();
@@ -343,19 +350,19 @@ void sortByUser(vector<Studentas> &grupe, int temp)
     {
     case 1:
         sort(grupe.begin(), grupe.end(), [](const Studentas &a, const Studentas &b)
-             { return a.vardas < b.vardas; });
+             { return a.vardas() < b.vardas(); });
         break;
     case 2:
         sort(grupe.begin(), grupe.end(), [](const Studentas &a, const Studentas &b)
-             { return a.pavarde < b.pavarde; });
+             { return a.pavarde() < b.pavarde(); });
         break;
     case 3:
         sort(grupe.begin(), grupe.end(), [](const Studentas &a, const Studentas &b)
-             { return a.vid > b.vid; });
+             { return a.vid() > b.vid(); });
         break;
     case 4:
         sort(grupe.begin(), grupe.end(), [](const Studentas &a, const Studentas &b)
-             { return a.med > b.med; });
+             { return a.med() > b.med(); });
         break;
     default:
         break;
@@ -408,21 +415,21 @@ void duomenuIrasymasFaile(vector<Studentas> &grupe, int temp, string fileName)
             rezultatai << right << setw(20) << "Galutinis (Vid.)" << endl;
             rezultatai << left << setw(10) << "--------------------------------------------------------" << endl;
             for (auto A : grupe)
-                rezultatai << left << setw(15) << A.vardas << left << setw(20) << A.pavarde << right << setw(20) << fixed << setprecision(2) << A.vid << endl;
+                rezultatai << left << setw(15) << A.vardas() << left << setw(20) << A.pavarde() << right << setw(20) << fixed << setprecision(2) << A.vid() << endl;
         }
         if (temp == 2)
         {
             rezultatai << right << setw(20) << "Galutinis (Med.)" << endl;
             rezultatai << left << setw(10) << "---------------------------------------------------------" << endl;
             for (auto A : grupe)
-                rezultatai << left << setw(15) << A.vardas << left << setw(20) << A.pavarde << right << setw(20) << fixed << setprecision(2) << A.med << endl;
+                rezultatai << left << setw(15) << A.vardas() << left << setw(20) << A.pavarde() << right << setw(20) << fixed << setprecision(2) << A.med() << endl;
         }
         if (temp == 3)
         {
             rezultatai << right << setw(20) << "Galutinis (Vid.)" << right << setw(20) << "Galutinis (Med.)" << endl;
             rezultatai << left << setw(10) << "---------------------------------------------------------------------------" << endl;
             for (auto A : grupe)
-                rezultatai << left << setw(15) << A.vardas << left << setw(20) << A.pavarde << right << setw(20) << fixed << setprecision(2) << A.vid << right << setw(20) << A.med << endl;
+                rezultatai << left << setw(15) << A.vardas() << left << setw(20) << A.pavarde() << right << setw(20) << fixed << setprecision(2) << A.vid() << right << setw(20) << A.med() << endl;
         }
     }
     rezultatai.close();
@@ -436,21 +443,21 @@ void duomenuIrasymasKonsole(vector<Studentas> &grupe, int temp)
         cout << right << setw(20) << "Galutinis (Vid.)" << endl;
         cout << left << setw(10) << "--------------------------------------------------------" << endl;
         for (auto A : grupe)
-            cout << left << setw(15) << A.vardas << left << setw(20) << A.pavarde << right << setw(20) << fixed << setprecision(2) << A.vid << endl;
+            cout << left << setw(15) << A.vardas() << left << setw(20) << A.pavarde() << right << setw(20) << fixed << setprecision(2) << A.vid() << endl;
     }
     if (temp == 2)
     {
         cout << right << setw(20) << "Galutinis (Med.)" << endl;
         cout << left << setw(10) << "---------------------------------------------------------" << endl;
         for (auto A : grupe)
-            cout << left << setw(15) << A.vardas << left << setw(20) << A.pavarde << right << setw(20) << fixed << setprecision(2) << A.med << endl;
+            cout << left << setw(15) << A.vardas() << left << setw(20) << A.pavarde() << right << setw(20) << fixed << setprecision(2) << A.med() << endl;
     }
     if (temp == 3)
     {
         cout << right << setw(20) << "Galutinis (Vid.)" << right << setw(20) << "Galutinis (Med.)" << endl;
         cout << left << setw(10) << "---------------------------------------------------------------------------" << endl;
         for (auto A : grupe)
-            cout << left << setw(15) << A.vardas << left << setw(20) << A.pavarde << right << setw(20) << fixed << setprecision(2) << A.vid << right << setw(20) << A.med << endl;
+            cout << left << setw(15) << A.vardas() << left << setw(20) << A.pavarde() << right << setw(20) << fixed << setprecision(2) << A.vid() << right << setw(20) << A.med() << endl;
     }
 }
 
@@ -498,7 +505,7 @@ void SplitStudentsStrategy1(const vector<Studentas> &grupe, vector<Studentas> &f
 
     for (const auto &A : grupe)
     {
-        if (A.vid < 5.0)
+        if (A.vid() < 5.0)
             failed.push_back(A);
         else
             passed.push_back(A);
@@ -511,7 +518,7 @@ void SplitStudentsStrategy2(vector<Studentas> &grupe, vector<Studentas> &failed)
 
     for (const auto &A : grupe)
     {
-        if (A.vid < 5.0)
+        if (A.vid() < 5.0)
             failed.push_back(A);
         else
             passed.push_back(A);
@@ -524,7 +531,7 @@ void SplitStudentsStrategy3(vector<Studentas> &grupe, vector<Studentas> &failed)
     auto it = std::stable_partition(grupe.begin(), grupe.end(),
                                     [](const Studentas &A)
                                     {
-                                        return A.vid >= 5.0;
+                                        return A.vid() >= 5.0;
                                     });
 
     for (auto iter = it; iter != grupe.end(); ++iter)

@@ -36,8 +36,9 @@ public:
     void SetVid(double vid) { _vid = vid; }
     void SetMed(double med) { _med = med; }
     void AddPaz(int paz) {_paz.push_back(paz); }
+    void ClearPaz() { _paz.clear(); }
 
-    void MedIrVidSkaciavimas(Studentas &A, int sum);
+    void MedIrVidSkaciavimas(int sum);
 };
 
 #endif

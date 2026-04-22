@@ -15,19 +15,19 @@ std::istream& Studentas::ReadStudent(std::istream &is)
     return is;
 }
 
-void MedVidSkaciavimas(Studentas &A, int sum)
+void Studentas::MedIrVidSkaciavimas(int sum)
 {
-    int length = A.paz.size();
+    int length = _paz.size();
     if (length == 0)
     {
-        A.med = A.egz * 0.6;
-        A.vid = A.med;
+        _med = _egz * 0.6;
+        _vid = _med;
         return;
     }
-    sort(A.paz.begin(), A.paz.end());
+    sort(_paz.begin(), _paz.end());
     if (length % 2 == 0)
-        A.med = (A.paz[length / 2 - 1] + A.paz[length / 2]) / 2.0 * 0.4 + A.egz * 0.6;
+        _med = (_paz[length / 2 - 1] + _paz[length / 2]) / 2.0 * 0.4 + _egz * 0.6;
     else
-        A.med = A.paz[length / 2] * 0.4 + A.egz * 0.6;
-    A.vid = sum * 1.0 / (length * 1.0) * 0.4 + A.egz * 0.6;
+        _med = _paz[length / 2] * 0.4 + _egz * 0.6;
+    _vid = sum * 1.0 / (length * 1.0) * 0.4 + _egz * 0.6;
 }
