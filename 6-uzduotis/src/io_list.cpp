@@ -398,7 +398,7 @@ int getSortChoice(int temp)
 
 void duomenuIrasymasFaile(list<Studentas> &grupe, int temp, string fileName)
 {
-    ofstream rezultatai(fileName);
+    ofstream rezultatai("Data\\" + fileName);
     if (rezultatai.is_open())
     {
         rezultatai << left << setw(15) << "Vardas" << left << setw(20) << "Pavarde" << right << setw(20);

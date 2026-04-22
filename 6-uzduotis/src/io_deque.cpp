@@ -293,7 +293,7 @@ void fileRead(deque<Studentas> &grupe, string file_name)
     Studentas A;
     string temp;
     int balas;
-    ifstream duomenys(file_name);
+    ifstream duomenys("Data\\" + file_name);
     if (!duomenys.is_open())
     {
         throw std::runtime_error("Klaida: failas nerastas arba nepavyko atidaryti " + file_name);
@@ -398,7 +398,7 @@ int getSortChoice(int temp)
 
 void duomenuIrasymasFaile(deque<Studentas> &grupe, int temp, string fileName)
 {
-    ofstream rezultatai(fileName);
+    ofstream rezultatai("Data\\" + fileName);
     if (rezultatai.is_open())
     {
         rezultatai << left << setw(15) << "Vardas" << left << setw(20) << "Pavarde" << right << setw(20);
