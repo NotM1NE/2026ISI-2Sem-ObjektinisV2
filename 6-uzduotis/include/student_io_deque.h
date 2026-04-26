@@ -17,7 +17,7 @@ void fileTest(deque<Studentas> &grupe, string file_name, int &testKiekis);
 
 void sortByUser(deque<Studentas> &grupe, int temp);
 
-void duomenuIrasymasFaile(deque<Studentas> &grupe, int temp, string fileName);
+void duomenuIrasymasFaile(const deque<Studentas>& grupe, int temp, const string& fileName);
 void duomenuIrasymasKonsole(deque<Studentas> &grupe, int temp);
 
 bool containsDigit(const string &str);

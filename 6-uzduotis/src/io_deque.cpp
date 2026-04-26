@@ -174,7 +174,10 @@ void inputas(deque<Studentas> &grupe)
         {
             for (int i = 1; i <= 10; i++)
             {
-                randomVardasPavarde(A.vardas(), A.pavarde());
+                string vardas, pavarde;
+                randomVardasPavarde(vardas, pavarde);
+                A.SetVardas(vardas);
+                A.SetPavarde(pavarde);
                 cout << "Sugeneruotas " << i << " vardas ir pavarde: " << A.vardas() << " " << A.pavarde() << endl;
                 int sum = 0, rand_paz;
                 for (int ii = 1; ii <= 10; ii++)
@@ -269,11 +272,12 @@ void inputas(deque<Studentas> &grupe)
         if (t == 6)
         {
             cout << "Pasirinkite kiek kartu norite paleisti testa" << endl;
+            intInput(t);
             cout << "Pasirinkite strategija studentu isskyrimui:" << endl;
             cout << "1 - Strategija 1\n2 - Strategija 2\n3 - Strategija 3" << endl;
             int strategy;
             intInput(strategy);
-            intInput(t);
+
             for (int n = 1000; n <= 10000000; n *= 10)
                 benchmarkProcessingFile(n, t, strategy);
         }
@@ -298,7 +302,7 @@ void fileTest(deque<Studentas> &grupe, string file_name, int &testKiekis)
 void fileRead(deque<Studentas> &grupe, string file_name)
 {
     grupe.clear();
-    Studentas A;
+    
     string temp;
     int balas;
     ifstream duomenys("Data\\" + file_name);
@@ -307,14 +311,15 @@ void fileRead(deque<Studentas> &grupe, string file_name)
         throw std::runtime_error("Klaida: failas nerastas arba nepavyko atidaryti " + file_name);
     }
     getline(duomenys, temp); // skip header
-    while (duomenys >> A.vardas() >> A.pavarde())
+    string vardas, pavarde;
+    while (duomenys >> vardas >> pavarde)
     {
-        A.ClearPaz();
-        A.vardas().erase(std::remove_if(A.vardas().begin(), A.vardas().end(), ::isspace), A.vardas().end());
-        A.pavarde().erase(std::remove_if(A.pavarde().begin(), A.pavarde().end(), ::isspace), A.pavarde().end());
-
-        if (A.vardas().empty() || A.pavarde().empty())
+        Studentas A;
+        if (vardas.empty() || pavarde.empty())
             throw std::invalid_argument("Faile nera vardo arba pavardes");
+        A.SetVardas(vardas);
+        A.SetPavarde(pavarde);
+
         getline(duomenys, temp);
         stringstream x(temp);
 
@@ -404,7 +409,7 @@ int getSortChoice(int temp)
     }
 }
 
-void duomenuIrasymasFaile(deque<Studentas> &grupe, int temp, string fileName)
+void duomenuIrasymasFaile(const deque<Studentas>& grupe, int temp, const string& fileName)
 {
     ofstream rezultatai("Data\\" + fileName);
     if (rezultatai.is_open())
@@ -414,21 +419,21 @@ void duomenuIrasymasFaile(deque<Studentas> &grupe, int temp, string fileName)
         {
             rezultatai << right << setw(20) << "Galutinis (Vid.)" << endl;
             rezultatai << left << setw(10) << "--------------------------------------------------------" << endl;
-            for (auto A : grupe)
+            for (const auto& A : grupe)
                 rezultatai << left << setw(15) << A.vardas() << left << setw(20) << A.pavarde() << right << setw(20) << fixed << setprecision(2) << A.vid() << endl;
         }
         if (temp == 2)
         {
             rezultatai << right << setw(20) << "Galutinis (Med.)" << endl;
             rezultatai << left << setw(10) << "---------------------------------------------------------" << endl;
-            for (auto A : grupe)
+            for (const auto& A : grupe)
                 rezultatai << left << setw(15) << A.vardas() << left << setw(20) << A.pavarde() << right << setw(20) << fixed << setprecision(2) << A.med() << endl;
         }
         if (temp == 3)
         {
             rezultatai << right << setw(20) << "Galutinis (Vid.)" << right << setw(20) << "Galutinis (Med.)" << endl;
             rezultatai << left << setw(10) << "---------------------------------------------------------------------------" << endl;
-            for (auto A : grupe)
+            for (const auto& A : grupe)
                 rezultatai << left << setw(15) << A.vardas() << left << setw(20) << A.pavarde() << right << setw(20) << fixed << setprecision(2) << A.vid() << right << setw(20) << A.med() << endl;
         }
     }
@@ -442,21 +447,21 @@ void duomenuIrasymasKonsole(deque<Studentas> &grupe, int temp)
     {
         cout << right << setw(20) << "Galutinis (Vid.)" << endl;
         cout << left << setw(10) << "--------------------------------------------------------" << endl;
-        for (auto A : grupe)
+        for (const auto& A : grupe)
             cout << left << setw(15) << A.vardas() << left << setw(20) << A.pavarde() << right << setw(20) << fixed << setprecision(2) << A.vid() << endl;
     }
     if (temp == 2)
     {
         cout << right << setw(20) << "Galutinis (Med.)" << endl;
         cout << left << setw(10) << "---------------------------------------------------------" << endl;
-        for (auto A : grupe)
+        for (const auto& A : grupe)
             cout << left << setw(15) << A.vardas() << left << setw(20) << A.pavarde() << right << setw(20) << fixed << setprecision(2) << A.med() << endl;
     }
     if (temp == 3)
     {
         cout << right << setw(20) << "Galutinis (Vid.)" << right << setw(20) << "Galutinis (Med.)" << endl;
         cout << left << setw(10) << "---------------------------------------------------------------------------" << endl;
-        for (auto A : grupe)
+        for (const auto& A : grupe)
             cout << left << setw(15) << A.vardas() << left << setw(20) << A.pavarde() << right << setw(20) << fixed << setprecision(2) << A.vid() << right << setw(20) << A.med() << endl;
     }
 }
@@ -477,7 +482,7 @@ void GenerateStudentsFile(int n)
 {
     srand(time(NULL));
     int ndRand = rand() % 16 + 5;
-    ofstream rez("studentaiGen" + std::to_string(n) + ".txt");
+    ofstream rez("Data\\studentaiGen" + std::to_string(n) + ".txt");
     rez << left << setw(25) << "Vardas" << setw(25) << "Pavarde";
     for (int i = 1; i <= ndRand; i++)
         rez << setw(10) << ("ND" + std::to_string(i));
@@ -516,14 +521,14 @@ void SplitStudentsStrategy2(deque<Studentas> &grupe, deque<Studentas> &failed)
     failed.clear();
     deque<Studentas> passed;
 
-    for (const auto &A : grupe)
+    for (auto &A : grupe)
     {
         if (A.vid() < 5.0)
             failed.push_back(A);
         else
             passed.push_back(A);
     }
-    grupe = passed;
+    grupe = std::move(passed);
 }
 void SplitStudentsStrategy3(deque<Studentas> &grupe, deque<Studentas> &failed)
 {
@@ -577,12 +582,12 @@ void benchmarkProcessingFile(int n, int testKiekis, int strategy)
         else if (strategy == 2)
         {
             SplitStudentsStrategy2(grupe, failed);
-            passed = grupe;
+            passed = std::move(grupe);
         }
         else if (strategy == 3)
         {
             SplitStudentsStrategy3(grupe, failed);
-            passed = grupe;
+            passed = std::move(grupe);
         }
         splitTotal += splitTimer.elapsed();
 
@@ -603,5 +608,6 @@ void benchmarkProcessingFile(int n, int testKiekis, int strategy)
     cout << "Vidutinis skirstymo laikas: " << fixed << setprecision(6) << splitTotal / testKiekis << " s" << endl;
     cout << "Vidutinis isvedimo laikas: " << fixed << setprecision(6) << writeTotal / testKiekis << " s" << endl;
     cout << "Vidutinis bendras laikas: " << fixed << setprecision(6) << totalTotal / testKiekis << " s" << endl;
-    cout << "-------------------------------\n" << endl;
+    cout << "-------------------------------\n"
+         << endl;
 }

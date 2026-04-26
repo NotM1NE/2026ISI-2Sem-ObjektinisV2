@@ -174,7 +174,10 @@ void inputas(vector<Studentas> &grupe)
         {
             for (int i = 1; i <= 10; i++)
             {
-                randomVardasPavarde(A.vardas(), A.pavarde());
+                string vardas, pavarde;
+                randomVardasPavarde(vardas, pavarde);
+                A.SetVardas(vardas);
+                A.SetPavarde(pavarde);
                 cout << "Sugeneruotas " << i << " vardas ir pavarde: " << A.vardas() << " " << A.pavarde() << endl;
                 int sum = 0, rand_paz;
                 for (int ii = 1; ii <= 10; ii++)
@@ -307,11 +310,15 @@ void fileRead(vector<Studentas> &grupe, string file_name)
         throw std::runtime_error("Klaida: failas nerastas arba nepavyko atidaryti " + file_name);
     }
     getline(duomenys, temp); // skip header
-    while (duomenys >> A.vardas() >> A.pavarde())
+    string vardas, pavarde;
+    while (duomenys >> vardas >> pavarde)
     {
+        if (vardas.empty() || pavarde.empty())
+            throw std::invalid_argument("Faile nera vardo arba pavardes");
+            
+        A.SetVardas(vardas);
+        A.SetPavarde(pavarde);
         A.ClearPaz();
-        A.vardas().erase(std::remove_if(A.vardas().begin(), A.vardas().end(), ::isspace), A.vardas().end());
-        A.pavarde().erase(std::remove_if(A.pavarde().begin(), A.pavarde().end(), ::isspace), A.pavarde().end());
 
         if (A.vardas().empty() || A.pavarde().empty())
             throw std::invalid_argument("Faile nera vardo arba pavardes");
@@ -603,5 +610,6 @@ void benchmarkProcessingFile(int n, int testKiekis, int strategy)
     cout << "Vidutinis skirstymo laikas: " << fixed << setprecision(6) << splitTotal / testKiekis << " s" << endl;
     cout << "Vidutinis isvedimo laikas: " << fixed << setprecision(6) << writeTotal / testKiekis << " s" << endl;
     cout << "Vidutinis bendras laikas: " << fixed << setprecision(6) << totalTotal / testKiekis << " s" << endl;
-    cout << "-------------------------------\n" << endl;
+    cout << "-------------------------------\n"
+         << endl;
 }

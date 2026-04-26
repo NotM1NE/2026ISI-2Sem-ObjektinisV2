@@ -21,9 +21,9 @@ public:
     Studentas() : _egz(0), _vid(0.0), _med(0.0) {}
     Studentas(std::istream &is);
 
-    inline string vardas() const { return _vardas; }
-    inline string pavarde() const { return _pavarde; }
-    inline vector<int> paz() const { return _paz; }
+    inline const string vardas() const { return _vardas; }
+    inline const string pavarde() const { return _pavarde; }
+    inline const vector<int> paz() const { return _paz; }
     inline int egz() const { return _egz; }
     inline double vid() const { return _vid; }
     inline double med() const { return _med; }

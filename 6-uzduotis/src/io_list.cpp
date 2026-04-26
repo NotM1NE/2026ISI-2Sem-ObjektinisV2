@@ -174,7 +174,10 @@ void inputas(list<Studentas> &grupe)
         {
             for (int i = 1; i <= 10; i++)
             {
-                randomVardasPavarde(A.vardas(), A.pavarde());
+                string vardas, pavarde;
+                randomVardasPavarde(vardas, pavarde);
+                A.SetVardas(vardas);
+                A.SetPavarde(pavarde);
                 cout << "Sugeneruotas " << i << " vardas ir pavarde: " << A.vardas() << " " << A.pavarde() << endl;
                 int sum = 0, rand_paz;
                 for (int ii = 1; ii <= 10; ii++)
@@ -274,6 +277,7 @@ void inputas(list<Studentas> &grupe)
             cout << "1 - Strategija 1\n2 - Strategija 2\n3 - Strategija 3" << endl;
             int strategy;
             intInput(strategy);
+
             for (int n = 1000; n <= 10000000; n *= 10)
                 benchmarkProcessingFile(n, t, strategy);
         }
@@ -307,7 +311,8 @@ void fileRead(list<Studentas> &grupe, string file_name)
         throw std::runtime_error("Klaida: failas nerastas arba nepavyko atidaryti " + file_name);
     }
     getline(duomenys, temp); // skip header
-    while (duomenys >> A.vardas() >> A.pavarde())
+    string vardas, pavarde;
+    while (duomenys >> vardas >> pavarde)
     {
         A.ClearPaz();
         A.vardas().erase(std::remove_if(A.vardas().begin(), A.vardas().end(), ::isspace), A.vardas().end());
