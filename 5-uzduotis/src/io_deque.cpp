@@ -261,11 +261,12 @@ void inputas(deque<Studentas> &grupe)
         if (t == 6)
         {
             cout << "Pasirinkite kiek kartu norite paleisti testa" << endl;
+            intInput(t);
             cout << "Pasirinkite strategija studentu isskyrimui:" << endl;
             cout << "1 - Strategija 1\n2 - Strategija 2\n3 - Strategija 3" << endl;
             int strategy;
             intInput(strategy);
-            intInput(t);
+
             for (int n = 1000; n <= 10000000; n *= 10)
                 benchmarkProcessingFile(n, t, strategy);
         }
@@ -595,5 +596,6 @@ void benchmarkProcessingFile(int n, int testKiekis, int strategy)
     cout << "Vidutinis skirstymo laikas: " << fixed << setprecision(6) << splitTotal / testKiekis << " s" << endl;
     cout << "Vidutinis isvedimo laikas: " << fixed << setprecision(6) << writeTotal / testKiekis << " s" << endl;
     cout << "Vidutinis bendras laikas: " << fixed << setprecision(6) << totalTotal / testKiekis << " s" << endl;
-    cout << "-------------------------------\n" << endl;
+    cout << "-------------------------------\n"
+         << endl;
 }
