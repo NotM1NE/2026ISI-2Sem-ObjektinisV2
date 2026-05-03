@@ -1,130 +1,54 @@
-# Studentų rezultatų skaičiavimo programa
+## v1.5 versijos pakeitimai
 
-## Aprašymas
+Šioje versijoje programa buvo perdaryta pritaikant paveldėjimą. Vietoje vienos `Studentas` klasės buvo sukurtos dvi klasės:
 
-Programa skirta studentų galutiniams rezultatams skaičiuoti pagal namų darbų pažymius ir egzamino rezultatą.
-
-Galutinis balas skaičiuojamas dviem būdais:
-
-- pagal vidurkį;
-- pagal medianą.
-
-Programa palaiko kelis konteinerių tipus:
-
-| Konteineris | Programa |
-|---|---|
-| `vector` | `vector_app` |
-| `list` | `list_app` |
-| `deque` | `deque_app` |
+| Klasė | Tipas | Paskirtis |
+|---|---|---|
+| `Zmogus` | Abstrakti bazinė klasė | Saugo bendrus žmogaus duomenis: vardą ir pavardę |
+| `Studentas` | Išvestinė klasė | Paveldi iš `Zmogus` ir saugo studento pažymius, egzamino rezultatą, vidurkį ir medianą |
 
 ---
 
-## Studentas klasės Rule of Five
+## Abstrakti bazinė klasė `Zmogus`
 
-`Studentas` klasėje realizuoti visi penki Rule of Five metodai:
+Sukurta bazinė klasė `Zmogus`, skirta bendrai aprašyti žmogų. Joje saugomi bendri laukai:
 
-| Metodas | Paskirtis |
-|---|---|
-| `~Studentas()` | Destruktorius. Iškviečiamas, kai objektas sunaikinamas |
-| `Studentas(const Studentas& other)` | Copy konstruktorius. Sukuria naują objektą kopijuojant kitą objektą |
-| `Studentas& operator=(const Studentas& other)` | Copy assignment operatorius. Nukopijuoja duomenis į jau egzistuojantį objektą |
-| `Studentas(Studentas&& other) noexcept` | Move konstruktorius. Sukuria naują objektą perkeliant duomenis iš kito objekto |
-| `Studentas& operator=(Studentas&& other) noexcept` | Move assignment operatorius. Perkelia duomenis į jau egzistuojantį objektą |
+- `_vardas`
+- `_pavarde`
 
-Nors `Studentas` klasėje naudojami `std::string` ir `std::vector`, kurie patys valdo atmintį, Rule of Five metodai buvo realizuoti rankiniu būdu pagal užduoties reikalavimą. Kopijavimo metodai nukopijuoja visus klasės laukus, o perkėlimo metodai naudoja `std::move`.
+Klasė `Zmogus` yra abstrakti, nes turi pure virtual metodą:
 
----
-
-## Rule of Five realizacijos paaiškinimas
-
-### Destruktorius
-
-Destruktorius realizuotas tam, kad objektui baigus gyvavimą būtų išvalomi jo duomenys.
+### zmogus.h
 
 ```cpp
-Studentas::~Studentas()
+#ifndef ZMOGUS_H
+#define ZMOGUS_H
+
+#include <string>
+
+using std::string;
+
+class Zmogus
 {
-    _vardas.clear();
-    _pavarde.clear();
-    _paz.clear();
-    _egz = 0;
-    _vid = 0.0;
-    _med = 0.0;
-}
-```
+protected:
+    string _vardas;
+    string _pavarde;
 
-### Copy konstruktorius
+public:
+    Zmogus() {}
+    Zmogus(const string &vardas, const string &pavarde)
+        : _vardas(vardas), _pavarde(pavarde) {}
 
-```cpp
-Studentas::Studentas(const Studentas& other)
-    : _vardas(other._vardas),
-      _pavarde(other._pavarde),
-      _paz(other._paz),
-      _egz(other._egz),
-      _vid(other._vid),
-      _med(other._med)
-{
-}
-```
-### Copy priskyrimo operatorius
+    virtual ~Zmogus() {}
 
-```cpp
-Studentas& Studentas::operator=(const Studentas& other)
-{
-    if (this != &other)
-    {
-        _vardas = other._vardas;
-        _pavarde = other._pavarde;
-        _paz = other._paz;
-        _egz = other._egz;
-        _vid = other._vid;
-        _med = other._med;
-    }
+    virtual void spausdinti() const = 0; //dont get it
 
-    return *this;
-}
-```
-### Move konstruktorius
+    inline const string vardas() const { return _vardas; }
+    inline const string pavarde() const { return _pavarde; }
 
-```cpp
-Studentas::Studentas(Studentas &&other) noexcept
-    : _vardas(std::move(other._vardas)),
-      _pavarde(std::move(other._pavarde)),
-      _paz(std::move(other._paz)),
-      _egz(other._egz),
-      _vid(other._vid),
-      _med(other._med)
-{
-    other._vardas.clear();
-    other._pavarde.clear();
-    other._paz.clear();
-    other._egz = 0;
-    other._vid = 0.0;
-    other._med = 0.0;
-}
-```
-### Move priskyrimo operatorius
+    void SetVardas(const string &vardas) { _vardas = vardas; }
+    void SetPavarde(const string &pavarde) { _pavarde = pavarde; }
+};
 
-```cpp
-Studentas& Studentas::operator=(Studentas&& other) noexcept
-{
-    if (this != &other)
-    {
-        _vardas = std::move(other._vardas);
-        _pavarde = std::move(other._pavarde);
-        _paz = std::move(other._paz);
-        _egz = other._egz;
-        _vid = other._vid;
-        _med = other._med;
-
-        other._vardas.clear();
-        other._pavarde.clear();
-        other._paz.clear();
-        other._egz = 0;
-        other._vid = 0.0;
-        other._med = 0.0;
-    }
-
-    return *this;
-}
+#endif
 ```
