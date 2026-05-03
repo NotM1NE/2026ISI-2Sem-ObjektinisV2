@@ -16,7 +16,7 @@ Sukurta bazinė klasė `Zmogus`, skirta bendrai aprašyti žmogų. Joje saugomi 
 - `_vardas`
 - `_pavarde`
 
-Klasė `Zmogus` yra abstrakti, nes turi pure virtual metodą:
+Šis metodas reiškia, kad tiesioginio `Zmogus` objekto sukurti negalima, o visos išvestinės klasės privalo realizuoti savo `spausdinti()` metodą.
 
 ### zmogus.h
 
@@ -52,3 +52,10 @@ public:
 
 #endif
 ```
+### `spausdinti()` metodas
+```cpp
+void spausdinti() const override;
+```
+
+
+
