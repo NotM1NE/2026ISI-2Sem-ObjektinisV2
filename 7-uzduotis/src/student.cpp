@@ -16,7 +16,7 @@ std::istream &Studentas::ReadStudent(std::istream &is)
     is >> _vardas >> _pavarde;
     return is;
 }
-
+//Destruktorius
 Studentas::~Studentas()
 {
     _vardas.clear();
@@ -27,6 +27,7 @@ Studentas::~Studentas()
     _med = 0.0;
 }
 
+//Copy konstruktorius
 Studentas::Studentas(const Studentas &other)
     : _vardas(other._vardas),
       _pavarde(other._pavarde),
@@ -37,6 +38,7 @@ Studentas::Studentas(const Studentas &other)
 {
 }
 
+//Copy priskyrimo operatorius
 Studentas &Studentas::operator=(const Studentas &other)
 {
     if (this != &other)
@@ -51,6 +53,7 @@ Studentas &Studentas::operator=(const Studentas &other)
     return *this;
 }
 
+//Move priskyrimo operatorius
 Studentas &Studentas::operator=(Studentas &&other) noexcept
 {
     if (this != &other)
@@ -73,6 +76,7 @@ Studentas &Studentas::operator=(Studentas &&other) noexcept
     return *this;
 }
 
+//Move konstruktorius
 Studentas::Studentas(Studentas &&other) noexcept
     : _vardas(std::move(other._vardas)),
       _pavarde(std::move(other._pavarde)),

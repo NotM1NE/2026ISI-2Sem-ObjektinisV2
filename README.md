@@ -51,3 +51,80 @@ Studentas::~Studentas()
     _vid = 0.0;
     _med = 0.0;
 }
+```
+
+### Copy konstruktorius
+
+```cpp
+Studentas::Studentas(const Studentas& other)
+    : _vardas(other._vardas),
+      _pavarde(other._pavarde),
+      _paz(other._paz),
+      _egz(other._egz),
+      _vid(other._vid),
+      _med(other._med)
+{
+}
+```
+### Copy priskyrimo operatorius
+
+```cpp
+Studentas& Studentas::operator=(const Studentas& other)
+{
+    if (this != &other)
+    {
+        _vardas = other._vardas;
+        _pavarde = other._pavarde;
+        _paz = other._paz;
+        _egz = other._egz;
+        _vid = other._vid;
+        _med = other._med;
+    }
+
+    return *this;
+}
+```
+### Move konstruktorius
+
+```cpp
+Studentas::Studentas(Studentas &&other) noexcept
+    : _vardas(std::move(other._vardas)),
+      _pavarde(std::move(other._pavarde)),
+      _paz(std::move(other._paz)),
+      _egz(other._egz),
+      _vid(other._vid),
+      _med(other._med)
+{
+    other._vardas.clear();
+    other._pavarde.clear();
+    other._paz.clear();
+    other._egz = 0;
+    other._vid = 0.0;
+    other._med = 0.0;
+}
+```
+### Move priskyrimo operatorius
+
+```cpp
+Studentas& Studentas::operator=(Studentas&& other) noexcept
+{
+    if (this != &other)
+    {
+        _vardas = std::move(other._vardas);
+        _pavarde = std::move(other._pavarde);
+        _paz = std::move(other._paz);
+        _egz = other._egz;
+        _vid = other._vid;
+        _med = other._med;
+
+        other._vardas.clear();
+        other._pavarde.clear();
+        other._paz.clear();
+        other._egz = 0;
+        other._vid = 0.0;
+        other._med = 0.0;
+    }
+
+    return *this;
+}
+```
