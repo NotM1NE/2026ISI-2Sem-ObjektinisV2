@@ -4,22 +4,21 @@
 #include <string>
 #include <vector>
 #include <iostream>
+#include "zmogus.h"
 
 using std::string;
 using std::vector;
 
-class Studentas
+class Studentas : public Zmogus
 {
 private:
-    string _vardas;
-    string _pavarde;
     vector<int> _paz;
     int _egz;
     double _vid;
     double _med;
 
 public:
-    Studentas() : _egz(0), _vid(0.0), _med(0.0) {}
+    Studentas() : Zmogus(), _egz(0), _vid(0.0), _med(0.0) {}
     Studentas(std::istream &is);
 
     ~Studentas(); //destruktorius
@@ -29,8 +28,6 @@ public:
     Studentas(Studentas && other) noexcept; //noexcept - neturetu mesti isimciu
     Studentas& operator =(Studentas&& other) noexcept; //noexcept - neturetu mesti isimciu
 
-    inline const string vardas() const { return _vardas; }
-    inline const string pavarde() const { return _pavarde; }
     inline const vector<int> paz() const { return _paz; }
     inline int egz() const { return _egz; }
     inline double vid() const { return _vid; }
@@ -38,8 +35,6 @@ public:
 
     std::istream &ReadStudent(std::istream&);
 
-    void SetVardas(const string& vardas) { _vardas = vardas; }
-    void SetPavarde(const string& pavarde) { _pavarde = pavarde; }
     void SetEgz(int egz) { _egz = egz; }
     void SetVid(double vid) { _vid = vid; }
     void SetMed(double med) { _med = med; }
@@ -47,6 +42,7 @@ public:
     void ClearPaz() { _paz.clear(); }
 
     void MedIrVidSkaciavimas(int sum);
+    void spausdinti() const override;
 };
 
 std::istream& operator>>(std::istream& is, Studentas& s);
