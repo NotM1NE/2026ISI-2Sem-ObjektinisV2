@@ -19,22 +19,6 @@ Programa palaiko kelis konteinerių tipus:
 
 ---
 
-## v1.2 versijos pakeitimai
-
-Šioje versijoje buvo įgyvendinti šie reikalavimai:
-
-| Reikalavimas | Būsena |
-|---|---|
-| Sukurta `v1.2` šaka | Atlikta |
-| Realizuota Rule of Five `Studentas` klasei | Atlikta |
-| Realizuotas įvesties operatorius `operator>>` | Atlikta |
-| Realizuotas išvesties operatorius `operator<<` | Atlikta |
-| Parašytas Rule of Five testas | Atlikta |
-| Išleistas `v1.2` release | Atlikta |
-| README papildytas lentelėmis ir nuotraukomis | Atlikta |
-
----
-
 ## Studentas klasės Rule of Five
 
 `Studentas` klasėje realizuoti visi penki Rule of Five metodai:
