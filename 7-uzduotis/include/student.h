@@ -3,6 +3,7 @@
 
 #include <string>
 #include <vector>
+#include <iostream>
 
 using std::string;
 using std::vector;
@@ -20,6 +21,13 @@ private:
 public:
     Studentas() : _egz(0), _vid(0.0), _med(0.0) {}
     Studentas(std::istream &is);
+
+    ~Studentas(); //destruktorius
+
+    Studentas(const Studentas& other); //copy konstruktorius - sukuria nauja objekta
+    Studentas& operator =(const Studentas& other); //copy priskyrimo konstruktorius - kopijojame egzistuojancia objekta
+    Studentas(Studentas && other) noexcept; //noexcept - neturetu mesti isimciu
+    Studentas& operator =(Studentas&& other) noexcept; //noexcept - neturetu mesti isimciu
 
     inline const string vardas() const { return _vardas; }
     inline const string pavarde() const { return _pavarde; }
@@ -40,5 +48,8 @@ public:
 
     void MedIrVidSkaciavimas(int sum);
 };
+
+std::istream& operator>>(std::istream& is, Studentas& s);
+std::ostream& operator<<(std::ostream& os, const Studentas& s);
 
 #endif

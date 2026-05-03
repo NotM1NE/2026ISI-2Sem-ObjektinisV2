@@ -30,7 +30,7 @@ using std::string;
 using std::stringstream;
 using std::vector;
 
-void outputas(vector<Studentas> grupe)
+void outputas(vector<Studentas> &grupe)
 {
     int temp, t;
     cout << "Pasirinkite norimu formatu isvesti duomenis" << endl;

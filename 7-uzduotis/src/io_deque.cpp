@@ -11,6 +11,7 @@
 #include <stdexcept>
 #include <ctime>
 #include <stdlib.h>
+#include <utility>
 
 using std::cin;
 using std::cout;
@@ -28,8 +29,9 @@ using std::sort;
 using std::streamsize;
 using std::string;
 using std::stringstream;
+using std::move;
 
-void outputas(deque<Studentas> grupe)
+void outputas(deque<Studentas>& grupe)
 {
     int temp, t;
     cout << "Pasirinkite norimu formatu isvesti duomenis" << endl;
@@ -73,7 +75,7 @@ void inputas(deque<Studentas> &grupe)
     {
         int t = 0;
         cout << "Pasirinkite norima buda ivesti duomenis" << endl;
-        cout << "1 - ranka\n2 - generuoti tik pazymius\n3 - generuoti studentu vardus, pavardes ir pazymius\n4 - nuskaityti is failo\n5 - generuoti studentu sarasa\n6 - paleisti testa\n7 - baigti darba\n";
+        cout << "1 - ranka\n2 - generuoti tik pazymius\n3 - generuoti studentu vardus, pavardes ir pazymius\n4 - nuskaityti is failo\n5 - generuoti studentu sarasa\n6 - paleisti testa\n7 - paleisti rule of five testa\n8 - baigti darba\n";
         intInput(t);
         if (t == 1)
         {
@@ -282,6 +284,8 @@ void inputas(deque<Studentas> &grupe)
                 benchmarkProcessingFile(n, t, strategy);
         }
         if (t == 7)
+            RuleOfFiveTestas();
+        if(t == 8)
             break;
     }
 }
@@ -611,3 +615,39 @@ void benchmarkProcessingFile(int n, int testKiekis, int strategy)
     cout << "-------------------------------\n"
          << endl;
 }
+ void RuleOfFiveTestas()
+ {
+    Studentas s1;
+    s1.SetVardas("Jonas");
+    s1.SetPavarde("Jonaitis");
+    s1.AddPaz(8);
+    s1.AddPaz(9);
+    s1.AddPaz(10);
+    s1.SetEgz(10);
+    s1.MedIrVidSkaciavimas(27);
+
+    cout << "Pradinis objektas s1:\n";
+    cout << s1.vardas() << " " << s1.pavarde() << " Vid: " << s1.vid() << " Med: " << s1.med() << endl;
+
+    Studentas s2(s1);
+    cout << "\nCopy konstruktorius: Studentas s2(s1)\n";
+    cout << "s2: " << s2.vardas() << " " << s2.pavarde() << " Vid: " << s2.vid() << " Med: " << s2.med() << endl;
+
+    Studentas s3;
+    s3 = s1;
+    cout << "\nCopy assignment: s3 = s1\n";
+    cout << "s3: " << s3.vardas() << " " << s3.pavarde() << " Vid: " << s3.vid() << " Med: " << s3.med() << endl;
+
+    Studentas s4(move(s2));
+    cout << "\nMove konstruktorius: Studentas s4(move(s2))\n";
+    cout << "s4: " << s4.vardas() << " " << s4.pavarde() << " Vid: " << s4.vid() << " Med: " << s4.med() << endl;
+
+    Studentas s5;
+    s5 = move(s3);
+    cout << "\nMove assignment: s5 = move(s3)\n";
+    cout << "s5: " << s5.vardas() << " " << s5.pavarde() << " Vid: " << s5.vid() << " Med: " << s5.med() << endl;
+
+    cout << "Po move\ns3: ";
+    cout << s3.vardas() << " " << s3.pavarde() << " Vid: " << s3.vid() << " Med: " << s3.med() << endl;
+
+ }

@@ -29,7 +29,7 @@ using std::streamsize;
 using std::string;
 using std::stringstream;
 
-void outputas(list<Studentas> grupe)
+void outputas(list<Studentas> &grupe)
 {
     int temp, t;
     cout << "Pasirinkite norimu formatu isvesti duomenis" << endl;
@@ -314,12 +314,12 @@ void fileRead(list<Studentas> &grupe, string file_name)
     string vardas, pavarde;
     while (duomenys >> vardas >> pavarde)
     {
-        A.ClearPaz();
-        A.vardas().erase(std::remove_if(A.vardas().begin(), A.vardas().end(), ::isspace), A.vardas().end());
-        A.pavarde().erase(std::remove_if(A.pavarde().begin(), A.pavarde().end(), ::isspace), A.pavarde().end());
-
-        if (A.vardas().empty() || A.pavarde().empty())
+        Studentas A;
+        if (vardas.empty() || pavarde.empty())
             throw std::invalid_argument("Faile nera vardo arba pavardes");
+        A.SetVardas(vardas);
+        A.SetPavarde(pavarde);
+
         getline(duomenys, temp);
         stringstream x(temp);
 
@@ -545,7 +545,6 @@ void SplitStudentsStrategy3(list<Studentas> &grupe, list<Studentas> &failed)
     grupe.erase(it, grupe.end());
 }
 
-
 void benchmarkProcessingFile(int n, int testKiekis, int strategy)
 {
     double generationTotal = 0.0;
@@ -609,5 +608,6 @@ void benchmarkProcessingFile(int n, int testKiekis, int strategy)
     cout << "Vidutinis skirstymo laikas: " << fixed << setprecision(6) << splitTotal / testKiekis << " s" << endl;
     cout << "Vidutinis isvedimo laikas: " << fixed << setprecision(6) << writeTotal / testKiekis << " s" << endl;
     cout << "Vidutinis bendras laikas: " << fixed << setprecision(6) << totalTotal / testKiekis << " s" << endl;
-    cout << "-------------------------------\n" << endl;
+    cout << "-------------------------------\n"
+         << endl;
 }

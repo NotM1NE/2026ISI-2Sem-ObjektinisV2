@@ -9,7 +9,7 @@ using std::string;
 using std::list;
 
 void inputas(list<Studentas> &grupe);
-void outputas(list<Studentas> grupe);
+void outputas(list<Studentas> &grupe);
 
 void fileRead(list<Studentas> &grupe, string file_name);
 void fileTest(list<Studentas> &grupe, string file_name, int &testKiekis);

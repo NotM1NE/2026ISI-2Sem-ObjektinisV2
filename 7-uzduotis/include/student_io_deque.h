@@ -10,7 +10,7 @@ using std::string;
 
 
 void inputas(deque<Studentas> &grupe);
-void outputas(deque<Studentas> grupe);
+void outputas(deque<Studentas>& grupe);
 
 void fileRead(deque<Studentas> &grupe, string file_name);
 void fileTest(deque<Studentas> &grupe, string file_name, int &testKiekis);
@@ -28,5 +28,6 @@ void SplitStudentsStrategy3(deque<Studentas> &grupe, deque<Studentas> &failed);
 int getSortChoice(int temp);
 
 void benchmarkProcessingFile(int n, int testKiekis, int strategy);
+void RuleOfFiveTestas();
 
 #endif

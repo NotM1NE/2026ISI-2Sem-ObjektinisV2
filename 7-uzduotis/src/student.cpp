@@ -1,18 +1,107 @@
 #include "student.h"
 #include <algorithm>
 #include <iostream>
+#include <utility>
 
 using std::sort;
 
 Studentas::Studentas(std::istream &is)
+    : _vardas(), _pavarde(), _paz(), _egz(0), _vid(0.0), _med(0.0)
 {
     ReadStudent(is);
 }
 
-std::istream& Studentas::ReadStudent(std::istream &is)
+std::istream &Studentas::ReadStudent(std::istream &is)
 {
     is >> _vardas >> _pavarde;
     return is;
+}
+
+Studentas::~Studentas()
+{
+    _vardas.clear();
+    _pavarde.clear();
+    _paz.clear();
+    _egz = 0;
+    _vid = 0.0;
+    _med = 0.0;
+}
+
+Studentas::Studentas(const Studentas &other)
+    : _vardas(other._vardas),
+      _pavarde(other._pavarde),
+      _paz(other._paz),
+      _egz(other._egz),
+      _vid(other._vid),
+      _med(other._med)
+{
+}
+
+Studentas &Studentas::operator=(const Studentas &other)
+{
+    if (this != &other)
+    {
+        _vardas = other._vardas;
+        _pavarde = other._pavarde;
+        _paz = other._paz;
+        _egz = other._egz;
+        _vid = other._vid;
+        _med = other._med;
+    }
+    return *this;
+}
+
+Studentas &Studentas::operator=(Studentas &&other) noexcept
+{
+    if (this != &other)
+    {
+        _vardas = std::move(other._vardas);
+        _pavarde = std::move(other._pavarde);
+        _paz = std::move(other._paz);
+        _egz = other._egz;
+        _vid = other._vid;
+        _med = other._med;
+
+        other._vardas.clear();
+        other._pavarde.clear();
+        other._paz.clear();
+        other._egz = 0;
+        other._vid = 0.0;
+        other._med = 0.0;
+    }
+
+    return *this;
+}
+
+Studentas::Studentas(Studentas &&other) noexcept
+    : _vardas(std::move(other._vardas)),
+      _pavarde(std::move(other._pavarde)),
+      _paz(std::move(other._paz)),
+      _egz(other._egz),
+      _vid(other._vid),
+      _med(other._med)
+{
+    other._vardas.clear();
+    other._pavarde.clear();
+    other._paz.clear();
+    other._egz = 0;
+    other._vid = 0.0;
+    other._med = 0.0;
+}
+
+std::istream &operator>>(std::istream &is, Studentas &s)
+{
+    return s.ReadStudent(is);
+}
+
+std::ostream &operator<<(std::ostream &os, const Studentas &s)
+{
+    os << s.vardas() << " "
+       << s.pavarde() << " "
+       << s.vid() << " "
+       << s.med();
+
+    return os;
 }
 
 void Studentas::MedIrVidSkaciavimas(int sum)

@@ -10,7 +10,7 @@ using std::string;
 
 
 void inputas(vector<Studentas> &grupe);
-void outputas(vector<Studentas> grupe);
+void outputas(vector<Studentas> &grupe);
 
 void fileRead(vector<Studentas> &grupe, string file_name);
 void fileTest(vector<Studentas> &grupe, string file_name, int &testKiekis);
