@@ -41,7 +41,7 @@ public:
 
     virtual ~Zmogus() {}
 
-    virtual void spausdinti() const = 0; //dont get it
+    virtual void spausdinti() const = 0;
 
     inline const string vardas() const { return _vardas; }
     inline const string pavarde() const { return _pavarde; }
