@@ -56,6 +56,11 @@ public:
 ```cpp
 void spausdinti() const override;
 ```
+## Studentas klasė
 
+`Studentas` klasė paveldi iš `Zmogus`:
+```cpp
+class Studentas : public Zmogus
+```
 
 
