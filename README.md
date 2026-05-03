@@ -1,6 +1,6 @@
 ## v1.5 versijos pakeitimai
 
-Šioje versijoje programa buvo perdaryta pritaikant paveldėjimą. Vietoje vienos `Studentas` klasės buvo sukurtos dvi klasės:
+Šioje versijoje programa buvo perdaryta pritaikant paveldėjimą. Vietoje vienos `Studentas` klasės sukurtos dvi klasės:
 
 | Klasė | Tipas | Paskirtis |
 |---|---|---|
@@ -11,14 +11,20 @@
 
 ## Abstrakti bazinė klasė `Zmogus`
 
-Sukurta bazinė klasė `Zmogus`, skirta bendrai aprašyti žmogų. Joje saugomi bendri laukai:
+`Zmogus` klasė skirta bendriems žmogaus duomenims saugoti. Į ją iškelti laukai, kurie tinka kiekvienam žmogui:
 
 - `_vardas`
 - `_pavarde`
 
-Šis metodas reiškia, kad tiesioginio `Zmogus` objekto sukurti negalima, o visos išvestinės klasės privalo realizuoti savo `spausdinti()` metodą.
+Ši klasė yra abstrakti, nes joje yra pure virtual metodas:
+```cpp
+virtual void spausdinti() const = 0;
+```
 
-### zmogus.h
+---
+### Pagrindiniai pakeitimai
+## zmogus.h
+Sukurta nauja klase:
 
 ```cpp
 #ifndef ZMOGUS_H
@@ -52,15 +58,27 @@ public:
 
 #endif
 ```
-### `spausdinti()` metodas
+## Studentas klasė
+`Studentas` klasė yra išvestinė klasė, kuri paveldi iš abstrakčios bazinės klasės `Zmogus`:
+
+```cpp
+class Studentas : public Zmogus
+```
+
+`spausdinti()` metodas:
+
 ```cpp
 void spausdinti() const override;
 ```
-## Studentas klasė
+Kadangi Zmogus klasėje metodas spausdinti() yra pure virtual, Studentas klasė privalo jį realizuoti:
 
-`Studentas` klasė paveldi iš `Zmogus`:
+## Studentas.cpp
+
 ```cpp
-class Studentas : public Zmogus
+void Studentas::spausdinti() const
+{
+    cout << vardas() << " " << pavarde() << " " << vid() << " " << med() << endl; 
+}
 ```
 
 
