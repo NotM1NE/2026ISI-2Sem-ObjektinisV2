@@ -1,0 +1,177 @@
+\doxysection{src/\+io\+\_\+vector.cpp File Reference}
+\hypertarget{io__vector_8cpp}{}\label{io__vector_8cpp}\index{src/io\_vector.cpp@{src/io\_vector.cpp}}
+{\ttfamily \+\#include "{}student\+\_\+io\+\_\+vector.\+h"{}}\newline
+{\ttfamily \+\#include "{}utils.\+h"{}}\newline
+{\ttfamily \+\#include "{}timer.\+h"{}}\newline
+{\ttfamily \+\#include $<$iostream$>$}\newline
+{\ttfamily \+\#include $<$iomanip$>$}\newline
+{\ttfamily \+\#include $<$algorithm$>$}\newline
+{\ttfamily \+\#include $<$limits$>$}\newline
+{\ttfamily \+\#include $<$fstream$>$}\newline
+{\ttfamily \+\#include $<$sstream$>$}\newline
+{\ttfamily \+\#include $<$stdexcept$>$}\newline
+{\ttfamily \+\#include $<$ctime$>$}\newline
+{\ttfamily \+\#include $<$stdlib.\+h$>$}\newline
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \doxymbox{\hyperlink{io__vector_8cpp_af2184771dc41b31f5017f499ab4b123e}{outputas}} (vector$<$ \doxymbox{\hyperlink{class_studentas}{Studentas}} $>$ \&grupe)
+\item 
+void \doxymbox{\hyperlink{io__vector_8cpp_a48aa126d7143c8a4b2649d498199c3c7}{inputas}} (vector$<$ \doxymbox{\hyperlink{class_studentas}{Studentas}} $>$ \&grupe)
+\item 
+void \doxymbox{\hyperlink{io__vector_8cpp_ac23984d2a43d1285e4fe1c8c5ee45beb}{file\+Test}} (vector$<$ \doxymbox{\hyperlink{class_studentas}{Studentas}} $>$ \&grupe, string file\+\_\+name, int \&test\+Kiekis)
+\item 
+void \doxymbox{\hyperlink{io__vector_8cpp_ae035eaa97b4bb82d3922dac801b886dd}{file\+Read}} (vector$<$ \doxymbox{\hyperlink{class_studentas}{Studentas}} $>$ \&grupe, string file\+\_\+name)
+\item 
+void \doxymbox{\hyperlink{io__vector_8cpp_aeb2022404675d26de5563fa05593ec6f}{sort\+By\+User}} (vector$<$ \doxymbox{\hyperlink{class_studentas}{Studentas}} $>$ \&grupe, int temp)
+\item 
+int \doxymbox{\hyperlink{io__vector_8cpp_aff0dc6ecb4a0b0096bc262bad76bac1c}{get\+Sort\+Choice}} (int temp)
+\begin{DoxyCompactList}\small\item\em Rusiuoja pagal vartotojo pasirinkta varianta. \end{DoxyCompactList}\item 
+void \doxymbox{\hyperlink{io__vector_8cpp_a041b0a8b9f01a24675c1eff5cf7df027}{duomenu\+Irasymas\+Faile}} (vector$<$ \doxymbox{\hyperlink{class_studentas}{Studentas}} $>$ \&grupe, int temp, string file\+Name)
+\item 
+void \doxymbox{\hyperlink{io__vector_8cpp_a1a64c3c04e4ff73626832622898859a6}{duomenu\+Irasymas\+Konsole}} (vector$<$ \doxymbox{\hyperlink{class_studentas}{Studentas}} $>$ \&grupe, int temp)
+\item 
+bool \doxymbox{\hyperlink{io__vector_8cpp_a3808c3144661fea9d3999d01fc92a286}{contains\+Digit}} (const string \&str)
+\begin{DoxyCompactList}\small\item\em Patikrina, ar eilute sudaryta tik is skaitmenu. \end{DoxyCompactList}\item 
+void \doxymbox{\hyperlink{io__vector_8cpp_a540e00b1d668bb18960050f6901c344c}{Generate\+Students\+File}} (int n)
+\begin{DoxyCompactList}\small\item\em Sugeneruoja studentu duomenu faila. \end{DoxyCompactList}\item 
+void \doxymbox{\hyperlink{io__vector_8cpp_a4c186c4d4dbc354d6b88069b01f3d1d7}{Split\+Students\+Strategy1}} (const vector$<$ \doxymbox{\hyperlink{class_studentas}{Studentas}} $>$ \&grupe, vector$<$ \doxymbox{\hyperlink{class_studentas}{Studentas}} $>$ \&failed, vector$<$ \doxymbox{\hyperlink{class_studentas}{Studentas}} $>$ \&passed)
+\item 
+void \doxymbox{\hyperlink{io__vector_8cpp_a84b9c5008a6808c0a46d6f3d11fe7855}{Split\+Students\+Strategy2}} (vector$<$ \doxymbox{\hyperlink{class_studentas}{Studentas}} $>$ \&grupe, vector$<$ \doxymbox{\hyperlink{class_studentas}{Studentas}} $>$ \&failed)
+\item 
+void \doxymbox{\hyperlink{io__vector_8cpp_a974376e2b86d6433ae66ea8b4803003b}{Split\+Students\+Strategy3}} (vector$<$ \doxymbox{\hyperlink{class_studentas}{Studentas}} $>$ \&grupe, vector$<$ \doxymbox{\hyperlink{class_studentas}{Studentas}} $>$ \&failed)
+\item 
+void \doxymbox{\hyperlink{io__vector_8cpp_a2a6c0eb3590294f9b0a359236ce11976}{benchmark\+Processing\+File}} (int n, int test\+Kiekis, int strategy)
+\begin{DoxyCompactList}\small\item\em Atlieka failo generavimo, nuskaitymo, skirstymo ir rasymo greicio testa. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\label{io__vector_8cpp_doc-func-members}
+\Hypertarget{io__vector_8cpp_doc-func-members}
+\doxysubsection{Function Documentation}
+\Hypertarget{io__vector_8cpp_a2a6c0eb3590294f9b0a359236ce11976}\index{io\_vector.cpp@{io\_vector.cpp}!benchmarkProcessingFile@{benchmarkProcessingFile}}
+\index{benchmarkProcessingFile@{benchmarkProcessingFile}!io\_vector.cpp@{io\_vector.cpp}}
+\doxysubsubsection{\texorpdfstring{benchmarkProcessingFile()}{benchmarkProcessingFile()}}
+{\footnotesize\ttfamily \label{io__vector_8cpp_a2a6c0eb3590294f9b0a359236ce11976} 
+void benchmark\+Processing\+File (\begin{DoxyParamCaption}\item[{int}]{n}{, }\item[{int}]{test\+Kiekis}{, }\item[{int}]{strategy}{}\end{DoxyParamCaption})}
+
+
+
+Atlieka failo generavimo, nuskaitymo, skirstymo ir rasymo greicio testa. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em n} & Studentu skaicius. \\
+\hline
+{\em test\+Kiekis} & Kiek kartu kartojamas testas. \\
+\hline
+{\em strategy} & Studentu skirstymo strategijos numeris. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{io__vector_8cpp_a3808c3144661fea9d3999d01fc92a286}\index{io\_vector.cpp@{io\_vector.cpp}!containsDigit@{containsDigit}}
+\index{containsDigit@{containsDigit}!io\_vector.cpp@{io\_vector.cpp}}
+\doxysubsubsection{\texorpdfstring{containsDigit()}{containsDigit()}}
+{\footnotesize\ttfamily \label{io__vector_8cpp_a3808c3144661fea9d3999d01fc92a286} 
+bool contains\+Digit (\begin{DoxyParamCaption}\item[{const string \&}]{str}{}\end{DoxyParamCaption})}
+
+
+
+Patikrina, ar eilute sudaryta tik is skaitmenu. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em str} & Tikrinama eilute. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true, jei eilute sudaryta tik is skaitmenu, false kitu atveju. 
+\end{DoxyReturn}
+\Hypertarget{io__vector_8cpp_a041b0a8b9f01a24675c1eff5cf7df027}\index{io\_vector.cpp@{io\_vector.cpp}!duomenuIrasymasFaile@{duomenuIrasymasFaile}}
+\index{duomenuIrasymasFaile@{duomenuIrasymasFaile}!io\_vector.cpp@{io\_vector.cpp}}
+\doxysubsubsection{\texorpdfstring{duomenuIrasymasFaile()}{duomenuIrasymasFaile()}}
+{\footnotesize\ttfamily \label{io__vector_8cpp_a041b0a8b9f01a24675c1eff5cf7df027} 
+void duomenu\+Irasymas\+Faile (\begin{DoxyParamCaption}\item[{vector$<$ \doxymbox{\hyperlink{class_studentas}{Studentas}} $>$ \&}]{grupe}{, }\item[{int}]{temp}{, }\item[{string}]{file\+Name}{}\end{DoxyParamCaption})}
+
+\Hypertarget{io__vector_8cpp_a1a64c3c04e4ff73626832622898859a6}\index{io\_vector.cpp@{io\_vector.cpp}!duomenuIrasymasKonsole@{duomenuIrasymasKonsole}}
+\index{duomenuIrasymasKonsole@{duomenuIrasymasKonsole}!io\_vector.cpp@{io\_vector.cpp}}
+\doxysubsubsection{\texorpdfstring{duomenuIrasymasKonsole()}{duomenuIrasymasKonsole()}}
+{\footnotesize\ttfamily \label{io__vector_8cpp_a1a64c3c04e4ff73626832622898859a6} 
+void duomenu\+Irasymas\+Konsole (\begin{DoxyParamCaption}\item[{vector$<$ \doxymbox{\hyperlink{class_studentas}{Studentas}} $>$ \&}]{grupe}{, }\item[{int}]{temp}{}\end{DoxyParamCaption})}
+
+\Hypertarget{io__vector_8cpp_ae035eaa97b4bb82d3922dac801b886dd}\index{io\_vector.cpp@{io\_vector.cpp}!fileRead@{fileRead}}
+\index{fileRead@{fileRead}!io\_vector.cpp@{io\_vector.cpp}}
+\doxysubsubsection{\texorpdfstring{fileRead()}{fileRead()}}
+{\footnotesize\ttfamily \label{io__vector_8cpp_ae035eaa97b4bb82d3922dac801b886dd} 
+void file\+Read (\begin{DoxyParamCaption}\item[{vector$<$ \doxymbox{\hyperlink{class_studentas}{Studentas}} $>$ \&}]{grupe}{, }\item[{string}]{file\+\_\+name}{}\end{DoxyParamCaption})}
+
+\Hypertarget{io__vector_8cpp_ac23984d2a43d1285e4fe1c8c5ee45beb}\index{io\_vector.cpp@{io\_vector.cpp}!fileTest@{fileTest}}
+\index{fileTest@{fileTest}!io\_vector.cpp@{io\_vector.cpp}}
+\doxysubsubsection{\texorpdfstring{fileTest()}{fileTest()}}
+{\footnotesize\ttfamily \label{io__vector_8cpp_ac23984d2a43d1285e4fe1c8c5ee45beb} 
+void file\+Test (\begin{DoxyParamCaption}\item[{vector$<$ \doxymbox{\hyperlink{class_studentas}{Studentas}} $>$ \&}]{grupe}{, }\item[{string}]{file\+\_\+name}{, }\item[{int \&}]{test\+Kiekis}{}\end{DoxyParamCaption})}
+
+\Hypertarget{io__vector_8cpp_a540e00b1d668bb18960050f6901c344c}\index{io\_vector.cpp@{io\_vector.cpp}!GenerateStudentsFile@{GenerateStudentsFile}}
+\index{GenerateStudentsFile@{GenerateStudentsFile}!io\_vector.cpp@{io\_vector.cpp}}
+\doxysubsubsection{\texorpdfstring{GenerateStudentsFile()}{GenerateStudentsFile()}}
+{\footnotesize\ttfamily \label{io__vector_8cpp_a540e00b1d668bb18960050f6901c344c} 
+void Generate\+Students\+File (\begin{DoxyParamCaption}\item[{int}]{n}{}\end{DoxyParamCaption})}
+
+
+
+Sugeneruoja studentu duomenu faila. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em n} & Studentu skaicius faile. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{io__vector_8cpp_aff0dc6ecb4a0b0096bc262bad76bac1c}\index{io\_vector.cpp@{io\_vector.cpp}!getSortChoice@{getSortChoice}}
+\index{getSortChoice@{getSortChoice}!io\_vector.cpp@{io\_vector.cpp}}
+\doxysubsubsection{\texorpdfstring{getSortChoice()}{getSortChoice()}}
+{\footnotesize\ttfamily \label{io__vector_8cpp_aff0dc6ecb4a0b0096bc262bad76bac1c} 
+int get\+Sort\+Choice (\begin{DoxyParamCaption}\item[{int}]{temp}{}\end{DoxyParamCaption})}
+
+
+
+Rusiuoja pagal vartotojo pasirinkta varianta. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em temp} & Rusiavimo formato pasirinkimas. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{io__vector_8cpp_a48aa126d7143c8a4b2649d498199c3c7}\index{io\_vector.cpp@{io\_vector.cpp}!inputas@{inputas}}
+\index{inputas@{inputas}!io\_vector.cpp@{io\_vector.cpp}}
+\doxysubsubsection{\texorpdfstring{inputas()}{inputas()}}
+{\footnotesize\ttfamily \label{io__vector_8cpp_a48aa126d7143c8a4b2649d498199c3c7} 
+void inputas (\begin{DoxyParamCaption}\item[{vector$<$ \doxymbox{\hyperlink{class_studentas}{Studentas}} $>$ \&}]{grupe}{}\end{DoxyParamCaption})}
+
+\Hypertarget{io__vector_8cpp_af2184771dc41b31f5017f499ab4b123e}\index{io\_vector.cpp@{io\_vector.cpp}!outputas@{outputas}}
+\index{outputas@{outputas}!io\_vector.cpp@{io\_vector.cpp}}
+\doxysubsubsection{\texorpdfstring{outputas()}{outputas()}}
+{\footnotesize\ttfamily \label{io__vector_8cpp_af2184771dc41b31f5017f499ab4b123e} 
+void outputas (\begin{DoxyParamCaption}\item[{vector$<$ \doxymbox{\hyperlink{class_studentas}{Studentas}} $>$ \&}]{grupe}{}\end{DoxyParamCaption})}
+
+\Hypertarget{io__vector_8cpp_aeb2022404675d26de5563fa05593ec6f}\index{io\_vector.cpp@{io\_vector.cpp}!sortByUser@{sortByUser}}
+\index{sortByUser@{sortByUser}!io\_vector.cpp@{io\_vector.cpp}}
+\doxysubsubsection{\texorpdfstring{sortByUser()}{sortByUser()}}
+{\footnotesize\ttfamily \label{io__vector_8cpp_aeb2022404675d26de5563fa05593ec6f} 
+void sort\+By\+User (\begin{DoxyParamCaption}\item[{vector$<$ \doxymbox{\hyperlink{class_studentas}{Studentas}} $>$ \&}]{grupe}{, }\item[{int}]{temp}{}\end{DoxyParamCaption})}
+
+\Hypertarget{io__vector_8cpp_a4c186c4d4dbc354d6b88069b01f3d1d7}\index{io\_vector.cpp@{io\_vector.cpp}!SplitStudentsStrategy1@{SplitStudentsStrategy1}}
+\index{SplitStudentsStrategy1@{SplitStudentsStrategy1}!io\_vector.cpp@{io\_vector.cpp}}
+\doxysubsubsection{\texorpdfstring{SplitStudentsStrategy1()}{SplitStudentsStrategy1()}}
+{\footnotesize\ttfamily \label{io__vector_8cpp_a4c186c4d4dbc354d6b88069b01f3d1d7} 
+void Split\+Students\+Strategy1 (\begin{DoxyParamCaption}\item[{const vector$<$ \doxymbox{\hyperlink{class_studentas}{Studentas}} $>$ \&}]{grupe}{, }\item[{vector$<$ \doxymbox{\hyperlink{class_studentas}{Studentas}} $>$ \&}]{failed}{, }\item[{vector$<$ \doxymbox{\hyperlink{class_studentas}{Studentas}} $>$ \&}]{passed}{}\end{DoxyParamCaption})}
+
+\Hypertarget{io__vector_8cpp_a84b9c5008a6808c0a46d6f3d11fe7855}\index{io\_vector.cpp@{io\_vector.cpp}!SplitStudentsStrategy2@{SplitStudentsStrategy2}}
+\index{SplitStudentsStrategy2@{SplitStudentsStrategy2}!io\_vector.cpp@{io\_vector.cpp}}
+\doxysubsubsection{\texorpdfstring{SplitStudentsStrategy2()}{SplitStudentsStrategy2()}}
+{\footnotesize\ttfamily \label{io__vector_8cpp_a84b9c5008a6808c0a46d6f3d11fe7855} 
+void Split\+Students\+Strategy2 (\begin{DoxyParamCaption}\item[{vector$<$ \doxymbox{\hyperlink{class_studentas}{Studentas}} $>$ \&}]{grupe}{, }\item[{vector$<$ \doxymbox{\hyperlink{class_studentas}{Studentas}} $>$ \&}]{failed}{}\end{DoxyParamCaption})}
+
+\Hypertarget{io__vector_8cpp_a974376e2b86d6433ae66ea8b4803003b}\index{io\_vector.cpp@{io\_vector.cpp}!SplitStudentsStrategy3@{SplitStudentsStrategy3}}
+\index{SplitStudentsStrategy3@{SplitStudentsStrategy3}!io\_vector.cpp@{io\_vector.cpp}}
+\doxysubsubsection{\texorpdfstring{SplitStudentsStrategy3()}{SplitStudentsStrategy3()}}
+{\footnotesize\ttfamily \label{io__vector_8cpp_a974376e2b86d6433ae66ea8b4803003b} 
+void Split\+Students\+Strategy3 (\begin{DoxyParamCaption}\item[{vector$<$ \doxymbox{\hyperlink{class_studentas}{Studentas}} $>$ \&}]{grupe}{, }\item[{vector$<$ \doxymbox{\hyperlink{class_studentas}{Studentas}} $>$ \&}]{failed}{}\end{DoxyParamCaption})}
+

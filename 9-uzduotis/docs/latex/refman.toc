@@ -1,0 +1,204 @@
+\@ifundefined {etoctocstyle}{\let \etoc@startlocaltoc \@gobble \let \etoc@settocdepth \@gobble \let \etoc@depthtag \@gobble \let \etoc@setlocaltop \@gobble }{}
+\contentsline {chapter}{\numberline {1}Directory Hierarchy}{1}{chapter.1}%
+\contentsline {section}{\numberline {1.1}Directories}{1}{section.1.1}%
+\contentsline {chapter}{\numberline {2}Hierarchical Index}{3}{chapter.2}%
+\contentsline {section}{\numberline {2.1}Class Hierarchy}{3}{section.2.1}%
+\contentsline {chapter}{\numberline {3}Class Index}{5}{chapter.3}%
+\contentsline {section}{\numberline {3.1}Class List}{5}{section.3.1}%
+\contentsline {chapter}{\numberline {4}File Index}{7}{chapter.4}%
+\contentsline {section}{\numberline {4.1}File List}{7}{section.4.1}%
+\contentsline {chapter}{\numberline {5}Directory Documentation}{9}{chapter.5}%
+\contentsline {section}{\numberline {5.1}include Directory Reference}{9}{section.5.1}%
+\contentsline {section}{\numberline {5.2}src Directory Reference}{9}{section.5.2}%
+\contentsline {chapter}{\numberline {6}Class Documentation}{11}{chapter.6}%
+\contentsline {section}{\numberline {6.1}Studentas Class Reference}{11}{section.6.1}%
+\contentsline {subsection}{\numberline {6.1.1}Detailed Description}{12}{subsection.6.1.1}%
+\contentsline {subsection}{\numberline {6.1.2}Constructor \& Destructor Documentation}{13}{subsection.6.1.2}%
+\contentsline {subsubsection}{\numberline {6.1.2.1}Studentas()\hspace {0.1cm}{\footnotesize \ttfamily [1/4]}}{13}{subsubsection.6.1.2.1}%
+\contentsline {subsubsection}{\numberline {6.1.2.2}Studentas()\hspace {0.1cm}{\footnotesize \ttfamily [2/4]}}{13}{subsubsection.6.1.2.2}%
+\contentsline {subsubsection}{\numberline {6.1.2.3}$\sim $Studentas()}{13}{subsubsection.6.1.2.3}%
+\contentsline {subsubsection}{\numberline {6.1.2.4}Studentas()\hspace {0.1cm}{\footnotesize \ttfamily [3/4]}}{13}{subsubsection.6.1.2.4}%
+\contentsline {subsubsection}{\numberline {6.1.2.5}Studentas()\hspace {0.1cm}{\footnotesize \ttfamily [4/4]}}{14}{subsubsection.6.1.2.5}%
+\contentsline {subsection}{\numberline {6.1.3}Member Function Documentation}{14}{subsection.6.1.3}%
+\contentsline {subsubsection}{\numberline {6.1.3.1}AddPaz()}{14}{subsubsection.6.1.3.1}%
+\contentsline {subsubsection}{\numberline {6.1.3.2}ClearPaz()}{14}{subsubsection.6.1.3.2}%
+\contentsline {subsubsection}{\numberline {6.1.3.3}egz()}{14}{subsubsection.6.1.3.3}%
+\contentsline {subsubsection}{\numberline {6.1.3.4}med()}{14}{subsubsection.6.1.3.4}%
+\contentsline {subsubsection}{\numberline {6.1.3.5}MedIrVidSkaciavimas()}{15}{subsubsection.6.1.3.5}%
+\contentsline {subsubsection}{\numberline {6.1.3.6}operator=()\hspace {0.1cm}{\footnotesize \ttfamily [1/2]}}{15}{subsubsection.6.1.3.6}%
+\contentsline {subsubsection}{\numberline {6.1.3.7}operator=()\hspace {0.1cm}{\footnotesize \ttfamily [2/2]}}{15}{subsubsection.6.1.3.7}%
+\contentsline {subsubsection}{\numberline {6.1.3.8}paz()}{15}{subsubsection.6.1.3.8}%
+\contentsline {subsubsection}{\numberline {6.1.3.9}ReadStudent()}{16}{subsubsection.6.1.3.9}%
+\contentsline {subsubsection}{\numberline {6.1.3.10}SetEgz()}{16}{subsubsection.6.1.3.10}%
+\contentsline {subsubsection}{\numberline {6.1.3.11}SetMed()}{16}{subsubsection.6.1.3.11}%
+\contentsline {subsubsection}{\numberline {6.1.3.12}SetVid()}{16}{subsubsection.6.1.3.12}%
+\contentsline {subsubsection}{\numberline {6.1.3.13}spausdinti()}{16}{subsubsection.6.1.3.13}%
+\contentsline {subsubsection}{\numberline {6.1.3.14}vid()}{17}{subsubsection.6.1.3.14}%
+\contentsline {section}{\numberline {6.2}Timer Class Reference}{17}{section.6.2}%
+\contentsline {subsection}{\numberline {6.2.1}Detailed Description}{17}{subsection.6.2.1}%
+\contentsline {subsection}{\numberline {6.2.2}Constructor \& Destructor Documentation}{17}{subsection.6.2.2}%
+\contentsline {subsubsection}{\numberline {6.2.2.1}Timer()}{17}{subsubsection.6.2.2.1}%
+\contentsline {subsection}{\numberline {6.2.3}Member Function Documentation}{18}{subsection.6.2.3}%
+\contentsline {subsubsection}{\numberline {6.2.3.1}elapsed()}{18}{subsubsection.6.2.3.1}%
+\contentsline {subsubsection}{\numberline {6.2.3.2}reset()}{18}{subsubsection.6.2.3.2}%
+\contentsline {section}{\numberline {6.3}Zmogus Class Reference}{18}{section.6.3}%
+\contentsline {subsection}{\numberline {6.3.1}Detailed Description}{19}{subsection.6.3.1}%
+\contentsline {subsection}{\numberline {6.3.2}Constructor \& Destructor Documentation}{19}{subsection.6.3.2}%
+\contentsline {subsubsection}{\numberline {6.3.2.1}Zmogus()\hspace {0.1cm}{\footnotesize \ttfamily [1/2]}}{19}{subsubsection.6.3.2.1}%
+\contentsline {subsubsection}{\numberline {6.3.2.2}Zmogus()\hspace {0.1cm}{\footnotesize \ttfamily [2/2]}}{19}{subsubsection.6.3.2.2}%
+\contentsline {subsubsection}{\numberline {6.3.2.3}$\sim $Zmogus()}{19}{subsubsection.6.3.2.3}%
+\contentsline {subsection}{\numberline {6.3.3}Member Function Documentation}{19}{subsection.6.3.3}%
+\contentsline {subsubsection}{\numberline {6.3.3.1}pavarde()}{19}{subsubsection.6.3.3.1}%
+\contentsline {subsubsection}{\numberline {6.3.3.2}SetPavarde()}{20}{subsubsection.6.3.3.2}%
+\contentsline {subsubsection}{\numberline {6.3.3.3}SetVardas()}{20}{subsubsection.6.3.3.3}%
+\contentsline {subsubsection}{\numberline {6.3.3.4}spausdinti()}{20}{subsubsection.6.3.3.4}%
+\contentsline {subsubsection}{\numberline {6.3.3.5}vardas()}{20}{subsubsection.6.3.3.5}%
+\contentsline {subsection}{\numberline {6.3.4}Member Data Documentation}{20}{subsection.6.3.4}%
+\contentsline {subsubsection}{\numberline {6.3.4.1}\_pavarde}{20}{subsubsection.6.3.4.1}%
+\contentsline {subsubsection}{\numberline {6.3.4.2}\_vardas}{20}{subsubsection.6.3.4.2}%
+\contentsline {chapter}{\numberline {7}File Documentation}{21}{chapter.7}%
+\contentsline {section}{\numberline {7.1}include/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}student.h File Reference}{21}{section.7.1}%
+\contentsline {subsection}{\numberline {7.1.1}Detailed Description}{21}{subsection.7.1.1}%
+\contentsline {subsection}{\numberline {7.1.2}Function Documentation}{22}{subsection.7.1.2}%
+\contentsline {subsubsection}{\numberline {7.1.2.1}operator$<$$<$()}{22}{subsubsection.7.1.2.1}%
+\contentsline {subsubsection}{\numberline {7.1.2.2}operator$>$$>$()}{22}{subsubsection.7.1.2.2}%
+\contentsline {section}{\numberline {7.2}student.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}h}{22}{section.7.2}%
+\contentsline {section}{\numberline {7.3}include/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}student\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}io\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}deque.h File Reference}{23}{section.7.3}%
+\contentsline {subsection}{\numberline {7.3.1}Detailed Description}{24}{subsection.7.3.1}%
+\contentsline {subsection}{\numberline {7.3.2}Function Documentation}{24}{subsection.7.3.2}%
+\contentsline {subsubsection}{\numberline {7.3.2.1}benchmarkProcessingFile()}{24}{subsubsection.7.3.2.1}%
+\contentsline {subsubsection}{\numberline {7.3.2.2}containsDigit()}{25}{subsubsection.7.3.2.2}%
+\contentsline {subsubsection}{\numberline {7.3.2.3}duomenuIrasymasFaile()}{25}{subsubsection.7.3.2.3}%
+\contentsline {subsubsection}{\numberline {7.3.2.4}duomenuIrasymasKonsole()}{25}{subsubsection.7.3.2.4}%
+\contentsline {subsubsection}{\numberline {7.3.2.5}fileRead()}{26}{subsubsection.7.3.2.5}%
+\contentsline {subsubsection}{\numberline {7.3.2.6}fileTest()}{26}{subsubsection.7.3.2.6}%
+\contentsline {subsubsection}{\numberline {7.3.2.7}GenerateStudentsFile()}{26}{subsubsection.7.3.2.7}%
+\contentsline {subsubsection}{\numberline {7.3.2.8}getSortChoice()}{26}{subsubsection.7.3.2.8}%
+\contentsline {subsubsection}{\numberline {7.3.2.9}inputas()}{27}{subsubsection.7.3.2.9}%
+\contentsline {subsubsection}{\numberline {7.3.2.10}outputas()}{27}{subsubsection.7.3.2.10}%
+\contentsline {subsubsection}{\numberline {7.3.2.11}RuleOfFiveTestas()}{27}{subsubsection.7.3.2.11}%
+\contentsline {subsubsection}{\numberline {7.3.2.12}sortByUser()}{27}{subsubsection.7.3.2.12}%
+\contentsline {subsubsection}{\numberline {7.3.2.13}SplitStudentsStrategy1()}{28}{subsubsection.7.3.2.13}%
+\contentsline {subsubsection}{\numberline {7.3.2.14}SplitStudentsStrategy2()}{28}{subsubsection.7.3.2.14}%
+\contentsline {subsubsection}{\numberline {7.3.2.15}SplitStudentsStrategy3()}{28}{subsubsection.7.3.2.15}%
+\contentsline {section}{\numberline {7.4}student\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}io\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}deque.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}h}{29}{section.7.4}%
+\contentsline {section}{\numberline {7.5}include/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}student\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}io\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}list.h File Reference}{29}{section.7.5}%
+\contentsline {subsection}{\numberline {7.5.1}Function Documentation}{30}{subsection.7.5.1}%
+\contentsline {subsubsection}{\numberline {7.5.1.1}benchmarkProcessingFile()}{30}{subsubsection.7.5.1.1}%
+\contentsline {subsubsection}{\numberline {7.5.1.2}containsDigit()}{30}{subsubsection.7.5.1.2}%
+\contentsline {subsubsection}{\numberline {7.5.1.3}duomenuIrasymasFaile()}{30}{subsubsection.7.5.1.3}%
+\contentsline {subsubsection}{\numberline {7.5.1.4}duomenuIrasymasKonsole()}{31}{subsubsection.7.5.1.4}%
+\contentsline {subsubsection}{\numberline {7.5.1.5}fileRead()}{31}{subsubsection.7.5.1.5}%
+\contentsline {subsubsection}{\numberline {7.5.1.6}fileTest()}{31}{subsubsection.7.5.1.6}%
+\contentsline {subsubsection}{\numberline {7.5.1.7}GenerateStudentsFile()}{31}{subsubsection.7.5.1.7}%
+\contentsline {subsubsection}{\numberline {7.5.1.8}getSortChoice()}{31}{subsubsection.7.5.1.8}%
+\contentsline {subsubsection}{\numberline {7.5.1.9}inputas()}{31}{subsubsection.7.5.1.9}%
+\contentsline {subsubsection}{\numberline {7.5.1.10}outputas()}{32}{subsubsection.7.5.1.10}%
+\contentsline {subsubsection}{\numberline {7.5.1.11}sortByUser()}{32}{subsubsection.7.5.1.11}%
+\contentsline {subsubsection}{\numberline {7.5.1.12}SplitStudentsStrategy1()}{32}{subsubsection.7.5.1.12}%
+\contentsline {subsubsection}{\numberline {7.5.1.13}SplitStudentsStrategy2()}{32}{subsubsection.7.5.1.13}%
+\contentsline {subsubsection}{\numberline {7.5.1.14}SplitStudentsStrategy3()}{32}{subsubsection.7.5.1.14}%
+\contentsline {section}{\numberline {7.6}student\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}io\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}list.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}h}{32}{section.7.6}%
+\contentsline {section}{\numberline {7.7}include/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}student\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}io\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}vector.h File Reference}{33}{section.7.7}%
+\contentsline {subsection}{\numberline {7.7.1}Function Documentation}{33}{subsection.7.7.1}%
+\contentsline {subsubsection}{\numberline {7.7.1.1}benchmarkProcessingFile()}{33}{subsubsection.7.7.1.1}%
+\contentsline {subsubsection}{\numberline {7.7.1.2}containsDigit()}{34}{subsubsection.7.7.1.2}%
+\contentsline {subsubsection}{\numberline {7.7.1.3}duomenuIrasymasFaile()}{34}{subsubsection.7.7.1.3}%
+\contentsline {subsubsection}{\numberline {7.7.1.4}duomenuIrasymasKonsole()}{34}{subsubsection.7.7.1.4}%
+\contentsline {subsubsection}{\numberline {7.7.1.5}fileRead()}{34}{subsubsection.7.7.1.5}%
+\contentsline {subsubsection}{\numberline {7.7.1.6}fileTest()}{34}{subsubsection.7.7.1.6}%
+\contentsline {subsubsection}{\numberline {7.7.1.7}GenerateStudentsFile()}{35}{subsubsection.7.7.1.7}%
+\contentsline {subsubsection}{\numberline {7.7.1.8}getSortChoice()}{35}{subsubsection.7.7.1.8}%
+\contentsline {subsubsection}{\numberline {7.7.1.9}inputas()}{35}{subsubsection.7.7.1.9}%
+\contentsline {subsubsection}{\numberline {7.7.1.10}outputas()}{35}{subsubsection.7.7.1.10}%
+\contentsline {subsubsection}{\numberline {7.7.1.11}sortByUser()}{35}{subsubsection.7.7.1.11}%
+\contentsline {subsubsection}{\numberline {7.7.1.12}SplitStudentsStrategy1()}{35}{subsubsection.7.7.1.12}%
+\contentsline {subsubsection}{\numberline {7.7.1.13}SplitStudentsStrategy2()}{36}{subsubsection.7.7.1.13}%
+\contentsline {subsubsection}{\numberline {7.7.1.14}SplitStudentsStrategy3()}{36}{subsubsection.7.7.1.14}%
+\contentsline {section}{\numberline {7.8}student\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}io\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}vector.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}h}{36}{section.7.8}%
+\contentsline {section}{\numberline {7.9}include/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}timer.h File Reference}{36}{section.7.9}%
+\contentsline {subsection}{\numberline {7.9.1}Detailed Description}{37}{subsection.7.9.1}%
+\contentsline {section}{\numberline {7.10}timer.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}h}{37}{section.7.10}%
+\contentsline {section}{\numberline {7.11}include/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}utils.h File Reference}{37}{section.7.11}%
+\contentsline {subsection}{\numberline {7.11.1}Detailed Description}{38}{subsection.7.11.1}%
+\contentsline {subsection}{\numberline {7.11.2}Function Documentation}{38}{subsection.7.11.2}%
+\contentsline {subsubsection}{\numberline {7.11.2.1}intInput()}{38}{subsubsection.7.11.2.1}%
+\contentsline {subsubsection}{\numberline {7.11.2.2}randomVardasPavarde()}{38}{subsubsection.7.11.2.2}%
+\contentsline {subsection}{\numberline {7.11.3}Variable Documentation}{38}{subsection.7.11.3}%
+\contentsline {subsubsection}{\numberline {7.11.3.1}mot\_pavardes}{38}{subsubsection.7.11.3.1}%
+\contentsline {subsubsection}{\numberline {7.11.3.2}vardai}{38}{subsubsection.7.11.3.2}%
+\contentsline {subsubsection}{\numberline {7.11.3.3}vyr\_pavardes}{39}{subsubsection.7.11.3.3}%
+\contentsline {section}{\numberline {7.12}utils.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}h}{39}{section.7.12}%
+\contentsline {section}{\numberline {7.13}include/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}zmogus.h File Reference}{39}{section.7.13}%
+\contentsline {subsection}{\numberline {7.13.1}Detailed Description}{39}{subsection.7.13.1}%
+\contentsline {section}{\numberline {7.14}zmogus.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}h}{40}{section.7.14}%
+\contentsline {section}{\numberline {7.15}src/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}io\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}deque.cpp File Reference}{40}{section.7.15}%
+\contentsline {subsection}{\numberline {7.15.1}Function Documentation}{41}{subsection.7.15.1}%
+\contentsline {subsubsection}{\numberline {7.15.1.1}benchmarkProcessingFile()}{41}{subsubsection.7.15.1.1}%
+\contentsline {subsubsection}{\numberline {7.15.1.2}containsDigit()}{42}{subsubsection.7.15.1.2}%
+\contentsline {subsubsection}{\numberline {7.15.1.3}duomenuIrasymasFaile()}{42}{subsubsection.7.15.1.3}%
+\contentsline {subsubsection}{\numberline {7.15.1.4}duomenuIrasymasKonsole()}{42}{subsubsection.7.15.1.4}%
+\contentsline {subsubsection}{\numberline {7.15.1.5}fileRead()}{43}{subsubsection.7.15.1.5}%
+\contentsline {subsubsection}{\numberline {7.15.1.6}fileTest()}{43}{subsubsection.7.15.1.6}%
+\contentsline {subsubsection}{\numberline {7.15.1.7}GenerateStudentsFile()}{43}{subsubsection.7.15.1.7}%
+\contentsline {subsubsection}{\numberline {7.15.1.8}getSortChoice()}{43}{subsubsection.7.15.1.8}%
+\contentsline {subsubsection}{\numberline {7.15.1.9}inputas()}{44}{subsubsection.7.15.1.9}%
+\contentsline {subsubsection}{\numberline {7.15.1.10}outputas()}{44}{subsubsection.7.15.1.10}%
+\contentsline {subsubsection}{\numberline {7.15.1.11}RuleOfFiveTestas()}{44}{subsubsection.7.15.1.11}%
+\contentsline {subsubsection}{\numberline {7.15.1.12}sortByUser()}{44}{subsubsection.7.15.1.12}%
+\contentsline {subsubsection}{\numberline {7.15.1.13}SplitStudentsStrategy1()}{45}{subsubsection.7.15.1.13}%
+\contentsline {subsubsection}{\numberline {7.15.1.14}SplitStudentsStrategy2()}{45}{subsubsection.7.15.1.14}%
+\contentsline {subsubsection}{\numberline {7.15.1.15}SplitStudentsStrategy3()}{45}{subsubsection.7.15.1.15}%
+\contentsline {section}{\numberline {7.16}src/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}io\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}list.cpp File Reference}{46}{section.7.16}%
+\contentsline {subsection}{\numberline {7.16.1}Function Documentation}{46}{subsection.7.16.1}%
+\contentsline {subsubsection}{\numberline {7.16.1.1}benchmarkProcessingFile()}{46}{subsubsection.7.16.1.1}%
+\contentsline {subsubsection}{\numberline {7.16.1.2}containsDigit()}{47}{subsubsection.7.16.1.2}%
+\contentsline {subsubsection}{\numberline {7.16.1.3}duomenuIrasymasFaile()}{47}{subsubsection.7.16.1.3}%
+\contentsline {subsubsection}{\numberline {7.16.1.4}duomenuIrasymasKonsole()}{47}{subsubsection.7.16.1.4}%
+\contentsline {subsubsection}{\numberline {7.16.1.5}fileRead()}{47}{subsubsection.7.16.1.5}%
+\contentsline {subsubsection}{\numberline {7.16.1.6}fileTest()}{47}{subsubsection.7.16.1.6}%
+\contentsline {subsubsection}{\numberline {7.16.1.7}GenerateStudentsFile()}{48}{subsubsection.7.16.1.7}%
+\contentsline {subsubsection}{\numberline {7.16.1.8}getSortChoice()}{48}{subsubsection.7.16.1.8}%
+\contentsline {subsubsection}{\numberline {7.16.1.9}inputas()}{48}{subsubsection.7.16.1.9}%
+\contentsline {subsubsection}{\numberline {7.16.1.10}outputas()}{48}{subsubsection.7.16.1.10}%
+\contentsline {subsubsection}{\numberline {7.16.1.11}sortByUser()}{48}{subsubsection.7.16.1.11}%
+\contentsline {subsubsection}{\numberline {7.16.1.12}SplitStudentsStrategy1()}{48}{subsubsection.7.16.1.12}%
+\contentsline {subsubsection}{\numberline {7.16.1.13}SplitStudentsStrategy2()}{49}{subsubsection.7.16.1.13}%
+\contentsline {subsubsection}{\numberline {7.16.1.14}SplitStudentsStrategy3()}{49}{subsubsection.7.16.1.14}%
+\contentsline {section}{\numberline {7.17}src/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}io\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}vector.cpp File Reference}{49}{section.7.17}%
+\contentsline {subsection}{\numberline {7.17.1}Function Documentation}{50}{subsection.7.17.1}%
+\contentsline {subsubsection}{\numberline {7.17.1.1}benchmarkProcessingFile()}{50}{subsubsection.7.17.1.1}%
+\contentsline {subsubsection}{\numberline {7.17.1.2}containsDigit()}{50}{subsubsection.7.17.1.2}%
+\contentsline {subsubsection}{\numberline {7.17.1.3}duomenuIrasymasFaile()}{50}{subsubsection.7.17.1.3}%
+\contentsline {subsubsection}{\numberline {7.17.1.4}duomenuIrasymasKonsole()}{50}{subsubsection.7.17.1.4}%
+\contentsline {subsubsection}{\numberline {7.17.1.5}fileRead()}{51}{subsubsection.7.17.1.5}%
+\contentsline {subsubsection}{\numberline {7.17.1.6}fileTest()}{51}{subsubsection.7.17.1.6}%
+\contentsline {subsubsection}{\numberline {7.17.1.7}GenerateStudentsFile()}{51}{subsubsection.7.17.1.7}%
+\contentsline {subsubsection}{\numberline {7.17.1.8}getSortChoice()}{51}{subsubsection.7.17.1.8}%
+\contentsline {subsubsection}{\numberline {7.17.1.9}inputas()}{51}{subsubsection.7.17.1.9}%
+\contentsline {subsubsection}{\numberline {7.17.1.10}outputas()}{51}{subsubsection.7.17.1.10}%
+\contentsline {subsubsection}{\numberline {7.17.1.11}sortByUser()}{52}{subsubsection.7.17.1.11}%
+\contentsline {subsubsection}{\numberline {7.17.1.12}SplitStudentsStrategy1()}{52}{subsubsection.7.17.1.12}%
+\contentsline {subsubsection}{\numberline {7.17.1.13}SplitStudentsStrategy2()}{52}{subsubsection.7.17.1.13}%
+\contentsline {subsubsection}{\numberline {7.17.1.14}SplitStudentsStrategy3()}{52}{subsubsection.7.17.1.14}%
+\contentsline {section}{\numberline {7.18}src/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}main\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}deque.cpp File Reference}{52}{section.7.18}%
+\contentsline {subsection}{\numberline {7.18.1}Function Documentation}{52}{subsection.7.18.1}%
+\contentsline {subsubsection}{\numberline {7.18.1.1}main()}{52}{subsubsection.7.18.1.1}%
+\contentsline {section}{\numberline {7.19}src/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}main\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}list.cpp File Reference}{53}{section.7.19}%
+\contentsline {subsection}{\numberline {7.19.1}Function Documentation}{53}{subsection.7.19.1}%
+\contentsline {subsubsection}{\numberline {7.19.1.1}main()}{53}{subsubsection.7.19.1.1}%
+\contentsline {section}{\numberline {7.20}src/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}main\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}vector.cpp File Reference}{53}{section.7.20}%
+\contentsline {subsection}{\numberline {7.20.1}Function Documentation}{53}{subsection.7.20.1}%
+\contentsline {subsubsection}{\numberline {7.20.1.1}main()}{53}{subsubsection.7.20.1.1}%
+\contentsline {section}{\numberline {7.21}src/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}student.cpp File Reference}{53}{section.7.21}%
+\contentsline {subsection}{\numberline {7.21.1}Function Documentation}{54}{subsection.7.21.1}%
+\contentsline {subsubsection}{\numberline {7.21.1.1}operator$<$$<$()}{54}{subsubsection.7.21.1.1}%
+\contentsline {subsubsection}{\numberline {7.21.1.2}operator$>$$>$()}{54}{subsubsection.7.21.1.2}%
+\contentsline {section}{\numberline {7.22}src/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}utils.cpp File Reference}{55}{section.7.22}%
+\contentsline {subsection}{\numberline {7.22.1}Function Documentation}{55}{subsection.7.22.1}%
+\contentsline {subsubsection}{\numberline {7.22.1.1}intInput()}{55}{subsubsection.7.22.1.1}%
+\contentsline {subsubsection}{\numberline {7.22.1.2}randomVardasPavarde()}{56}{subsubsection.7.22.1.2}%
+\contentsline {subsection}{\numberline {7.22.2}Variable Documentation}{56}{subsection.7.22.2}%
+\contentsline {subsubsection}{\numberline {7.22.2.1}mot\_pavardes}{56}{subsubsection.7.22.2.1}%
+\contentsline {subsubsection}{\numberline {7.22.2.2}vardai}{56}{subsubsection.7.22.2.2}%
+\contentsline {subsubsection}{\numberline {7.22.2.3}vyr\_pavardes}{56}{subsubsection.7.22.2.3}%

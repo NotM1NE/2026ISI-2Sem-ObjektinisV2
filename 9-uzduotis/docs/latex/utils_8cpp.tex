@@ -1,0 +1,100 @@
+\doxysection{src/\+utils.cpp File Reference}
+\hypertarget{utils_8cpp}{}\label{utils_8cpp}\index{src/utils.cpp@{src/utils.cpp}}
+{\ttfamily \+\#include "{}utils.\+h"{}}\newline
+{\ttfamily \+\#include $<$iostream$>$}\newline
+{\ttfamily \+\#include $<$limits$>$}\newline
+{\ttfamily \+\#include $<$cstdlib$>$}\newline
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \doxymbox{\hyperlink{utils_8cpp_ada7406d541e47650e22045d6755d59dd}{int\+Input}} (int \&temp)
+\begin{DoxyCompactList}\small\item\em Nuskaito sveikaji skaiciu ir patikrina ivesti. \end{DoxyCompactList}\item 
+void \doxymbox{\hyperlink{utils_8cpp_a398a807211a3641beed94644bc6b1207}{random\+Vardas\+Pavarde}} (string \&vardas, string \&pavarde)
+\begin{DoxyCompactList}\small\item\em Sugeneruoja atsitiktini varda ir pavarde. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+const vector$<$ string $>$ \doxymbox{\hyperlink{utils_8cpp_aef9f9c749c51311b7aab4ce5c7f54c2e}{vardai}}
+\begin{DoxyCompactList}\small\item\em Vardu sarasas atsitiktiniam generavimui. \end{DoxyCompactList}\item 
+const vector$<$ string $>$ \doxymbox{\hyperlink{utils_8cpp_a538338880add734b51daa6959526b4bb}{vyr\+\_\+pavardes}} = \{"{}Kazlauskas"{}, "{}Jankauskas"{}, "{}Petrauskas"{}, "{}Stankevicius"{}, "{}Zukauskas"{}, "{}Butkus"{}, "{}Pocius"{}, "{}Urbonas"{}, "{}Mockus"{}, "{}Savickas"{}\}
+\begin{DoxyCompactList}\small\item\em Vyrisku pavardziu sarasas atsitiktiniam generavimui. \end{DoxyCompactList}\item 
+const vector$<$ string $>$ \doxymbox{\hyperlink{utils_8cpp_ac7412857cbfa903144c74e5cc7ef1ea9}{mot\+\_\+pavardes}} = \{"{}Kazlauskiene"{}, "{}Jankauskiene"{}, "{}Petrauskiene"{}, "{}Stankeviciene"{}, "{}Zukauskiene"{}, "{}Butkiene"{}, "{}Pociene"{}, "{}Urboniene"{}, "{}Mockiene"{}, "{}Savickiene"{}\}
+\begin{DoxyCompactList}\small\item\em Moterisku pavardziu sarasas atsitiktiniam generavimui. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\label{utils_8cpp_doc-func-members}
+\Hypertarget{utils_8cpp_doc-func-members}
+\doxysubsection{Function Documentation}
+\Hypertarget{utils_8cpp_ada7406d541e47650e22045d6755d59dd}\index{utils.cpp@{utils.cpp}!intInput@{intInput}}
+\index{intInput@{intInput}!utils.cpp@{utils.cpp}}
+\doxysubsubsection{\texorpdfstring{intInput()}{intInput()}}
+{\footnotesize\ttfamily \label{utils_8cpp_ada7406d541e47650e22045d6755d59dd} 
+void int\+Input (\begin{DoxyParamCaption}\item[{int \&}]{temp}{}\end{DoxyParamCaption})}
+
+
+
+Nuskaito sveikaji skaiciu ir patikrina ivesti. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em temp} & Kintamasis, i kuri irasomas nuskaitytas skaicius. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{utils_8cpp_a398a807211a3641beed94644bc6b1207}\index{utils.cpp@{utils.cpp}!randomVardasPavarde@{randomVardasPavarde}}
+\index{randomVardasPavarde@{randomVardasPavarde}!utils.cpp@{utils.cpp}}
+\doxysubsubsection{\texorpdfstring{randomVardasPavarde()}{randomVardasPavarde()}}
+{\footnotesize\ttfamily \label{utils_8cpp_a398a807211a3641beed94644bc6b1207} 
+void random\+Vardas\+Pavarde (\begin{DoxyParamCaption}\item[{string \&}]{vardas}{, }\item[{string \&}]{pavarde}{}\end{DoxyParamCaption})}
+
+
+
+Sugeneruoja atsitiktini varda ir pavarde. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em vardas} & Sugeneruotas vardas. \\
+\hline
+{\em pavarde} & Sugeneruota pavarde. \\
+\hline
+\end{DoxyParams}
+
+
+\label{utils_8cpp_doc-var-members}
+\Hypertarget{utils_8cpp_doc-var-members}
+\doxysubsection{Variable Documentation}
+\Hypertarget{utils_8cpp_ac7412857cbfa903144c74e5cc7ef1ea9}\index{utils.cpp@{utils.cpp}!mot\_pavardes@{mot\_pavardes}}
+\index{mot\_pavardes@{mot\_pavardes}!utils.cpp@{utils.cpp}}
+\doxysubsubsection{\texorpdfstring{mot\_pavardes}{mot\_pavardes}}
+{\footnotesize\ttfamily \label{utils_8cpp_ac7412857cbfa903144c74e5cc7ef1ea9} 
+const vector$<$string$>$ mot\+\_\+pavardes = \{"{}Kazlauskiene"{}, "{}Jankauskiene"{}, "{}Petrauskiene"{}, "{}Stankeviciene"{}, "{}Zukauskiene"{}, "{}Butkiene"{}, "{}Pociene"{}, "{}Urboniene"{}, "{}Mockiene"{}, "{}Savickiene"{}\}}
+
+
+
+Moterisku pavardziu sarasas atsitiktiniam generavimui. 
+
+\Hypertarget{utils_8cpp_aef9f9c749c51311b7aab4ce5c7f54c2e}\index{utils.cpp@{utils.cpp}!vardai@{vardai}}
+\index{vardai@{vardai}!utils.cpp@{utils.cpp}}
+\doxysubsubsection{\texorpdfstring{vardai}{vardai}}
+{\footnotesize\ttfamily \label{utils_8cpp_aef9f9c749c51311b7aab4ce5c7f54c2e} 
+const vector$<$string$>$ vardai}
+
+{\bfseries Initial value:\+}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{=\ \{\textcolor{stringliteral}{"{}Jonas"{}},\ \textcolor{stringliteral}{"{}Mantas"{}},\ \textcolor{stringliteral}{"{}Tomas"{}},\ \textcolor{stringliteral}{"{}Lukas"{}},\ \textcolor{stringliteral}{"{}Karolis"{}},\ \textcolor{stringliteral}{"{}Darius"{}},\ \textcolor{stringliteral}{"{}Paulius"{}},\ \textcolor{stringliteral}{"{}Mindaugas"{}},\ \textcolor{stringliteral}{"{}Justas"{}},\ \textcolor{stringliteral}{"{}Rokas"{}},}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \textcolor{stringliteral}{"{}Agne"{}},\ \textcolor{stringliteral}{"{}Ieva"{}},\ \textcolor{stringliteral}{"{}Egle"{}},\ \textcolor{stringliteral}{"{}Gabija"{}},\ \textcolor{stringliteral}{"{}Monika"{}},\ \textcolor{stringliteral}{"{}Karolina"{}},\ \textcolor{stringliteral}{"{}Viktorija"{}},\ \textcolor{stringliteral}{"{}Emilija"{}},\ \textcolor{stringliteral}{"{}Justina"{}},\ \textcolor{stringliteral}{"{}Greta"{}}\}}
+
+\end{DoxyCode}
+
+
+Vardu sarasas atsitiktiniam generavimui. 
+
+\Hypertarget{utils_8cpp_a538338880add734b51daa6959526b4bb}\index{utils.cpp@{utils.cpp}!vyr\_pavardes@{vyr\_pavardes}}
+\index{vyr\_pavardes@{vyr\_pavardes}!utils.cpp@{utils.cpp}}
+\doxysubsubsection{\texorpdfstring{vyr\_pavardes}{vyr\_pavardes}}
+{\footnotesize\ttfamily \label{utils_8cpp_a538338880add734b51daa6959526b4bb} 
+const vector$<$string$>$ vyr\+\_\+pavardes = \{"{}Kazlauskas"{}, "{}Jankauskas"{}, "{}Petrauskas"{}, "{}Stankevicius"{}, "{}Zukauskas"{}, "{}Butkus"{}, "{}Pocius"{}, "{}Urbonas"{}, "{}Mockus"{}, "{}Savickas"{}\}}
+
+
+
+Vyrisku pavardziu sarasas atsitiktiniam generavimui. 
+

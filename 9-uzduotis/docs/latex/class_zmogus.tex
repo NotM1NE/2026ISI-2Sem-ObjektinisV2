@@ -1,0 +1,183 @@
+\doxysection{Zmogus Class Reference}
+\hypertarget{class_zmogus}{}\label{class_zmogus}\index{Zmogus@{Zmogus}}
+
+
+Abstrakti bazine klase, sauganti bendrus zmogaus duomenis.  
+
+
+
+
+{\ttfamily \+\#include $<$zmogus.\+h$>$}
+
+Inheritance diagram for Zmogus:\+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_zmogus}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\doxymbox{\hyperlink{class_zmogus_aa7a8ba4d3c4778f9b35d59eef3e72574}{Zmogus}} ()
+\begin{DoxyCompactList}\small\item\em Konstruktorius. \end{DoxyCompactList}\item 
+\doxymbox{\hyperlink{class_zmogus_ac7034e8672e7feda0e3e1303a5336f2b}{Zmogus}} (const string \&vardas, const string \&pavarde)
+\begin{DoxyCompactList}\small\item\em Konstruktorius su vardu ir pavarde. \end{DoxyCompactList}\item 
+virtual \doxymbox{\hyperlink{class_zmogus_ac5615bf607a8f2f1b303ffa04328d24d}{\texorpdfstring{$\sim$}{\string~}\+Zmogus}} ()
+\begin{DoxyCompactList}\small\item\em Destruktorius. \end{DoxyCompactList}\item 
+virtual void \doxymbox{\hyperlink{class_zmogus_a74984fa910acbec6353c7346f977b78b}{spausdinti}} () const =0
+\item 
+const string \doxymbox{\hyperlink{class_zmogus_ac3affa1c00509925ac46972f00288e68}{vardas}} () const
+\begin{DoxyCompactList}\small\item\em grazina Zmogaus Vardas \end{DoxyCompactList}\item 
+const string \doxymbox{\hyperlink{class_zmogus_aea6ec4b7bc673de8a19f213530b1fae1}{pavarde}} () const
+\begin{DoxyCompactList}\small\item\em grazina Zmogaus Pavarde \end{DoxyCompactList}\item 
+void \doxymbox{\hyperlink{class_zmogus_a31544c5da6e98eaf465da4fab1cb33b1}{Set\+Vardas}} (const string \&vardas)
+\begin{DoxyCompactList}\small\item\em Iraso zmogaus varda. \end{DoxyCompactList}\item 
+void \doxymbox{\hyperlink{class_zmogus_ab112bd4db2cd981a2a7e88b488c5c5ad}{Set\+Pavarde}} (const string \&pavarde)
+\begin{DoxyCompactList}\small\item\em Iraso zmogaus pavarde. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+string \doxymbox{\hyperlink{class_zmogus_a8668d1b3a86c50d13ef399c559461c26}{\+\_\+vardas}}
+\item 
+string \doxymbox{\hyperlink{class_zmogus_a958ea1970677b8d787ae8fe2a6d1ac13}{\+\_\+pavarde}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Abstrakti bazine klase, sauganti bendrus zmogaus duomenis. 
+
+Sia klase paveldi \doxylink{class_studentas}{Studentas} klase Is jos negalima kurti objektu tiesiogiai \doxylink{class_zmogus}{Zmogus} klase yra abstrakti, nes turi metoda \doxylink{class_zmogus_a74984fa910acbec6353c7346f977b78b}{spausdinti()}, kuri \doxylink{class_studentas}{Studentas} klase turi perrasyti. 
+
+\label{class_zmogus_doc-constructors}
+\Hypertarget{class_zmogus_doc-constructors}
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{class_zmogus_aa7a8ba4d3c4778f9b35d59eef3e72574}\index{Zmogus@{Zmogus}!Zmogus@{Zmogus}}
+\index{Zmogus@{Zmogus}!Zmogus@{Zmogus}}
+\doxysubsubsection{\texorpdfstring{Zmogus()}{Zmogus()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \label{class_zmogus_aa7a8ba4d3c4778f9b35d59eef3e72574} 
+Zmogus::\+\+Zmogus (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Konstruktorius. 
+
+\Hypertarget{class_zmogus_ac7034e8672e7feda0e3e1303a5336f2b}\index{Zmogus@{Zmogus}!Zmogus@{Zmogus}}
+\index{Zmogus@{Zmogus}!Zmogus@{Zmogus}}
+\doxysubsubsection{\texorpdfstring{Zmogus()}{Zmogus()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \label{class_zmogus_ac7034e8672e7feda0e3e1303a5336f2b} 
+Zmogus::\+\+Zmogus (\begin{DoxyParamCaption}\item[{const string \&}]{vardas}{, }\item[{const string \&}]{pavarde}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Konstruktorius su vardu ir pavarde. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em vardas} & \doxylink{class_zmogus}{Zmogus} vardas \\
+\hline
+{\em pavarde} & \doxylink{class_zmogus}{Zmogus} pavarde \\
+\hline
+\end{DoxyParams}
+\Hypertarget{class_zmogus_ac5615bf607a8f2f1b303ffa04328d24d}\index{Zmogus@{Zmogus}!````~Zmogus@{\texorpdfstring{$\sim$}{\string~}Zmogus}}
+\index{````~Zmogus@{\texorpdfstring{$\sim$}{\string~}Zmogus}!Zmogus@{Zmogus}}
+\doxysubsubsection{\texorpdfstring{\texorpdfstring{$\sim$}{\string~}Zmogus()}{\string~Zmogus()}}
+{\footnotesize\ttfamily \label{class_zmogus_ac5615bf607a8f2f1b303ffa04328d24d} 
+virtual Zmogus::\+\texorpdfstring{$\sim$}{\string~}\+Zmogus (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+
+
+Destruktorius. 
+
+
+
+\label{class_zmogus_doc-func-members}
+\Hypertarget{class_zmogus_doc-func-members}
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_zmogus_aea6ec4b7bc673de8a19f213530b1fae1}\index{Zmogus@{Zmogus}!pavarde@{pavarde}}
+\index{pavarde@{pavarde}!Zmogus@{Zmogus}}
+\doxysubsubsection{\texorpdfstring{pavarde()}{pavarde()}}
+{\footnotesize\ttfamily \label{class_zmogus_aea6ec4b7bc673de8a19f213530b1fae1} 
+const string Zmogus::\+pavarde (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+grazina Zmogaus Pavarde 
+
+\begin{DoxyReturn}{Returns}
+Zmogaus pavarde 
+\end{DoxyReturn}
+\Hypertarget{class_zmogus_ab112bd4db2cd981a2a7e88b488c5c5ad}\index{Zmogus@{Zmogus}!SetPavarde@{SetPavarde}}
+\index{SetPavarde@{SetPavarde}!Zmogus@{Zmogus}}
+\doxysubsubsection{\texorpdfstring{SetPavarde()}{SetPavarde()}}
+{\footnotesize\ttfamily \label{class_zmogus_ab112bd4db2cd981a2a7e88b488c5c5ad} 
+void Zmogus::\+\+Set\+Pavarde (\begin{DoxyParamCaption}\item[{const string \&}]{pavarde}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Iraso zmogaus pavarde. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em pavarde} & naujas Pavarde \\
+\hline
+\end{DoxyParams}
+\Hypertarget{class_zmogus_a31544c5da6e98eaf465da4fab1cb33b1}\index{Zmogus@{Zmogus}!SetVardas@{SetVardas}}
+\index{SetVardas@{SetVardas}!Zmogus@{Zmogus}}
+\doxysubsubsection{\texorpdfstring{SetVardas()}{SetVardas()}}
+{\footnotesize\ttfamily \label{class_zmogus_a31544c5da6e98eaf465da4fab1cb33b1} 
+void Zmogus::\+\+Set\+Vardas (\begin{DoxyParamCaption}\item[{const string \&}]{vardas}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Iraso zmogaus varda. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em vardas} & naujas Vardas \\
+\hline
+\end{DoxyParams}
+\Hypertarget{class_zmogus_a74984fa910acbec6353c7346f977b78b}\index{Zmogus@{Zmogus}!spausdinti@{spausdinti}}
+\index{spausdinti@{spausdinti}!Zmogus@{Zmogus}}
+\doxysubsubsection{\texorpdfstring{spausdinti()}{spausdinti()}}
+{\footnotesize\ttfamily \label{class_zmogus_a74984fa910acbec6353c7346f977b78b} 
+virtual void Zmogus::\+spausdinti (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Implemented in \doxymbox{\hyperlink{class_studentas_a8b32d20abb049b6e7e4af59c8b55b333}{Studentas}}.
+
+\Hypertarget{class_zmogus_ac3affa1c00509925ac46972f00288e68}\index{Zmogus@{Zmogus}!vardas@{vardas}}
+\index{vardas@{vardas}!Zmogus@{Zmogus}}
+\doxysubsubsection{\texorpdfstring{vardas()}{vardas()}}
+{\footnotesize\ttfamily \label{class_zmogus_ac3affa1c00509925ac46972f00288e68} 
+const string Zmogus::\+vardas (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+grazina Zmogaus Vardas 
+
+\begin{DoxyReturn}{Returns}
+Zmogaus vardas 
+\end{DoxyReturn}
+
+
+\label{class_zmogus_doc-variable-members}
+\Hypertarget{class_zmogus_doc-variable-members}
+\doxysubsection{Member Data Documentation}
+\Hypertarget{class_zmogus_a958ea1970677b8d787ae8fe2a6d1ac13}\index{Zmogus@{Zmogus}!\_pavarde@{\_pavarde}}
+\index{\_pavarde@{\_pavarde}!Zmogus@{Zmogus}}
+\doxysubsubsection{\texorpdfstring{\_pavarde}{\_pavarde}}
+{\footnotesize\ttfamily \label{class_zmogus_a958ea1970677b8d787ae8fe2a6d1ac13} 
+string Zmogus::\+\+\_\+pavarde\hspace{0.3cm}{\ttfamily [protected]}}
+
+Pavarde \Hypertarget{class_zmogus_a8668d1b3a86c50d13ef399c559461c26}\index{Zmogus@{Zmogus}!\_vardas@{\_vardas}}
+\index{\_vardas@{\_vardas}!Zmogus@{Zmogus}}
+\doxysubsubsection{\texorpdfstring{\_vardas}{\_vardas}}
+{\footnotesize\ttfamily \label{class_zmogus_a8668d1b3a86c50d13ef399c559461c26} 
+string Zmogus::\+\+\_\+vardas\hspace{0.3cm}{\ttfamily [protected]}}
+
+Vardas 
+
+The documentation for this class was generated from the following file:\+\begin{DoxyCompactItemize}
+\item 
+include/\+\doxymbox{\hyperlink{zmogus_8h}{zmogus.\+h}}\end{DoxyCompactItemize}
