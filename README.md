@@ -144,6 +144,11 @@ PDF sugeneravimas iš LaTeX:
 - C++
 - Makefile
 - Doxygen
-- MiKTeX / LaTeX
+- MiKTeX
 - doctest
 - Git / GitHub
+
+## Šaltiniai
+
+- doctest: https://github.com/doctest/doctest/blob/master/doctest/doctest.h
+- MikTeX: https://miktex.org/
