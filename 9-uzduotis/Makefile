@@ -1,9 +1,13 @@
 CXX = g++
 CXXFLAGS = -Iinclude
 
+all: vector_app list_app deque_app
+
 VECTOR_OBJ = main_vector.o io_vector.o student.o utils.o
 LIST_OBJ = main_list.o io_list.o student.o utils.o
 DEQUE_SRC = src/main_deque.cpp src/io_deque.cpp src/student.cpp src/utils.cpp
+TEST_TARGET = student_tests.exe
+TEST_SRC = tests/test_studentas.cpp src/student.cpp
 
 vector_app: $(VECTOR_OBJ)
 	$(CXX) -o vector_app $(VECTOR_OBJ)
@@ -49,5 +53,10 @@ deque_O3:
 
 opt: deque_O1 deque_O2 deque_O3
 
+test: $(TEST_TARGET)
+
+$(TEST_TARGET): $(TEST_SRC)
+	$(CXX) $(CXXFLAGS) $(TEST_SRC) -o $(TEST_TARGET)
+
 clean:
-	rm -f *.o vector_app list_app deque_app deque_O1.exe deque_O2.exe deque_O3.exe
+	rm -f *.o *.exe vector_app list_app deque_app deque_O1.exe deque_O2.exe deque_O3.exe $(TEST_TARGET)
