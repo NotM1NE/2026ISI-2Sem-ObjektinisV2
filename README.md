@@ -32,19 +32,12 @@ Sukompiliuoti visas programos versijas:
 
 `make all`
 
-Jeigu naudojamas MinGW:
-
-`mingw32-make all`
-
 ## Programos paleidimas
 
 Paleisti `deque` versiją:
 
 `./deque_app`
 
-Windows aplinkoje:
-
-`./deque_app.exe`
 
 Paleisti `vector` versiją:
 
@@ -60,9 +53,6 @@ Ištrinti sukompiliuotus failus:
 
 `make clean`
 
-arba:
-
-`mingw32-make clean`
 
 ## Unit testai
 
@@ -84,17 +74,11 @@ Testų sukompiliavimas:
 
 `make test`
 
-arba:
-
-`mingw32-make test`
 
 Testų paleidimas:
 
-`make run-test`
+`./student_tests.exe`
 
-arba:
-
-`mingw32-make run-test`
 
 
 ## Doxygen dokumentacija
