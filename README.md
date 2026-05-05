@@ -1,84 +1,149 @@
-## v1.5 versijos pakeitimai
+# Studentų pažymių skaičiavimo programa
 
-Šioje versijoje programa buvo perdaryta pritaikant paveldėjimą. Vietoje vienos `Studentas` klasės sukurtos dvi klasės:
+Programa skirta studentų duomenims apdoroti. Ji leidžia įvesti arba nuskaityti studentų vardus, pavardes, namų darbų pažymius ir egzamino rezultatą. Pagal šiuos duomenis apskaičiuojamas galutinis balas pagal vidurkį ir medianą.
 
-| Klasė | Tipas | Paskirtis |
-|---|---|---|
-| `Zmogus` | Abstrakti bazinė klasė | Saugo bendrus žmogaus duomenis: vardą ir pavardę |
-| `Studentas` | Išvestinė klasė | Paveldi iš `Zmogus` ir saugo studento pažymius, egzamino rezultatą, vidurkį ir medianą |
+## Funkcionalumas
 
----
+- Duomenų įvedimas ranka.
+- Atsitiktinis pažymių generavimas.
+- Atsitiktinis studentų vardų, pavardžių ir pažymių generavimas.
+- Duomenų nuskaitymas iš failo.
+- Studentų rūšiavimas pagal vardą, pavardę, galutinį balą pagal vidurkį arba medianą.
+- Studentų skirstymas į išlaikiusius ir neišlaikiusius.
+- Darbas su `vector`, `list` ir `deque` konteineriais.
+- Realizuota `Studentas` klasė.
+- Realizuota abstrakti bazinė klasė `Zmogus`.
+- Realizuota Rule of Five.
+- Pridėti unit testai.
+- Sugeneruota Doxygen dokumentacija.
 
-## Abstrakti bazinė klasė `Zmogus`
+## Projekto struktūra
 
-`Zmogus` klasė skirta bendriems žmogaus duomenims saugoti. Į ją iškelti laukai, kurie tinka kiekvienam žmogui:
+- `include/` – antraštiniai failai.
+- `src/` – programos realizacijos failai.
+- `tests/` – unit testai.
+- `docs/` – Doxygen dokumentacija.
+- `Doxyfile` – Doxygen konfigūracija.
+- `Makefile` – kompiliavimo instrukcijos.
 
-- `_vardas`
-- `_pavarde`
+## Kompiliavimas
 
-Ši klasė yra abstrakti, nes joje yra pure virtual metodas:
-```cpp
-virtual void spausdinti() const = 0;
-```
+Sukompiliuoti visas programos versijas:
 
----
-### Pagrindiniai pakeitimai
-## zmogus.h
-Sukurta nauja klase:
+`make all`
 
-```cpp
-#ifndef ZMOGUS_H
-#define ZMOGUS_H
+Jeigu naudojamas MinGW:
 
-#include <string>
+`mingw32-make all`
 
-using std::string;
+## Programos paleidimas
 
-class Zmogus
-{
-protected:
-    string _vardas;
-    string _pavarde;
+Paleisti `deque` versiją:
 
-public:
-    Zmogus() {}
-    Zmogus(const string &vardas, const string &pavarde)
-        : _vardas(vardas), _pavarde(pavarde) {}
+`./deque_app`
 
-    virtual ~Zmogus() {}
+Windows aplinkoje:
 
-    virtual void spausdinti() const = 0;
+`./deque_app.exe`
 
-    inline const string vardas() const { return _vardas; }
-    inline const string pavarde() const { return _pavarde; }
+Paleisti `vector` versiją:
 
-    void SetVardas(const string &vardas) { _vardas = vardas; }
-    void SetPavarde(const string &pavarde) { _pavarde = pavarde; }
-};
+`./vector_app`
 
-#endif
-```
-## Studentas klasė
-`Studentas` klasė yra išvestinė klasė, kuri paveldi iš abstrakčios bazinės klasės `Zmogus`:
+Paleisti `list` versiją:
 
-```cpp
-class Studentas : public Zmogus
-```
+`./list_app`
 
-`spausdinti()` metodas:
+## Failų išvalymas
 
-```cpp
-void spausdinti() const override;
-```
-Kadangi Zmogus klasėje metodas spausdinti() yra pure virtual, Studentas klasė privalo jį realizuoti:
+Ištrinti sukompiliuotus failus:
 
-## Studentas.cpp
+`make clean`
 
-```cpp
-void Studentas::spausdinti() const
-{
-    cout << vardas() << " " << pavarde() << " " << vid() << " " << med() << endl; 
-}
-```
+arba:
+
+`mingw32-make clean`
+
+## Unit testai
+
+Unit testai realizuoti naudojant `doctest` framework.
+
+Testai tikrina:
+
+- numatytąjį `Studentas` konstruktorių;
+- setterius ir getterius;
+- galutinio balo skaičiavimą pagal vidurkį;
+- galutinio balo skaičiavimą pagal medianą;
+- pažymių išvalymą;
+- kopijavimo konstruktorių;
+- kopijavimo priskyrimo operatorių;
+- perkėlimo konstruktorių;
+- perkėlimo priskyrimo operatorių.
+
+Testų sukompiliavimas:
+
+`make test`
+
+arba:
+
+`mingw32-make test`
+
+Testų paleidimas:
+
+`make run-test`
+
+arba:
+
+`mingw32-make run-test`
 
 
+## Doxygen dokumentacija
+
+Dokumentacija sugeneruota naudojant `Doxygen`.
+
+Dokumentacijos generavimas:
+
+`doxygen Doxyfile`
+
+Po sugeneravimo dokumentacija randama:
+
+- HTML: `docs/html/index.html`
+- LaTeX: `docs/latex/`
+- PDF: `docs/latex/refman.pdf`
+
+PDF sugeneravimas iš LaTeX:
+
+1. Pereiti į `docs/latex`
+2. Paleisti `pdflatex refman.tex` kelis kartus
+3. Gautas failas: `refman.pdf`
+
+## Versijos
+
+| Versija | Aprašymas |
+|---|---|
+| v1.0 | Pradinė programos versija. Realizuotas studentų duomenų įvedimas ir galutinio balo skaičiavimas. |
+| v1.1 | Programa papildyta `Studentas` klase. |
+| v1.2 | Realizuota Rule of Five. |
+| v1.5 | Sukurta abstrakti bazinė klasė `Zmogus`, kurią paveldi `Studentas`. |
+| v2.0 | Pridėti unit testai su `doctest` ir sugeneruota Doxygen dokumentacija HTML, LaTeX ir PDF formatais. |
+
+## Rule of Five
+
+`Studentas` klasėje realizuoti šie metodai:
+
+| Metodas | Paskirtis |
+|---|---|
+| Destruktorius | Sunaikina objektą. |
+| Kopijavimo konstruktorius | Sukuria naują objektą kopijuojant kitą objektą. |
+| Kopijavimo priskyrimo operatorius | Priskiria vieno objekto duomenis kitam jau egzistuojančiam objektui. |
+| Perkėlimo konstruktorius | Sukuria naują objektą perkeliant kito objekto duomenis. |
+| Perkėlimo priskyrimo operatorius | Perkelia kito objekto duomenis į jau egzistuojantį objektą. |
+
+## Naudoti įrankiai
+
+- C++
+- Makefile
+- Doxygen
+- MiKTeX / LaTeX
+- doctest
+- Git / GitHub
