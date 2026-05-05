@@ -32,6 +32,10 @@ Sukompiliuoti visas programos versijas:
 
 `make all`
 
+Sukompiliuoti deque programos versija su flagais:
+
+`make opt`
+
 ## Programos paleidimas
 
 Paleisti `deque` versiją:
