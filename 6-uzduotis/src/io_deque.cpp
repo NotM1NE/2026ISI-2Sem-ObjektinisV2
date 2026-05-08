@@ -11,6 +11,7 @@
 #include <stdexcept>
 #include <ctime>
 #include <stdlib.h>
+#include <filesystem>
 
 using std::cin;
 using std::cout;
@@ -480,6 +481,7 @@ bool containsDigit(const string &str)
 
 void GenerateStudentsFile(int n)
 {
+    std::filesystem::create_directories("Data");
     srand(time(NULL));
     int ndRand = rand() % 16 + 5;
     ofstream rez("Data\\studentaiGen" + std::to_string(n) + ".txt");
