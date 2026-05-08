@@ -30,13 +30,13 @@ using std::streamsize;
 using std::string;
 using std::stringstream;
 
-void outputas(deque<Studentas> grupe)
+void outputas(deque<Studentas>& grupe)
 {
-    int temp, t;
+    int outputChoice, t;
     cout << "Pasirinkite norimu formatu isvesti duomenis" << endl;
     cout << "1 - isvesti tik Vidurki\n2 - isvesti tik Mediana\n3 - isvesti ir Vidurki ir Mediana\n";
-    intInput(temp);
-    int sortChoice = getSortChoice(temp);
+    intInput(outputChoice);
+    int sortChoice = getSortChoice(outputChoice);
     sortByUser(grupe, sortChoice);
     cout << "Pasirinkite norima buda isvesti duomenis" << endl;
     cout << "1 - isvesti i konsole\n2 - isvesti i faila\n";
@@ -44,7 +44,7 @@ void outputas(deque<Studentas> grupe)
     switch (t)
     {
     case 1:
-        duomenuIrasymasKonsole(grupe, sortChoice);
+        duomenuIrasymasKonsole(grupe, outputChoice);
         break;
     case 2:
     {
@@ -55,8 +55,8 @@ void outputas(deque<Studentas> grupe)
         sortByUser(failed, sortChoice);
         sortByUser(passed, sortChoice);
 
-        duomenuIrasymasFaile(failed, sortChoice, "failed.txt");
-        duomenuIrasymasFaile(passed, sortChoice, "passed.txt");
+        duomenuIrasymasFaile(failed, outputChoice, "failed.txt");
+        duomenuIrasymasFaile(passed, outputChoice, "passed.txt");
 
         cout << "Studentai isskirti i dvi grupes ir isvesti i failus." << endl;
         break;
