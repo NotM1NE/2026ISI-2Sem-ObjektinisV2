@@ -643,6 +643,7 @@ void benchmarkProcessingFile(int n, int testKiekis, int strategy)
     Studentas s4(move(s2));
     cout << "\nMove konstruktorius: Studentas s4(move(s2))\n";
     cout << "s4: " << s4.vardas() << " " << s4.pavarde() << " Vid: " << s4.vid() << " Med: " << s4.med() << endl;
+    cout << "s2: " << s2.vardas() << " " << s2.pavarde() << " Vid: " << s2.vid() << " Med: " << s2.med() << endl;
 
     Studentas s5;
     s5 = move(s3);
