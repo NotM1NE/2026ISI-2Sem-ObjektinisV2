@@ -12,16 +12,16 @@ protected:
     string _pavarde;
 
 public:
-    Zmogus() {}
+    Zmogus() : _vardas(""), _pavarde("") {}
     Zmogus(const string &vardas, const string &pavarde)
         : _vardas(vardas), _pavarde(pavarde) {}
 
-    virtual ~Zmogus() {}
+    virtual ~Zmogus() = default;
 
-    virtual void spausdinti() const = 0; //dont get it
+    virtual void spausdinti() const = 0;
 
-    inline const string vardas() const { return _vardas; }
-    inline const string pavarde() const { return _pavarde; }
+    inline const string& vardas() const { return _vardas; }
+    inline const string& pavarde() const { return _pavarde; }
 
     void SetVardas(const string &vardas) { _vardas = vardas; }
     void SetPavarde(const string &pavarde) { _pavarde = pavarde; }
