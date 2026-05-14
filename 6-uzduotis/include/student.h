@@ -18,7 +18,8 @@ private:
     double _med;
 
 public:
-    Studentas() : _egz(0), _vid(0.0), _med(0.0) {}
+    //konstrutkroius
+    Studentas() : _vardas(""), _pavarde(""), _paz(), _egz(0), _vid(0.0), _med(0.0) {}
     Studentas(std::istream &is);
 
     inline const string vardas() const { return _vardas; }
@@ -39,6 +40,13 @@ public:
     void ClearPaz() { _paz.clear(); }
 
     void MedIrVidSkaciavimas(int sum);
+    
+    //destruktorius
+    ~Studentas() {
+        _vardas.clear(); 
+        _pavarde.clear(); 
+        _paz.clear();
+    };
 };
 
 #endif
