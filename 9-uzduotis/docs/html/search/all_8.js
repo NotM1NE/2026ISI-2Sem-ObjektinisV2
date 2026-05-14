@@ -1,8 +1,6 @@
 var searchData=
 [
-  ['inputas_0',['inputas',['../student__io__deque_8h.html#af229ce85d1d6f065bade83b81800e066',1,'inputas(deque&lt; Studentas &gt; &amp;grupe):&#160;io_deque.cpp'],['../student__io__list_8h.html#a209c8558cf7b220bd6e9ca98bb05b1d1',1,'inputas(list&lt; Studentas &gt; &amp;grupe):&#160;io_list.cpp'],['../student__io__vector_8h.html#a48aa126d7143c8a4b2649d498199c3c7',1,'inputas(vector&lt; Studentas &gt; &amp;grupe):&#160;io_vector.cpp'],['../io__deque_8cpp.html#af229ce85d1d6f065bade83b81800e066',1,'inputas(deque&lt; Studentas &gt; &amp;grupe):&#160;io_deque.cpp'],['../io__list_8cpp.html#a209c8558cf7b220bd6e9ca98bb05b1d1',1,'inputas(list&lt; Studentas &gt; &amp;grupe):&#160;io_list.cpp'],['../io__vector_8cpp.html#a48aa126d7143c8a4b2649d498199c3c7',1,'inputas(vector&lt; Studentas &gt; &amp;grupe):&#160;io_vector.cpp']]],
-  ['intinput_1',['intInput',['../utils_8h.html#ada7406d541e47650e22045d6755d59dd',1,'intInput(int &amp;temp):&#160;utils.cpp'],['../utils_8cpp.html#ada7406d541e47650e22045d6755d59dd',1,'intInput(int &amp;temp):&#160;utils.cpp']]],
-  ['io_5fdeque_2ecpp_2',['io_deque.cpp',['../io__deque_8cpp.html',1,'']]],
-  ['io_5flist_2ecpp_3',['io_list.cpp',['../io__list_8cpp.html',1,'']]],
-  ['io_5fvector_2ecpp_4',['io_vector.cpp',['../io__vector_8cpp.html',1,'']]]
+  ['has_5finsertion_5foperator_0',['has_insertion_operator',['../structdoctest_1_1detail_1_1has__insertion__operator.html',1,'doctest::detail']]],
+  ['has_5finsertion_5foperator_3c_20t_2c_20decltype_28operator_3c_3c_28declval_3c_20std_3a_3aostream_20_26_20_3e_28_29_2c_20declval_3c_20const_20t_20_26_20_3e_28_29_29_2c_20void_28_29_29_3e_1',['has_insertion_operator&lt; T, decltype(operator&lt;&lt;(declval&lt; std::ostream &amp; &gt;(), declval&lt; const T &amp; &gt;()), void())&gt;',['../structdoctest_1_1detail_1_1has__insertion__operator_3_01_t_00_01decltype_07operator_3_3_07declvab094f732977dc5a8a6181e0b8269a776.html',1,'doctest::detail']]],
+  ['help_2',['help',['../structdoctest_1_1_context_options.html#a9d542a95ee03f61c233fff51e7461400',1,'doctest::ContextOptions']]]
 ];

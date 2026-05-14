@@ -30,7 +30,7 @@ public:
     /**
      * @brief Konstruktorius
      */
-    Zmogus() {}
+    Zmogus() : _vardas(""), _pavarde("") {}
     /**
      * @brief Konstruktorius su vardu ir pavarde
      * @param vardas Zmogus vardas
@@ -41,7 +41,7 @@ public:
     /**
      * @brief Destruktorius
      */
-    virtual ~Zmogus() {}
+    virtual ~Zmogus() = default;
 
     virtual void spausdinti() const = 0;
     /**

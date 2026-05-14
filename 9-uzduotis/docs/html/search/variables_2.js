@@ -1,5 +1,5 @@
 var searchData=
 [
-  ['vardai_0',['vardai',['../utils_8h.html#aef9f9c749c51311b7aab4ce5c7f54c2e',1,'vardai:&#160;utils.cpp'],['../utils_8cpp.html#aef9f9c749c51311b7aab4ce5c7f54c2e',1,'vardai:&#160;utils.cpp']]],
-  ['vyr_5fpavardes_1',['vyr_pavardes',['../utils_8h.html#a538338880add734b51daa6959526b4bb',1,'vyr_pavardes:&#160;utils.cpp'],['../utils_8cpp.html#a538338880add734b51daa6959526b4bb',1,'vyr_pavardes:&#160;utils.cpp']]]
+  ['binary_5fname_0',['binary_name',['../structdoctest_1_1_context_options.html#a0590006b4d10296c9a697e32ff886f74',1,'doctest::ContextOptions']]],
+  ['buf_1',['buf',['../classdoctest_1_1_string.html#a7e031ced488588936a540eba26facf67',1,'doctest::String']]]
 ];

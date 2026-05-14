@@ -1,7 +1,15 @@
 var searchData=
 [
-  ['operator_3c_3c_0',['operator&lt;&lt;',['../student_8h.html#a4062cbd3f4c44fac2063e38cfa00a8cf',1,'operator&lt;&lt;(std::ostream &amp;os, const Studentas &amp;s):&#160;student.cpp'],['../student_8cpp.html#a4062cbd3f4c44fac2063e38cfa00a8cf',1,'operator&lt;&lt;(std::ostream &amp;os, const Studentas &amp;s):&#160;student.cpp']]],
-  ['operator_3d_1',['operator=',['../class_studentas.html#a25bcc531503d3bc490dab4a656e3b8e9',1,'Studentas::operator=(const Studentas &amp;other)'],['../class_studentas.html#a6379482d741209e9a2d902023676fb45',1,'Studentas::operator=(Studentas &amp;&amp;other) noexcept']]],
-  ['operator_3e_3e_2',['operator&gt;&gt;',['../student_8h.html#ac63003b577b137ac6ad5b1fb176bd59a',1,'operator&gt;&gt;(std::istream &amp;is, Studentas &amp;s):&#160;student.cpp'],['../student_8cpp.html#ac63003b577b137ac6ad5b1fb176bd59a',1,'operator&gt;&gt;(std::istream &amp;is, Studentas &amp;s):&#160;student.cpp']]],
-  ['outputas_3',['outputas',['../student__io__deque_8h.html#a85e6eebcbc4fa24c61632a5f9cfdced8',1,'outputas(deque&lt; Studentas &gt; &amp;grupe):&#160;io_deque.cpp'],['../student__io__list_8h.html#a20fc0ff0022ebb570ee7e3a0932bd8b6',1,'outputas(list&lt; Studentas &gt; &amp;grupe):&#160;io_list.cpp'],['../student__io__vector_8h.html#af2184771dc41b31f5017f499ab4b123e',1,'outputas(vector&lt; Studentas &gt; &amp;grupe):&#160;io_vector.cpp'],['../io__deque_8cpp.html#a85e6eebcbc4fa24c61632a5f9cfdced8',1,'outputas(deque&lt; Studentas &gt; &amp;grupe):&#160;io_deque.cpp'],['../io__list_8cpp.html#a20fc0ff0022ebb570ee7e3a0932bd8b6',1,'outputas(list&lt; Studentas &gt; &amp;grupe):&#160;io_list.cpp'],['../io__vector_8cpp.html#af2184771dc41b31f5017f499ab4b123e',1,'outputas(vector&lt; Studentas &gt; &amp;grupe):&#160;io_vector.cpp']]]
+  ['last_0',['last',['../structdoctest_1_1_context_options.html#a5aaf1b28f6a46d8acb40898a502b6bef',1,'doctest::ContextOptions']]],
+  ['le_1',['le',['../namespacedoctest_1_1detail_1_1binary_assert_comparison.html#a2117cafa5b007d26f2e0988f3a081569a58efccb94f787a00914adc6db077347b',1,'doctest::detail::binaryAssertComparison']]],
+  ['lhs_2',['lhs',['../structdoctest_1_1detail_1_1_expression__lhs.html#ab9a46f4dcddaea288b56f8247d9d9886',1,'doctest::detail::Expression_lhs']]],
+  ['lightgrey_3',['LightGrey',['../namespacedoctest_1_1_color.html#a32e9eaf6013139846e848af6e6cf2b92a44f079a43a4709abd7d6f22b317838a2',1,'doctest::Color']]],
+  ['list_5freporters_4',['list_reporters',['../structdoctest_1_1_context_options.html#ad3daf077ac3182db5175f8baff49fce0',1,'doctest::ContextOptions']]],
+  ['list_5ftest_5fcases_5',['list_test_cases',['../structdoctest_1_1_context_options.html#a813e1543c358ab8a7a432b4ad2b32e56',1,'doctest::ContextOptions']]],
+  ['list_5ftest_5fsuites_6',['list_test_suites',['../structdoctest_1_1_context_options.html#a579399a66b278cbf96b6183d337f486b',1,'doctest::ContextOptions']]],
+  ['log_7',['log',['../structdoctest_1_1detail_1_1_result_builder.html#a2af75dd1d8db8d3aa949d78025854085',1,'doctest::detail::ResultBuilder::log()'],['../structdoctest_1_1detail_1_1_message_builder.html#a9bcc5d56e1764a7e07efebca55e43cce',1,'doctest::detail::MessageBuilder::log()']]],
+  ['log_5fassert_8',['log_assert',['../structdoctest_1_1_i_reporter.html#a5bb54923eab233bb02f2fcfc178fa12a',1,'doctest::IReporter']]],
+  ['log_5fmessage_9',['log_message',['../structdoctest_1_1_i_reporter.html#a2b2cb4f15aa7417d4903a0edc3147018',1,'doctest::IReporter']]],
+  ['logged_10',['logged',['../structdoctest_1_1detail_1_1_message_builder.html#ab99f0292c65f7a4311a6ecd94f313bf3',1,'doctest::detail::MessageBuilder']]],
+  ['lt_11',['lt',['../namespacedoctest_1_1detail_1_1binary_assert_comparison.html#a2117cafa5b007d26f2e0988f3a081569aea0e8621512e05d78d88ff2d2c164a6b',1,'doctest::detail::binaryAssertComparison']]]
 ];

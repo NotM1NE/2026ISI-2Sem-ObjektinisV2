@@ -2,7 +2,7 @@ var class_studentas =
 [
     [ "Studentas", "class_studentas.html#ab459e995e8c9b24cdc9aec5b09a66539", null ],
     [ "Studentas", "class_studentas.html#a00d6db6706f5e4182d3677ea4e90de61", null ],
-    [ "~Studentas", "class_studentas.html#a63e449e0f51a0b14340d02ee71b4be23", null ],
+    [ "~Studentas", "class_studentas.html#a91fbebba5c6999f73767467607a6afbc", null ],
     [ "Studentas", "class_studentas.html#aef0484fe46cf05746f8ffc0d083fcf3e", null ],
     [ "Studentas", "class_studentas.html#a732b15e3745fa8e35ff0002cfc4b73b5", null ],
     [ "AddPaz", "class_studentas.html#a9fa50d4e636735ddd03bc08a4a0a547e", null ],

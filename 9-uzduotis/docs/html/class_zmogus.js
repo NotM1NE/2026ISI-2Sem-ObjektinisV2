@@ -2,7 +2,7 @@ var class_zmogus =
 [
     [ "Zmogus", "class_zmogus.html#aa7a8ba4d3c4778f9b35d59eef3e72574", null ],
     [ "Zmogus", "class_zmogus.html#ac7034e8672e7feda0e3e1303a5336f2b", null ],
-    [ "~Zmogus", "class_zmogus.html#ac5615bf607a8f2f1b303ffa04328d24d", null ],
+    [ "~Zmogus", "class_zmogus.html#a6183937c7da8254430a6c99cfa89fe69", null ],
     [ "pavarde", "class_zmogus.html#aea6ec4b7bc673de8a19f213530b1fae1", null ],
     [ "SetPavarde", "class_zmogus.html#ab112bd4db2cd981a2a7e88b488c5c5ad", null ],
     [ "SetVardas", "class_zmogus.html#a31544c5da6e98eaf465da4fab1cb33b1", null ],

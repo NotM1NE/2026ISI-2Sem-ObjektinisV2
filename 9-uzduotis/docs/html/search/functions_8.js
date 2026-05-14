@@ -1,6 +1,6 @@
 var searchData=
 [
-  ['main_0',['main',['../main__deque_8cpp.html#ae66f6b31b5ad750f1fe042a706a4e3d4',1,'main():&#160;main_deque.cpp'],['../main__list_8cpp.html#ae66f6b31b5ad750f1fe042a706a4e3d4',1,'main():&#160;main_list.cpp'],['../main__vector_8cpp.html#ae66f6b31b5ad750f1fe042a706a4e3d4',1,'main():&#160;main_vector.cpp']]],
-  ['med_1',['med',['../class_studentas.html#a629f834d433c81a4e91ba10cd17082a3',1,'Studentas']]],
-  ['medirvidskaciavimas_2',['MedIrVidSkaciavimas',['../class_studentas.html#a62e047ac6034f8ef7a72acb2d2567846',1,'Studentas']]]
+  ['log_0',['log',['../structdoctest_1_1detail_1_1_result_builder.html#a2af75dd1d8db8d3aa949d78025854085',1,'doctest::detail::ResultBuilder::log()'],['../structdoctest_1_1detail_1_1_message_builder.html#a9bcc5d56e1764a7e07efebca55e43cce',1,'doctest::detail::MessageBuilder::log()']]],
+  ['log_5fassert_1',['log_assert',['../structdoctest_1_1_i_reporter.html#a5bb54923eab233bb02f2fcfc178fa12a',1,'doctest::IReporter']]],
+  ['log_5fmessage_2',['log_message',['../structdoctest_1_1_i_reporter.html#a2b2cb4f15aa7417d4903a0edc3147018',1,'doctest::IReporter']]]
 ];

@@ -37,7 +37,7 @@ public:
      * Sukuria tuscia studento objekta.
      * Nustato pazymius 0
      */
-    Studentas() : Zmogus(), _egz(0), _vid(0.0), _med(0.0) {}
+    Studentas() : Zmogus(), _paz(), _egz(0), _vid(0.0), _med(0.0) {}
     /**
      * @brief Konstruktorius, kuris nuskaito studento duomenis is ivesties srauto
      *
@@ -48,7 +48,7 @@ public:
     /**
      * @brief Destruktorius
      */
-    ~Studentas(); // destruktorius
+    ~Studentas() = default; // destruktorius
     /**
      * @brief Kopijavimo konstruktorius.
      * @param other Studentas objektas, is kurio kopijuojami duomenys.
