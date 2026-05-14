@@ -41,7 +41,7 @@ public:
     /**
      * @brief Destruktorius
      */
-    virtual ~Zmogus() {}
+    virtual ~Zmogus() = default;
 
     virtual void spausdinti() const = 0;
     /**
