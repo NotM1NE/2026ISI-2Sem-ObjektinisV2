@@ -16,16 +16,6 @@ std::istream &Studentas::ReadStudent(std::istream &is)
     is >> _vardas >> _pavarde;
     return is;
 }
-//Destruktorius
-Studentas::~Studentas()
-{
-    _vardas.clear();
-    _pavarde.clear();
-    _paz.clear();
-    _egz = 0;
-    _vid = 0.0;
-    _med = 0.0;
-}
 
 //Copy konstruktorius
 Studentas::Studentas(const Studentas &other)

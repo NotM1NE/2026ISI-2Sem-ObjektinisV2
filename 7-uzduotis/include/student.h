@@ -47,12 +47,7 @@ public:
     void MedIrVidSkaciavimas(int sum);
 
     // destruktorius
-    ~Studentas()
-    {
-        _vardas.clear();
-        _pavarde.clear();
-        _paz.clear();
-    }
+    ~Studentas() = default;
 };
 
 std::istream &operator>>(std::istream &is, Studentas &s);
