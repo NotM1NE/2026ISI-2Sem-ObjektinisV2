@@ -46,6 +46,9 @@ public:
         _vardas.clear(); 
         _pavarde.clear(); 
         _paz.clear();
+        _egz = 0;
+        _vid = 0.0;
+        _med = 0.0;
     };
 };
 
