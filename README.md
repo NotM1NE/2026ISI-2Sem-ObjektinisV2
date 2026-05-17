@@ -1,142 +1,77 @@
-# Studentų pažymių skaičiavimo programa
+## MyVector funkciju pavyzdziai
 
-Programa skirta studentų duomenims apdoroti. Ji leidžia įvesti arba nuskaityti studentų vardus, pavardes, namų darbų pažymius ir egzamino rezultatą. Pagal šiuos duomenis apskaičiuojamas galutinis balas pagal vidurkį ir medianą.
+### PushBack
 
-## Funkcionalumas
+```cpp
+MyVector<int> v;
+v.PushBack(10);
+v.PushBack(20);
+```
 
-- Duomenų įvedimas ranka.
-- Atsitiktinis pažymių generavimas.
-- Atsitiktinis studentų vardų, pavardžių ir pažymių generavimas.
-- Duomenų nuskaitymas iš failo.
-- Studentų rūšiavimas pagal vardą, pavardę, galutinį balą pagal vidurkį arba medianą.
-- Studentų skirstymas į išlaikiusius ir neišlaikiusius.
-- Darbas su `vector`, `list` ir `deque` konteineriais.
-- Realizuota `Studentas` klasė.
-- Realizuota abstrakti bazinė klasė `Zmogus`.
-- Realizuota Rule of Five.
-- Pridėti unit testai.
-- Sugeneruota Doxygen dokumentacija.
+### Resize
 
-## Projekto struktūra
+```cpp
+MyVector<int> v = {1, 2, 3};
+v.Resize(5, 9);
+// Rezultatas: 1 2 3 9 9
+```
 
-- `include/` – antraštiniai failai.
-- `src/` – programos realizacijos failai.
-- `tests/` – unit testai.
-- `docs/` – Doxygen dokumentacija.
-- `Doxyfile` – Doxygen konfigūracija.
-- `Makefile` – kompiliavimo instrukcijos.
+### Insert
 
-## Kompiliavimas
+```cpp
+MyVector<int> v = {1, 2, 3};
+v.Insert(1, 99);
+// Rezultatas: 1 99 2 3
+```
 
-Sukompiliuoti visas programos versijas:
+### Erase
 
-`make all`
+```cpp
+MyVector<int> v = {1, 2, 3};
+v.Erase(1);
+// Rezultatas: 1 3
+```
 
-Sukompiliuoti deque programos versija su flagais:
+### operator==
 
-`make opt`
+```cpp
+MyVector<int> a = {1, 2, 3};
+MyVector<int> b = {1, 2, 3};
 
-## Programos paleidimas
+if (a == b) {
+    // vektoriai lygus
+}
+```
 
-Paleisti `deque` versiją:
-
-`./deque_app`
-
-
-Paleisti `vector` versiją:
-
-`./vector_app`
-
-Paleisti `list` versiją:
-
-`./list_app`
-
-## Failų išvalymas
-
-Ištrinti sukompiliuotus failus:
-
-`make clean`
-
+---
 
 ## Unit testai
 
-Unit testai realizuoti naudojant `doctest` framework.
+Testavimui naudotas doctest framework.
 
-Testai tikrina:
+Rezultatas:
 
-- numatytąjį `Studentas` konstruktorių;
-- setterius ir getterius;
-- galutinio balo skaičiavimą pagal vidurkį;
-- galutinio balo skaičiavimą pagal medianą;
-- pažymių išvalymą;
-- kopijavimo konstruktorių;
-- kopijavimo priskyrimo operatorių;
-- perkėlimo konstruktorių;
-- perkėlimo priskyrimo operatorių.
+```txt
+[doctest] test cases:  28 | 28 passed | 0 failed | 0 skipped
+[doctest] assertions: 103 | 103 passed | 0 failed |
+[doctest] Status: SUCCESS!
+```
 
-Testų sukompiliavimas:
+---
 
-`make test`
+## std::vector ir MyVector spartos palyginimas
 
+| Elementai | std::vector, s | MyVector, s | std perskirstymai | MyVector perskirstymai | ratio |
+|---:|---:|---:|---:|---:|---:|
+| 1 000 | 0.000011 | 0.000009 | 11 | 10 | 0.834862 |
+| 10 000 | 0.000079 | 0.000065 | 15 | 14 | 0.823380 |
+| 100 000 | 0.000609 | 0.000469 | 18 | 17 | 0.770734 |
+| 1 000 000 | 0.005748 | 0.004508 | 21 | 20 | 0.784335 |
+| 10 000 000 | 0.058093 | 0.048645 | 25 | 24 | 0.837364 |
+| 100 000 000 | 0.572705 | 0.470027 | 28 | 27 | 0.820714 |
 
-Testų paleidimas:
+Ratio reiksme apskaiciuota kaip `MyVector laikas / std::vector laikas`.
 
-`./student_tests.exe`
+Kai `ratio < 1`, `MyVector` konkreciame teste buvo greitesnis.
 
-
-
-## Doxygen dokumentacija
-
-Dokumentacija sugeneruota naudojant `Doxygen`.
-
-Dokumentacijos generavimas:
-
-`doxygen Doxyfile`
-
-Po sugeneravimo dokumentacija randama:
-
-- HTML: `docs/html/index.html`
-- LaTeX: `docs/latex/`
-- PDF: `docs/latex/refman.pdf`
-
-PDF sugeneravimas iš LaTeX:
-
-1. Pereiti į `docs/latex`
-2. Paleisti `pdflatex refman.tex` kelis kartus
-3. Gautas failas: `refman.pdf`
-
-## Versijos
-
-| Versija | Aprašymas |
-|---|---|
-| v1.0 | Pradinė programos versija. Realizuotas studentų duomenų įvedimas ir galutinio balo skaičiavimas. |
-| v1.1 | Programa papildyta `Studentas` klase. |
-| v1.2 | Realizuota Rule of Five. |
-| v1.5 | Sukurta abstrakti bazinė klasė `Zmogus`, kurią paveldi `Studentas`. |
-| v2.0 | Pridėti unit testai su `doctest` ir sugeneruota Doxygen dokumentacija HTML, LaTeX ir PDF formatais. |
-
-## Rule of Five
-
-`Studentas` klasėje realizuoti šie metodai:
-
-| Metodas | Paskirtis |
-|---|---|
-| Destruktorius | Sunaikina objektą. |
-| Kopijavimo konstruktorius | Sukuria naują objektą kopijuojant kitą objektą. |
-| Kopijavimo priskyrimo operatorius | Priskiria vieno objekto duomenis kitam jau egzistuojančiam objektui. |
-| Perkėlimo konstruktorius | Sukuria naują objektą perkeliant kito objekto duomenis. |
-| Perkėlimo priskyrimo operatorius | Perkelia kito objekto duomenis į jau egzistuojantį objektą. |
-
-## Naudoti įrankiai
-
-- C++
-- Makefile
-- Doxygen
-- MiKTeX
-- doctest
-- Git / GitHub
-
-## Šaltiniai
-
-- doctest: https://github.com/doctest/doctest/blob/master/doctest/doctest.h
-- MikTeX: https://miktex.org/
+Atminties perskirstymas skaiciuojamas tada, kai pries elemento pridejima konteinerio `size()` yra lygus `capacity()`. Tokiu atveju konteineryje nebera laisvos vietos naujam elementui, todel reikia alokuoti nauja didesni masyva ir perkelti esamus elementus.
