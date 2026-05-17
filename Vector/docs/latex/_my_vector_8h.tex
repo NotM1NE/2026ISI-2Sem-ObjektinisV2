@@ -1,0 +1,198 @@
+\doxysection{src/\+\+My\+Vector.h File Reference}
+\hypertarget{_my_vector_8h}{}\label{_my_vector_8h}\index{src/MyVector.h@{src/MyVector.h}}
+
+
+Vektoriaus klases aprasymas.  
+
+
+{\ttfamily \+\#include $<$utility$>$}\newline
+{\ttfamily \+\#include $<$stdexcept$>$}\newline
+{\ttfamily \+\#include $<$initializer\+\_\+list$>$}\newline
+\doxysubsubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+class \doxymbox{\hyperlink{class_my_vector}{My\+Vector$<$ T $>$}}
+\begin{DoxyCompactList}\small\item\em Dinaminio masyvo konteineris, panasus i originalu std::\+vector. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+{\footnotesize template$<$typename T$>$ }\\bool \doxymbox{\hyperlink{_my_vector_8h_a33f4c2139ce8b1bf25abb7102590041d}{operator==}} (const \doxymbox{\hyperlink{class_my_vector}{My\+Vector}}$<$ T $>$ \&a, const \doxymbox{\hyperlink{class_my_vector}{My\+Vector}}$<$ T $>$ \&b)
+\begin{DoxyCompactList}\small\item\em Patikrina, ar du vektoriai yra lygus. \end{DoxyCompactList}\item 
+{\footnotesize template$<$typename T$>$ }\\bool \doxymbox{\hyperlink{_my_vector_8h_a47de66fe6a084b449bed6c3e0c35912b}{operator!=}} (const \doxymbox{\hyperlink{class_my_vector}{My\+Vector}}$<$ T $>$ \&a, const \doxymbox{\hyperlink{class_my_vector}{My\+Vector}}$<$ T $>$ \&b)
+\begin{DoxyCompactList}\small\item\em Patikrina, ar du vektoriai nera lygus. \end{DoxyCompactList}\item 
+{\footnotesize template$<$typename T$>$ }\\bool \doxymbox{\hyperlink{_my_vector_8h_ad043eec5937dab3fa1b71dbf80c7717f}{operator$<$}} (const \doxymbox{\hyperlink{class_my_vector}{My\+Vector}}$<$ T $>$ \&a, const \doxymbox{\hyperlink{class_my_vector}{My\+Vector}}$<$ T $>$ \&b)
+\begin{DoxyCompactList}\small\item\em Patikrina, kuris vektorius yra didesnis. \end{DoxyCompactList}\item 
+{\footnotesize template$<$typename T$>$ }\\bool \doxymbox{\hyperlink{_my_vector_8h_a30d7f89ef15e0ab7807eeee738f96d38}{operator$>$}} (const \doxymbox{\hyperlink{class_my_vector}{My\+Vector}}$<$ T $>$ \&a, const \doxymbox{\hyperlink{class_my_vector}{My\+Vector}}$<$ T $>$ \&b)
+\begin{DoxyCompactList}\small\item\em Patikrina, kuris vektorius yra mazesnis. \end{DoxyCompactList}\item 
+{\footnotesize template$<$typename T$>$ }\\bool \doxymbox{\hyperlink{_my_vector_8h_a609de716744a37be93a126b4cc0d07e8}{operator$<$=}} (const \doxymbox{\hyperlink{class_my_vector}{My\+Vector}}$<$ T $>$ \&a, const \doxymbox{\hyperlink{class_my_vector}{My\+Vector}}$<$ T $>$ \&b)
+\begin{DoxyCompactList}\small\item\em Patikrina, ar pirmas vektorius yra mazesnis arba lygus antram. \end{DoxyCompactList}\item 
+{\footnotesize template$<$typename T$>$ }\\bool \doxymbox{\hyperlink{_my_vector_8h_a5e23df9fc31338d7bb931a5549231d24}{operator$>$=}} (const \doxymbox{\hyperlink{class_my_vector}{My\+Vector}}$<$ T $>$ \&a, const \doxymbox{\hyperlink{class_my_vector}{My\+Vector}}$<$ T $>$ \&b)
+\begin{DoxyCompactList}\small\item\em Patikrina, ar pirmas vektorius yra didesnis arba lygus antram. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Vektoriaus klases aprasymas. 
+
+
+
+\label{_my_vector_8h_doc-func-members}
+\Hypertarget{_my_vector_8h_doc-func-members}
+\doxysubsection{Function Documentation}
+\Hypertarget{_my_vector_8h_a47de66fe6a084b449bed6c3e0c35912b}\index{MyVector.h@{MyVector.h}!operator"!=@{operator"!=}}
+\index{operator"!=@{operator"!=}!MyVector.h@{MyVector.h}}
+\doxysubsubsection{\texorpdfstring{operator"!=()}{operator!=()}}
+{\footnotesize\ttfamily \label{_my_vector_8h_a47de66fe6a084b449bed6c3e0c35912b} 
+template$<$typename T$>$ \\
+bool operator!= (\begin{DoxyParamCaption}\item[{const \doxymbox{\hyperlink{class_my_vector}{My\+Vector}}$<$ T $>$ \&}]{a}{, }\item[{const \doxymbox{\hyperlink{class_my_vector}{My\+Vector}}$<$ T $>$ \&}]{b}{}\end{DoxyParamCaption})}
+
+
+
+Patikrina, ar du vektoriai nera lygus. 
+
+
+\begin{DoxyTemplParams}{Template Parameters}
+{\em T} & Elementu tipas. \\
+\hline
+\end{DoxyTemplParams}
+
+\begin{DoxyParams}{Parameters}
+{\em a} & Pirmas vektorius. \\
+\hline
+{\em b} & Antras vektorius. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true jei vektoriai nelygus, false kitu atveju. 
+\end{DoxyReturn}
+\Hypertarget{_my_vector_8h_ad043eec5937dab3fa1b71dbf80c7717f}\index{MyVector.h@{MyVector.h}!operator$<$@{operator$<$}}
+\index{operator$<$@{operator$<$}!MyVector.h@{MyVector.h}}
+\doxysubsubsection{\texorpdfstring{operator$<$()}{operator<()}}
+{\footnotesize\ttfamily \label{_my_vector_8h_ad043eec5937dab3fa1b71dbf80c7717f} 
+template$<$typename T$>$ \\
+bool operator$<$ (\begin{DoxyParamCaption}\item[{const \doxymbox{\hyperlink{class_my_vector}{My\+Vector}}$<$ T $>$ \&}]{a}{, }\item[{const \doxymbox{\hyperlink{class_my_vector}{My\+Vector}}$<$ T $>$ \&}]{b}{}\end{DoxyParamCaption})}
+
+
+
+Patikrina, kuris vektorius yra didesnis. 
+
+
+\begin{DoxyTemplParams}{Template Parameters}
+{\em T} & Elementu tipas. \\
+\hline
+\end{DoxyTemplParams}
+
+\begin{DoxyParams}{Parameters}
+{\em a} & Pirmas vektorius. \\
+\hline
+{\em b} & Antras vektorius. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true jei a yra mazesnis uz b, false kitu atveju. 
+\end{DoxyReturn}
+\Hypertarget{_my_vector_8h_a609de716744a37be93a126b4cc0d07e8}\index{MyVector.h@{MyVector.h}!operator$<$=@{operator$<$=}}
+\index{operator$<$=@{operator$<$=}!MyVector.h@{MyVector.h}}
+\doxysubsubsection{\texorpdfstring{operator$<$=()}{operator<=()}}
+{\footnotesize\ttfamily \label{_my_vector_8h_a609de716744a37be93a126b4cc0d07e8} 
+template$<$typename T$>$ \\
+bool operator$<$= (\begin{DoxyParamCaption}\item[{const \doxymbox{\hyperlink{class_my_vector}{My\+Vector}}$<$ T $>$ \&}]{a}{, }\item[{const \doxymbox{\hyperlink{class_my_vector}{My\+Vector}}$<$ T $>$ \&}]{b}{}\end{DoxyParamCaption})}
+
+
+
+Patikrina, ar pirmas vektorius yra mazesnis arba lygus antram. 
+
+
+\begin{DoxyTemplParams}{Template Parameters}
+{\em T} & Elementu tipas. \\
+\hline
+\end{DoxyTemplParams}
+
+\begin{DoxyParams}{Parameters}
+{\em a} & Pirmas vektorius. \\
+\hline
+{\em b} & Antras vektorius. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true jei a yra mazesnis arba lygus b, false kitu atveju. 
+\end{DoxyReturn}
+\Hypertarget{_my_vector_8h_a33f4c2139ce8b1bf25abb7102590041d}\index{MyVector.h@{MyVector.h}!operator==@{operator==}}
+\index{operator==@{operator==}!MyVector.h@{MyVector.h}}
+\doxysubsubsection{\texorpdfstring{operator==()}{operator==()}}
+{\footnotesize\ttfamily \label{_my_vector_8h_a33f4c2139ce8b1bf25abb7102590041d} 
+template$<$typename T$>$ \\
+bool operator== (\begin{DoxyParamCaption}\item[{const \doxymbox{\hyperlink{class_my_vector}{My\+Vector}}$<$ T $>$ \&}]{a}{, }\item[{const \doxymbox{\hyperlink{class_my_vector}{My\+Vector}}$<$ T $>$ \&}]{b}{}\end{DoxyParamCaption})}
+
+
+
+Patikrina, ar du vektoriai yra lygus. 
+
+Vektoriai laikomi lygiais, jei ju dydziai sutampa ir visi elementai yra lygus.
+
+
+\begin{DoxyTemplParams}{Template Parameters}
+{\em T} & Elementu tipas. \\
+\hline
+\end{DoxyTemplParams}
+
+\begin{DoxyParams}{Parameters}
+{\em a} & Pirmas vektorius. \\
+\hline
+{\em b} & Antras vektorius. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true jei vektoriai lygus, false kitu atveju. 
+\end{DoxyReturn}
+\Hypertarget{_my_vector_8h_a30d7f89ef15e0ab7807eeee738f96d38}\index{MyVector.h@{MyVector.h}!operator$>$@{operator$>$}}
+\index{operator$>$@{operator$>$}!MyVector.h@{MyVector.h}}
+\doxysubsubsection{\texorpdfstring{operator$>$()}{operator>()}}
+{\footnotesize\ttfamily \label{_my_vector_8h_a30d7f89ef15e0ab7807eeee738f96d38} 
+template$<$typename T$>$ \\
+bool operator$>$ (\begin{DoxyParamCaption}\item[{const \doxymbox{\hyperlink{class_my_vector}{My\+Vector}}$<$ T $>$ \&}]{a}{, }\item[{const \doxymbox{\hyperlink{class_my_vector}{My\+Vector}}$<$ T $>$ \&}]{b}{}\end{DoxyParamCaption})}
+
+
+
+Patikrina, kuris vektorius yra mazesnis. 
+
+
+\begin{DoxyTemplParams}{Template Parameters}
+{\em T} & Elementu tipas. \\
+\hline
+\end{DoxyTemplParams}
+
+\begin{DoxyParams}{Parameters}
+{\em a} & Pirmas vektorius. \\
+\hline
+{\em b} & Antras vektorius. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true jei b yra mazesnis uz a, false kitu atveju. 
+\end{DoxyReturn}
+\Hypertarget{_my_vector_8h_a5e23df9fc31338d7bb931a5549231d24}\index{MyVector.h@{MyVector.h}!operator$>$=@{operator$>$=}}
+\index{operator$>$=@{operator$>$=}!MyVector.h@{MyVector.h}}
+\doxysubsubsection{\texorpdfstring{operator$>$=()}{operator>=()}}
+{\footnotesize\ttfamily \label{_my_vector_8h_a5e23df9fc31338d7bb931a5549231d24} 
+template$<$typename T$>$ \\
+bool operator$>$= (\begin{DoxyParamCaption}\item[{const \doxymbox{\hyperlink{class_my_vector}{My\+Vector}}$<$ T $>$ \&}]{a}{, }\item[{const \doxymbox{\hyperlink{class_my_vector}{My\+Vector}}$<$ T $>$ \&}]{b}{}\end{DoxyParamCaption})}
+
+
+
+Patikrina, ar pirmas vektorius yra didesnis arba lygus antram. 
+
+
+\begin{DoxyTemplParams}{Template Parameters}
+{\em T} & Elementu tipas. \\
+\hline
+\end{DoxyTemplParams}
+
+\begin{DoxyParams}{Parameters}
+{\em a} & Pirmas vektorius. \\
+\hline
+{\em b} & Antras vektorius. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true jei a yra didesnis arba lygus b, false kitu atveju. 
+\end{DoxyReturn}

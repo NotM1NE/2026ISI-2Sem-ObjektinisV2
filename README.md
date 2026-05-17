@@ -57,7 +57,6 @@ if (a == b) {
 | OS          | Windows PRO 64-bit                           |
 | MotherBoard | B850 Pro RS WiFi                             |
 
----
 
 Testavimui naudotas doctest framework.
 
