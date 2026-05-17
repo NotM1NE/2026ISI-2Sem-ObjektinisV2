@@ -268,6 +268,5 @@ Si lentele parodo, kad problema yra ne visas konteineris, o konkrecios operacijo
 5. Strategijoje 1 su `10 000 000` irasu `MyVector` bendras laikas buvo geresnis uz `std::vector`.
 6. Strategijoje 2 `std::vector` daugeliu atveju buvo greitesnis.
 7. Strategijoje 3 `MyVector` pradine realizacija buvo neefektyvi del daugkartinio `Erase(index)` naudojimo.
-8. Norint pagerinti Strategija 3, reiketu `MyVector` klaseje realizuoti intervalo trynima, pvz. `Erase(iterator first, iterator last)`.
 
 ---
