@@ -47,6 +47,18 @@ if (a == b) {
 
 ## Unit testai
 
+### Testai buvo vykdomi kompiuteryje su šiais parametrais:
+  
+| Komponentas | Specifikacija                                |
+| ----------- | -------------------------------------------- |
+| CPU         | AMD Ryzen 9 9900X (12 branduolių, 4.40 GHz) |
+| RAM         | 32 GB DDR5 RAM (6000 MT/s)                   |
+| GPU         | NVIDIA GeForce RTX 5070 Ti (16 GB VRAM)      |
+| OS          | Windows PRO 64-bit                           |
+| MotherBoard | B850 Pro RS WiFi                             |
+
+---
+
 Testavimui naudotas doctest framework.
 
 Rezultatas:
