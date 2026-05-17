@@ -100,5 +100,5 @@ doxygen Doxyfile
 Dokumentacija rasite:
 
 ```bash
-Vector/docs/index.html
+Vector/docs/html/index.html
 ```
