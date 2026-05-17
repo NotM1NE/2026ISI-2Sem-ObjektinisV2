@@ -4,26 +4,26 @@
 
 int main()
 {
-    std::vector<int> miau;
-    MyVector<int> miau2;
-    miau.resize(20, 2);
-    miau2.Resize(10, 5);
-    for (int i = 0; i < miau.size(); i++)
-    {
-        std::cout << miau[i] << std::endl;
-    }
-    std::cout << "---------" << std::endl;
-    for (int i = 0; i < miau2.size(); i++)
-    {
-        std::cout << miau2[i] << std::endl;
-    }
-    miau.shrink_to_fit();
+    MyVector<int> v = {1, 2, 3, 4, 5};
+    v.PushBack(4);
+    v.Insert(1, 99);
+    v.Erase(2);
+    v.Resize(6, 5);
+    v.ShrinkToFit();
 
-    std::cout << miau.at(4) << std::endl;
-    miau2.PushBack(6);
-    std::cout << miau2.Back() << std::endl;
+    for (int x : v)
+    {
+        std::cout << x << " ";
+    }
 
-    // std::cout << (miau2 > miau) << std::endl;
-    // std::cout << (miau2 < miau) << std::endl;
+    std::cout << "\nFront: " << v.Front();
+    std::cout << "\nBack: " << v.Back();
+    std::cout << "\nSize: " << v.size();
+    std::cout << "\nCapacity: " << v.capacity();
+
+    MyVector<int> copy = v;
+    std::cout << "\nEqual: " << (copy == v);
+
+    return 0;
     return 0;
 }
