@@ -86,3 +86,19 @@ Ratio reiksme apskaiciuota kaip `MyVector laikas / std::vector laikas`.
 Kai `ratio < 1`, `MyVector` konkreciame teste buvo greitesnis.
 
 Atminties perskirstymas skaiciuojamas tada, kai pries elemento pridejima konteinerio `size()` yra lygus `capacity()`. Tokiu atveju konteineryje nebera laisvos vietos naujam elementui, todel reikia alokuoti nauja didesni masyva ir perkelti esamus elementus.
+
+## Dokumentacija
+
+MyVector konteineris dokumentuotas naudojant Doxygen.
+
+Dokumentacijos generavimas:
+
+```bash
+doxygen Doxyfile
+```
+
+Dokumentacija rasite:
+
+```bash
+Vector/docs/index.html
+```
