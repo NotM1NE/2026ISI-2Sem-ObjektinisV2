@@ -1,3 +1,54 @@
+# MyVector konteineris
+
+Siame projekte realizuotas nuosavas `MyVector` konteineris, kuris funkcionalumu yra panasus i `std::vector`. Konteineris palaiko dinamini atminties perskirstyma, elementu pridejima, trynima, kopijavima, perkelima, iteratorius, palyginimo operatorius ir kitas pagrindines funkcijas.
+
+`MyVector` konteineris buvo pritaikytas studentu duomenu apdorojimo programoje ir palygintas su `std::vector`.
+
+Projektas turi:
+
+- `MyVector` konteinerio realizacija;
+- unit testus;
+- Doxygen dokumentacija;
+- `std::vector` ir `MyVector` spartos analize;
+- studentu programos spartos palyginima;
+- programos diegimo faila `Setup.exe`.
+
+---
+
+## Kompiliavimas ir paleidimas
+
+### Unit testai
+
+```bash
+make test
+```
+
+### MyVector push_back benchmark
+
+```bash
+make benchmark
+```
+
+### Studentu programa su MyVector
+
+```bash
+make run-myvector
+```
+
+### Studentu programa su std::vector
+
+```bash
+make run-std
+```
+
+### Isvalymas
+
+```bash
+make clean
+```
+
+---
+
 ## MyVector funkciju pavyzdziai
 
 ### PushBack
@@ -8,6 +59,14 @@ v.PushBack(10);
 v.PushBack(20);
 ```
 
+Rezultatas:
+
+```txt
+10 20
+```
+
+---
+
 ### Resize
 
 ```cpp
@@ -15,6 +74,8 @@ MyVector<int> v = {1, 2, 3};
 v.Resize(5, 9);
 // Rezultatas: 1 2 3 9 9
 ```
+
+---
 
 ### Insert
 
@@ -24,6 +85,8 @@ v.Insert(1, 99);
 // Rezultatas: 1 99 2 3
 ```
 
+---
+
 ### Erase
 
 ```cpp
@@ -32,13 +95,16 @@ v.Erase(1);
 // Rezultatas: 1 3
 ```
 
+---
+
 ### operator==
 
 ```cpp
 MyVector<int> a = {1, 2, 3};
 MyVector<int> b = {1, 2, 3};
 
-if (a == b) {
+if (a == b)
+{
     // vektoriai lygus
 }
 ```
@@ -47,20 +113,19 @@ if (a == b) {
 
 ## Unit testai
 
-### Testai buvo vykdomi kompiuteryje su šiais parametrais:
-  
-| Komponentas | Specifikacija                                |
-| ----------- | -------------------------------------------- |
-| CPU         | AMD Ryzen 9 9900X (12 branduolių, 4.40 GHz) |
-| RAM         | 32 GB DDR5 RAM (6000 MT/s)                   |
-| GPU         | NVIDIA GeForce RTX 5070 Ti (16 GB VRAM)      |
-| OS          | Windows PRO 64-bit                           |
-| MotherBoard | B850 Pro RS WiFi                             |
+Testavimui naudotas `doctest` framework.
 
+### Testai buvo vykdomi kompiuteryje su siais parametrais
 
-Testavimui naudotas doctest framework.
+| Komponentas | Specifikacija |
+|---|---|
+| CPU | AMD Ryzen 9 9900X, 12 branduoliu, 4.40 GHz |
+| RAM | 32 GB DDR5 RAM, 6000 MT/s |
+| GPU | NVIDIA GeForce RTX 5070 Ti, 16 GB VRAM |
+| OS | Windows Pro 64-bit |
+| Motherboard | B850 Pro RS WiFi |
 
-Rezultatas:
+### Testu rezultatai
 
 ```txt
 [doctest] test cases:  28 | 28 passed | 0 failed | 0 skipped
@@ -68,9 +133,34 @@ Rezultatas:
 [doctest] Status: SUCCESS!
 ```
 
+Testuose buvo tikrinama:
+
+- default konstruktorius;
+- `PushBack`;
+- `PopBack`;
+- `Front`;
+- `Back`;
+- `At`;
+- `Resize`;
+- `Reserve`;
+- `ShrinkToFit`;
+- `Insert`;
+- `Erase`;
+- copy constructor;
+- copy assignment;
+- move constructor;
+- move assignment;
+- palyginimo operatoriai;
+- `Clear`;
+- `Assign`;
+- `Swap`;
+- `EmplaceBack`.
+
 ---
 
-## std::vector ir MyVector spartos palyginimas
+## std::vector ir MyVector push_back spartos palyginimas
+
+Buvo matuojama, kiek laiko uztrunka tuscia konteineri uzpildyti `int` elementais naudojant `push_back` / `PushBack`.
 
 | Elementai | std::vector, s | MyVector, s | std perskirstymai | MyVector perskirstymai | ratio |
 |---:|---:|---:|---:|---:|---:|
@@ -81,15 +171,23 @@ Rezultatas:
 | 10 000 000 | 0.058093 | 0.048645 | 25 | 24 | 0.837364 |
 | 100 000 000 | 0.572705 | 0.470027 | 28 | 27 | 0.820714 |
 
-Ratio reiksme apskaiciuota kaip `MyVector laikas / std::vector laikas`.
+`ratio` reiksme apskaiciuota taip:
+
+```txt
+ratio = MyVector laikas / std::vector laikas
+```
 
 Kai `ratio < 1`, `MyVector` konkreciame teste buvo greitesnis.
 
 Atminties perskirstymas skaiciuojamas tada, kai pries elemento pridejima konteinerio `size()` yra lygus `capacity()`. Tokiu atveju konteineryje nebera laisvos vietos naujam elementui, todel reikia alokuoti nauja didesni masyva ir perkelti esamus elementus.
 
+Siame teste `MyVector` buvo greitesnis uz `std::vector`. Taip galejo nutikti del paprastesnes realizacijos ir mazesnio papildomo funkcionalumo kiekio.
+
+---
+
 ## Dokumentacija
 
-MyVector konteineris dokumentuotas naudojant Doxygen.
+`MyVector` konteineris dokumentuotas naudojant Doxygen.
 
 Dokumentacijos generavimas:
 
@@ -97,11 +195,13 @@ Dokumentacijos generavimas:
 doxygen Doxyfile
 ```
 
-Dokumentacija rasite:
+Sugeneruota HTML dokumentacija randama:
 
-```bash
+```txt
 Vector/docs/html/index.html
 ```
+
+---
 
 # Studentu programos spartos analize
 
@@ -110,7 +210,7 @@ Buvo palygintos dvi studentu programos versijos:
 1. versija naudojanti `std::vector`;
 2. versija naudojanti sukurta `MyVector`.
 
-Abi versijos buvo kompiliuojamos su tuo paciu flagu:
+Abi versijos buvo kompiliuojamos su tuo paciu optimizavimo flagu:
 
 ```bash
 -O2
@@ -270,3 +370,29 @@ Si lentele parodo, kad problema yra ne visas konteineris, o konkrecios operacijo
 7. Strategijoje 3 `MyVector` pradine realizacija buvo neefektyvi del daugkartinio `Erase(index)` naudojimo.
 
 ---
+
+## Diegimo failas
+
+Programos diegimui sukurtas `Setup.exe` failas naudojant Inno Setup.
+
+Diegimo metu programa idiegiama i:
+
+```txt
+C:/Program Files (x86)/VU/Vardenis-Pavardenis
+```
+
+Sukuriamos nuorodos:
+
+- Desktop;
+- Start menu: `VU -> Vardenis-Pavardenis`.
+
+Diegimo pakete pateikiami testavimo failai:
+
+- `kursiokai.txt`;
+- `studentai10000.txt`;
+- `studentai100000.txt`;
+- `studentai1000000.txt`.
+
+`Data` katalogui suteikiamos rasymo teises, kad programa galetu generuoti ir isvesti rezultatu failus.
+
+Programos diegimo failas `Setup.exe` pateiktas GitHub `v3.0` release skiltyje.
