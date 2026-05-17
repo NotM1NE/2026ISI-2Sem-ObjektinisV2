@@ -26,9 +26,9 @@ template <typename T>
 class MyVector
 {
 private:
-    T *_data;      /**< Rodykle i masyva */
     int _size;     /**< Dabartinis vektoriaus dydis */
     int _capacity; /**< Rezervuotas atminties vietu skaicius */
+    T *_data;      /**< Rodykle i masyva */
 
     /**
      * @brief Padidina vektoriaus talpa.
