@@ -115,6 +115,8 @@ public:
      */
     ~MyVector()
     {
+        _size = 0;
+        _capacity = 0;
         delete[] _data;
     }
 
