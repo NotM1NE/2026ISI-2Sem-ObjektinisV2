@@ -1,0 +1,105 @@
+C++[b] is a high-level, general-purpose programming language created by Danish computer scientist Bjarne Stroustrup. First released in 1985 as an extension of the C programming language, adding object-oriented (OOP) features, it has since expanded significantly over time adding more OOP and other features; as of 1997/C++98 standardization, C++ has added functional features, in addition to facilities for low-level memory manipulation for systems like microcomputers or to make operating systems like Linux or Windows, and even later came features like generic programming (through the use of templates). C++ is usually implemented as a compiled language, and many vendors provide C++ compilers, including the Free Software Foundation, LLVM, Microsoft, Intel, Embarcadero, Oracle, and IBM.[16]
+
+C++ was designed with systems programming and embedded, resource-constrained software and large systems in mind, with performance, efficiency, and flexibility of use as its design highlights.[17] C++ has also been found useful in many other contexts, with key strengths being software infrastructure and resource-constrained applications,[17] including desktop applications, video games, servers (e.g., e-commerce, web search, or databases), and performance-critical applications (e.g., telephone switches or space probes).[18]
+
+C++ is standardized by the International Organization for Standardization (ISO), with the latest standard version ratified and published by ISO in October 2024 as ISO/IEC 14882:2024 (informally known as C++23).[19] The C++ programming language was initially standardized in 1998 as ISO/IEC 14882:1998, which was then amended by the C++03, C++11, C++14, C++17, and C++20 standards. The next C++23 standard superseded these with new features and an enlarged standard library. Before the initial standardization in 1998, C++ was developed by Stroustrup at Bell Labs since 1979 as an extension of the C language; he wanted an efficient and flexible language similar to C that also provided high-level features for program organization.[20] Since 2012, C++ has been on a three-year release schedule[21] with C++29 as the next planned standard.[22]
+
+History
+n 1979, Bjarne Stroustrup, a Danish computer scientist, began work on "C with Classes", the predecessor to C++.[23] The motivation for creating a new language originated from Stroustrup's experience in programming for his PhD thesis. Stroustrup found that Simula had features that were very helpful for large software development, but the language was too slow for practical use, while BCPL was fast but too low-level to be suitable for large software development. When Stroustrup started working in AT&T Bell Labs, he had the problem of analyzing the UNIX kernel with respect to distributed computing. Remembering his PhD experience, Stroustrup set out to enhance the C language with Simula-like features.[24] C was chosen because it was general-purpose, fast, portable, and widely used. In addition to C and Simula's influences, other languages influenced this new language, including ALGOL 68, Ada, CLU, and ML.[25]
+
+Initially, Stroustrup's "C with Classes" added features to the C compiler, Cpre, including classes, derived classes, strong typing, inlining, and default arguments.[26]
+
+In 1982, Stroustrup started to develop a successor to C with Classes, which he named "C++" (++ being the increment operator in C) after going through several other names. New features were added, including virtual functions, function and operator overloading, references, constants, type-safe free-store memory allocation (new/delete), improved type checking, and BCPL-style single-line comments with two forward slashes (//). Furthermore, Stroustrup developed a new, standalone compiler for C++, Cfront.
+
+In 1984, Stroustrup implemented the first stream input/output library. The idea of providing an output operator rather than a named output function was suggested by Doug McIlroy[4] (who had previously suggested Unix pipes).
+
+In 1985, the first edition of The C++ Programming Language was released, which became the definitive reference for the language, as there was not yet an official standard.[27] The first commercial implementation of C++ was released in October of the same year.[23]
+
+In 1989, C++ 2.0 was released, followed by the updated second edition of The C++ Programming Language in 1991.[28] New features in 2.0 included multiple inheritance, abstract classes, static member functions, const member functions, and protected members. In 1990, The Annotated C++ Reference Manual was published. This work became the basis for the future standard. Later feature additions included templates, exceptions, namespaces, new casts, and a Boolean type.
+
+In 1998, C++98 was released, standardizing the language, and a minor update (C++03) was released in 2003.
+
+After C++98, C++ evolved relatively slowly until, in 2011, the C++11 standard was released, adding numerous new features, enlarging the standard library further, and providing more facilities to C++ programmers. After a minor C++14 update released in December 2014, various new additions were introduced in C++17.[29] After becoming finalized in February 2020,[30] a draft of the C++20 standard was approved on 4 September 2020, and officially published on 15 December 2020.[31][32]
+
+On January 3, 2018, Stroustrup was announced as the 2018 winner of the Charles Stark Draper Prize for Engineering, "for conceptualizing and developing the C++ programming language".[33]
+
+In December 2022, C++ ranked third on the TIOBE index, surpassing Java for the first time in the history of the index. As of November 2024, the language ranks second after Python, with Java being in third.[34]
+
+In March 2025, Stroustrup issued a call for the language community to defend it. Since the language allows manual memory management, bugs that represent security risks such as buffer overflow may be introduced in programs when inadvertently misused by the programmer.[35]
+
+Etymology
+According to Stroustrup, "the name signifies the evolutionary nature of the changes from C."[36] This name is credited to Rick Mascitti (mid-1983)[26] and was first used in December 1983. When Mascitti was questioned informally in 1992 about the naming, he indicated that it was given in a tongue-in-cheek spirit. The name comes from C's ++ operator (which increments the value of a variable) and a common naming convention of using "+" to indicate an enhanced computer program.
+
+During C++'s development period, the language had been referred to as "new C" and "C with Classes"[26][37] before acquiring its final name.
+
+Philosophy
+Throughout C++'s life, its development and evolution has been guided by a set of principles:[24]
+
+It must be driven by actual problems and its features should be immediately useful in real world programs.
+Every feature should be implementable (with a reasonably obvious way to do so).
+Programmers should be free to pick their own programming style, and that style should be fully supported by C++.
+Allowing a useful feature is more important than preventing every possible misuse of C++.
+It should provide facilities for organizing programs into separate, well-defined parts, and provide facilities for combining separately developed parts.
+No implicit violations of the type system (but allow explicit violations; that is, those explicitly requested by the programmer).
+User-created types need to have the same support and performance as built-in types.
+Unused features should not negatively impact created executables (e.g. in lower performance).
+There should be no language beneath C++ (except assembly language).
+C++ should work alongside other existing programming languages, rather than fostering its own separate and incompatible programming environment.
+If the programmer's intent is unknown, allow the programmer to specify it by providing manual control.
+
+Standardization
+Main articles: 
+- C++03: https://en.wikipedia.org/wiki/C%2B%2B03
+- C++11: https://en.wikipedia.org/wiki/C%2B%2B11
+- C++14: https://en.wikipedia.org/wiki/C%2B%2B14
+- C++17: https://en.wikipedia.org/wiki/C%2B%2B17
+- C++20: https://en.wikipedia.org/wiki/C%2B%2B20
+- C++23: https://en.wikipedia.org/wiki/C%2B%2B23
+- C++26: https://en.wikipedia.org/wiki/C%2B%2B26
+
+C++ is standardized by an ISO working group known as JTC1/SC22/WG21. The working group holds three week-long meetings each year.[44] So far, it has published seven revisions of the C++ standard and is currently working on the next revision, C++26.
+
+In 1998, the ISO working group standardized C++ for the first time as ISO/IEC 14882:1998, which is informally known as C++98. In 2003, it published a new version of the C++ standard called ISO/IEC 14882:2003, which fixed problems identified in C++98.
+
+The next major revision of the standard was informally referred to as "C++0x", but it was not released until 2011.[45] C++11 (14882:2011) included many additions to both the core language and the standard library.[40]
+
+In 2014, C++14 (also known as C++1y) was released as a small extension to C++11, featuring mainly bug fixes and small improvements.[46] The Draft International Standard ballot procedures completed in mid-August 2014.[47]
+
+After C++14, a major revision C++17, informally known as C++1z, was completed by the ISO C++ committee in mid July 2017 and was approved and published in December 2017.[48]
+
+Language
+The C++ language has two main components: a direct mapping of hardware features provided primarily by the C subset, and zero-overhead abstractions based on those mappings. Stroustrup describes C++ as "a light-weight abstraction programming language [designed] for building and using efficient and elegant abstractions";[17] and "offering both hardware access and abstraction is the basis of C++. Doing it efficiently is what distinguishes it from other languages."[68]
+
+C++ inherits most of C's syntax. A hello world program that conforms to the C standard is also a valid C++ hello world program. The following is adapted from Bjarne Stroustrup's version of the Hello world program that uses the C++ Standard Library stream facility to write a message to standard output:[69][70][c]
+
+Standard library
+The C++ standard consists of two parts: the core language and the standard library. C++ programmers expect the latter on every major implementation of C++; it includes aggregate types (vectors, linked lists, maps (such as tree maps and hash maps), sets (such as tree sets and hash sets), queues, stacks, arrays, tuples), algorithms (find, for_each, binary_search, random_shuffle, etc.), input/output facilities (I/O streams, for reading from and writing to the console and files), file system manipulation, localisation support, smart pointers for automatic memory management, regular expression support, multi-threading library, atomics support (allowing a variable to be read or written to by at most one thread at a time without any external synchronisation), time utilities (measurement, getting current time, etc.), a system for converting error reporting that does not use C++ exceptions into C++ exceptions, random number generators, and a slightly modified version of the C standard library (to make it comply with the C++ type system).
+
+The design of the C++ standard library, much like the C standard library, is minimalistic, and contains only core features for programming, lacking most of the more specialised features offered by the Java standard library or C# standard library. For more features, some third-party libraries such as Boost libraries and POCO C++ Libraries, which offer additional features, may be used to supplement the standard library.
+
+A large part of the C++ library is based on the Standard Template Library (STL). Useful tools provided by the STL include containers as the collections of objects (such as vectors and lists), iterators that provide array-like access to containers, and algorithms that perform operations such as searching and sorting.
+
+Furthermore, (multi)maps (associative arrays) and (multi)sets are provided, all of which export compatible interfaces. Therefore, using templates it is possible to write generic algorithms that work with any container or on any sequence defined by iterators.
+
+As in C, the features of the library may be accessed by using the #include directive to include a standard header. The C++ Standard Library provides 105 standard headers, of which 27 are deprecated. With the introduction of modules in C++20, these headers may be accessed with import, and in C++23, the entire standard library can now be directly imported as module itself, with import std;. Currently, the C++ standard library provides two modules, std and (a compatibility module for std which exports C standard library facilities into the global namespace).
+
+The standard incorporates the STL that was originally designed by Alexander Stepanov, who experimented with generic algorithms and containers for many years. When he started with C++, he finally found a language where it was possible to create generic algorithms (e.g., STL sort) that perform even better than, for example, the C standard library qsort, thanks to C++ features like using inlining and compile-time binding instead of function pointers. The standard does not refer to it as "STL", as it is merely a part of the standard library, but the term is still widely used to distinguish it from the rest of the standard library (input/output streams, internationalization, diagnostics, the C library subset, etc.).[71]
+
+Most C++ compilers, and all major ones, provide a standards-conforming implementation of the C++ standard library.
+
+Test Urls:
+- https://en.wikipedia.org/wiki/C%2B%2B
+- https://www.vu.lt/
+- https://vu.lt/
+- www.vu.lt
+- vu.lt
+- https://isocpp.org/
+- www.github.com
+- github.com
+
+Является мультипарадигменным языком программирования: поддерживаются такие парадигмы, как процедурное программирование, объектно-ориентированное программирование, обобщённое программирование, функциональное программирование. Язык имеет богатую стандартную библиотеку, которая включает в себя распространённые контейнеры и алгоритмы, ввод-вывод, регулярные выражения, поддержку многопоточности и другие возможности. C++ сочетает свойства как высокоуровневых, так и низкоуровневых языков[5][6]. В сравнении с его предшественником — языком C — наибольшее внимание уделено поддержке объектно-ориентированного и обобщённого программирования[6], а также переменных.
+
+C++ широко используется для разработки программного обеспечения, являясь одним из самых популярных языков программирования[мнения 1][мнения 2]. Область его применения включает создание операционных систем, разнообразных прикладных программ, драйверов устройств, приложений для встраиваемых систем, высокопроизводительных серверов, а также компьютерных игр. Существует множество реализаций языка C++, как бесплатных, так и коммерческих и для различных платформ. Например, на платформе x86 это GCC, Clang, Visual C++, Intel C++ Compiler, Embarcadero (Borland) C++ Builder и другие. C++ оказал огромное влияние на другие языки программирования, в первую очередь на Java и C#.
+
+Синтаксис C++ унаследован от языка Си. Изначально одним из принципов разработки было сохранение совместимости с Си. Тем не менее, C++ не является в строгом смысле надмножеством Си: множество программ, которые могут одинаково успешно транслироваться как компиляторами Си, так и компиляторами C++, довольно велико, но не включает все возможные программы на Си.
+
