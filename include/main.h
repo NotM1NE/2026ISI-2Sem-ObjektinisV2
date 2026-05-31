@@ -30,13 +30,21 @@ map<string, WordInfo> CountWords(const map<int, string> &lines);
 set<string> FindUrls(const map<int, string> &lines, const set<string> &tlds);
 
 vector<string> GetWordsFromLine(string line);
-string CleanWord(string word);
 string CleanUrl(string url);
 
 bool IsValidUrl(string url, const set<string>& tlds);
 string GetTldFromUrl(string url);
 string ToLowerCase(string text);
 set<string> ReadTlds(string fileName);
+
+std::wstring Utf8ToWstring(const std::string& text);
+string WstringToUtf8(const std::wstring& text);
+bool IsUnicodePunctuation(wchar_t symbol);
+bool IsNumber(const string &text);
+
+map<string, int> CountNumbers(const map<int, string> &lines);
+
+void WriteNumberCountToFile(const map<string, int> &numbers, string fileName);
 
 
 #endif

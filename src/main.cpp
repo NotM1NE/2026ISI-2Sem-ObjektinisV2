@@ -9,9 +9,13 @@
 #include <set>
 #include <iomanip>
 #include <regex>
+#include <locale>
+#include <codecvt>
+#include <cwctype>
 
 #include "../include/main.h"
 
+using std::codecvt_utf8;
 using std::cout;
 using std::endl;
 using std::ifstream;
@@ -26,13 +30,17 @@ using std::sregex_iterator;
 using std::string;
 using std::stringstream;
 using std::vector;
+using std::wstring;
+using std::wstring_convert;
 
 int main()
 {
-    auto lines = ReadFile("input.txt");
+    auto lines = ReadFile("inputas.txt");
     auto words = CountWords(lines);
+    auto numbers = CountNumbers(lines);
     WriteWordstoFile(words, "cross_reference.txt");
     WriteWordCountToFile(words, "word_count.txt");
+    WriteNumberCountToFile(numbers, "number_count.txt");
 
     auto tlds = ReadTlds("tldList.txt");
     auto urls = FindUrls(lines, tlds);
@@ -70,42 +78,68 @@ map<int, string> GetLines(ifstream &inputFile)
     return lines;
 }
 
+bool IsUnicodePunctuation(wchar_t symbol)
+{
+    return (symbol >= 0x2000 && symbol <= 0x206F) || // general punctuation
+           (symbol >= 0x2E00 && symbol <= 0x2E7F) || // supplemental punctuation
+           (symbol >= 0x3000 && symbol <= 0x303F) || // CJK punctuation
+           symbol == L'„' ||
+           symbol == L'“' ||
+           symbol == L'”' ||
+           symbol == L'‘' ||
+           symbol == L'’' ||
+           symbol == L'«' ||
+           symbol == L'»';
+}
+
 vector<string> GetWordsFromLine(string line)
 {
     vector<string> words;
-    string word, cleanedWord;
+    wstring wideLine = Utf8ToWstring(line);
+    wstring currentWord;
 
-    stringstream lineStream(line);
-
-    while (lineStream >> word)
+    for (wchar_t symbol : wideLine)
     {
-        cleanedWord = CleanWord(word);
+        bool isAsciiLetterOrDigit =
+            (symbol >= L'a' && symbol <= L'z') ||
+            (symbol >= L'A' && symbol <= L'Z') ||
+            (symbol >= L'0' && symbol <= L'9');
 
-        if (!cleanedWord.empty())
-            words.push_back(cleanedWord);
+        bool isUnicodeWordSymbol =
+            symbol >= 128 && !IsUnicodePunctuation(symbol);
+
+        if (isAsciiLetterOrDigit || isUnicodeWordSymbol)
+        {
+            currentWord += std::towlower(symbol);
+        }
+        else
+        {
+            if (!currentWord.empty())
+            {
+                words.push_back(WstringToUtf8(currentWord));
+                currentWord.clear();
+            }
+        }
+    }
+
+    if (!currentWord.empty())
+    {
+        words.push_back(WstringToUtf8(currentWord));
     }
 
     return words;
 }
 
-string CleanWord(string word)
+wstring Utf8ToWstring(const string &text)
 {
-    string cleanedWord;
+    wstring_convert<codecvt_utf8<wchar_t>> converter;
+    return converter.from_bytes(text);
+}
 
-    for (char symbol : word)
-    {
-        unsigned char currentSymbol = static_cast<unsigned char>(symbol);
-
-        bool isPunctuation = std::ispunct(currentSymbol);
-
-        if (!isPunctuation)
-        {
-            char lowerCaseSymbol = std::tolower(currentSymbol);
-            cleanedWord += lowerCaseSymbol;
-        }
-    }
-
-    return cleanedWord;
+string WstringToUtf8(const wstring &text)
+{
+    wstring_convert<codecvt_utf8<wchar_t>> converter;
+    return converter.to_bytes(text);
 }
 
 map<string, WordInfo> CountWords(const map<int, string> &lines)
@@ -118,6 +152,8 @@ map<string, WordInfo> CountWords(const map<int, string> &lines)
         words = GetWordsFromLine(line.second);
         for (const auto &word : words)
         {
+            if (IsNumber(word))
+                continue;
             if (wordCount.find(word) == wordCount.end())
             {
                 wordCount[word].count = 1;
@@ -132,6 +168,26 @@ map<string, WordInfo> CountWords(const map<int, string> &lines)
     }
 
     return wordCount;
+}
+
+map<string, int> CountNumbers(const map<int, string> &lines)
+{
+    map<string, int> numberCount;
+
+    for (const auto &line : lines)
+    {
+        vector<string> tokens = GetWordsFromLine(line.second);
+
+        for (const string &token : tokens)
+        {
+            if (IsNumber(token))
+            {
+                numberCount[token]++;
+            }
+        }
+    }
+
+    return numberCount;
 }
 
 void WriteWordstoFile(const map<string, WordInfo> &words, string fileName)
@@ -206,7 +262,7 @@ set<string> FindUrls(const map<int, string> &lines, const set<string> &tlds)
     return urls;
 }
 
-bool IsValidUrl(string url, const set<string>& tlds)
+bool IsValidUrl(string url, const set<string> &tlds)
 {
     string tld = GetTldFromUrl(url);
 
@@ -267,15 +323,15 @@ string CleanUrl(string url)
 
 string ToLowerCase(string text)
 {
-    string result;
+    wstring wideText = Utf8ToWstring(text);
+    wstring result;
 
-    for (char symbol : text)
+    for (wchar_t symbol : wideText)
     {
-        unsigned char currentSymbol = static_cast<unsigned char>(symbol);
-        result += std::tolower(currentSymbol);
+        result += std::towlower(symbol);
     }
 
-    return result;
+    return WstringToUtf8(result);
 }
 
 set<string> ReadTlds(string fileName)
@@ -313,6 +369,37 @@ void WriteUrlsToFile(const set<string> &urls, string fileName)
     for (const string &url : urls)
     {
         output << url << endl;
+    }
+
+    output.close();
+}
+
+bool IsNumber(const string &text)
+{
+    if (text.empty())
+        return false;
+
+    for (char symbol : text)
+    {
+        if (!std::isdigit(static_cast<unsigned char>(symbol)))
+            return false;
+    }
+
+    return true;
+}
+
+void WriteNumberCountToFile(const map<string, int> &numbers, string fileName)
+{
+    ofstream output("../Results/" + fileName);
+
+    if (!output.is_open())
+        throw runtime_error("Klaida: nepavyko sukurti arba atidaryti " + fileName);
+
+    output << "Number\tCount" << endl;
+
+    for (const auto &number : numbers)
+    {
+        output << number.first << "\t" << number.second << endl;
     }
 
     output.close();
